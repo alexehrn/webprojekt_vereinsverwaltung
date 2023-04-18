@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registrierung</title>
+</head>
+<body>
+	<h1>Registrierung</h1>
+
+	<main>
+
+
+		<form action="" method="post">
+			<p>
+				Ich bin:<br> <input type="radio" name="auswahl" id="r1"
+					value="Spieler" checked> <label for="r1">Spieler</label> <input
+					type="radio" name="auswahl" id="r2" value="Trainer"> <label
+					for="r2">Trainer</label>
+			</p>
+			<p>
+				Benutzername: <br> <input type="text" name="benutzername"
+					size="30" maxlength="30" required placeholder="Ihr Benutzername">
+			</p>
+			<p>
+				E-Mail: <br> <input type="text" name="e-mail" size="30"
+					maxlength="30" required placeholder="Ihre E-Mail-Adresse">
+			</p>
+			<p>
+				Passwort: <br>
+				<input type="password" name="passwort" size="30" maxlength="30"
+					required placeholder="Ihr Passwort">
+			</p>
+			<p>
+				Passwort wiederholen: <br>
+				<input type="password" name="passwort" size="30" maxlength="30"
+					required placeholder="Bitte Passwort wiederholen">
+			</p>
+			<p>Team auswählen:</p>
+			<select name="team" size="5">
+				<option value="team1" selected></option>
+				<option value="team2">A-Jugend</option>
+				<option value="team3">B-Jugend</option>
+				<option value="team4">C-Jugend</option>
+				<option value="team5">D-Jugend</option>
+				<option value="team6">F-Jugend</option>
+				<option value="team7">G-Jugend</option>
+			</select>
+			<p>
+				<button type="submit" name="registrieren">Registrieren</button>
+			</p>
+		</form>
+
+	</main>
+	<footer>
+		<a href="../index.html">Zurück zum Login</a>
+	</footer>
+
+
+
+
+
+
+</body>
+</html>
