@@ -4,105 +4,134 @@
 <meta charset="UTF-8">
 <title>Teamverwaltung</title>
 
-    <style>
-	     body {
-	        font-family:Arial;
-	      }
-    
-      /* Styling for the navigation */
-      nav {
-        display: flex;
-        justify-content: space-between;
-        background-color: #000000;
-        color: #fff;
-        padding: 10px;
-      }
+<style>
+body {
+	font-family: Arial;
+}
 
-      /* Styling for the navigation links */
-      nav a {
-        color: #fff;
-        text-decoration: none;
-        padding: 10px;
-      }
+/* Styling for the navigation */
+nav {
+	display: flex;
+	justify-content: space-between;
+	background-color: #000000;
+	color: #fff;
+	padding: 10px;
+}
 
-      /* Styling for the active link */
-      nav .active {
-        background-color: #fff;
-        color: #333;
-      }
-     
-      
-      main {
-        background-color: #fff;
-        padding: 300px;
-      }
-      
-       footer {
-        background-color: #000000;
-        color: #fff;
-        padding: 20px;
-        width: 100%;
-        position: fixed;
-        text-algin: center;
-        bottom: 0;
-      }
-      
-      footer table {
-        border-collapse: collapse;
-        margin: 0 auto;
-        width: 100%;
-      }
+/* Styling for the navigation links */
+nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 10px;
+}
 
-      td,
-      th {
-        padding: 8px;
-        text-align: left;
-        width: 25%;
-      }
+/* Styling for the active link */
+nav .active {
+	background-color: #fff;
+	color: #333;
+}
 
-      /* Styling für die Tabellenüberschrift */
-      th {
-        font-size: 18px;
-        font-weight: bold;
-      }
+main {
+	background-color: #fff;
+	padding: 300px;
+}
 
+footer {
+	background-color: #000000;
+	color: #fff;
+	padding: 20px;
+	width: 100%;
+	position: fixed;
+	text-algin: center;
+	bottom: 0;
+}
 
-        
-     
-    </style>
+footer table {
+	border-collapse: collapse;
+	margin: 0 auto;
+	width: 100%;
+}
+
+td, th {
+	padding: 8px;
+	text-align: left;
+	width: 25%;
+}
+
+/* Styling für die Tabellenüberschrift */
+th {
+	font-size: 18px;
+	font-weight: bold;
+}
+</style>
 
 </head>
 <body>
 
-<header>
-	<img src="../img/Header.png" allign=center alt="header" width=100% height=auto>
+	<header>
+		<img src="../img/Header.png" allign=center alt="header" width=100%
+			height=auto>
 
-</header>
-
-
-<nav>
-      <a href="./TrainerHome.html">Dashboard</a>
-      <a href="./TrainerKalender.html" >Kalender</a>
-      <a href="./TrainerTeamverwaltung.html" class="active">Teamverwaltung</a>
-      <a href="./TrainerTerminverwaltung.html">Terminverwaltung</a>
-
-</nav>
+	</header>
 
 
-<main>
+	<nav>
+		<a href="./TrainerHome.html">Dashboard</a> <a
+			href="./TrainerKalender.html">Kalender</a> <a
+			href="./TrainerTeamverwaltung.html" class="active">Teamverwaltung</a>
+		<a href="./TrainerTerminverwaltung.html">Terminverwaltung</a>
 
-<p>Body-Inhalt</p>
-
-</main>
+	</nav>
 
 
-<footer>
-	<table>
+	<main>
+
+		<section>
+			<table border="1">
+				<tr>
+					<th><h1>Name</h1></th>
+					<th><h1>Vorname</h1></th>
+					<th><h1>Position</h1></th>
+					<th><button type="submit" title="Neuen Spieler hinzufügen" name="hinzufügen">Hinzufügen</button></th>
+				</tr>
+				<tr>
+					<th>Mustermann</th>
+					<th>Max</th>
+					<th>Stürmer</th>
+					<th><button type="submit" title="Spieler löschen" name="spielerlöschen">&#x1F5D1;</button></th>
+				</tr>
+				<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th><button type="submit" title="Spieler löschen" name="spielerlöschen">&#x1F5D1;</button></th>
+				</tr>
+				<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th><button type="submit" title="Spieler löschen" name="spielerlöschen">&#x1F5D1;</button></th>
+				</tr>
+				<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th><button type="submit" title="Spieler löschen" name="spielerlöschen">&#x1F5D1;</button></th>
+				</tr>
+			</table>
+		</section>
+
+	</main>
+
+
+	<footer>
+		<table>
 			<tr>
 				<th><u>Vereinsverwaltung</u></th>
 				<th><u>Technischer Support</u></th>
 				<th><u>Über uns</u></th>
-				<th rowspan="4"><img src="../img/Firmenlogo.png" alt="Firmenlogo" style="float:center;"></th>
+				<th rowspan="4"><img src="../img/Firmenlogo.png"
+					alt="Firmenlogo" style="float: center;"></th>
 			</tr>
 			<tr>
 				<td>Unsere indivuellen Vereinslösungen</td>
@@ -119,9 +148,9 @@
 				<td></td>
 				<td>Werde Teil unseres jungen Teams.</td>
 			</tr>
-	</table>
+		</table>
 
-</footer>
+	</footer>
 
 </body>
 </html>

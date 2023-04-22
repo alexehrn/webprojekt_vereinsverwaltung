@@ -4,105 +4,185 @@
 <meta charset="UTF-8">
 <title>Terminverwaltung</title>
 
-    <style>
-	     body {
-	        font-family:Arial;
-	      }
-    
-      /* Styling for the navigation */
-      nav {
-        display: flex;
-        justify-content: space-between;
-        background-color: #000000;
-        color: #fff;
-        padding: 10px;
-      }
+<style>
+body {
+	font-family: Arial;
+}
 
-      /* Styling for the navigation links */
-      nav a {
-        color: #fff;
-        text-decoration: none;
-        padding: 10px;
-      }
+/* Styling for the navigation */
+nav {
+	display: flex;
+	justify-content: space-between;
+	background-color: #000000;
+	color: #fff;
+	padding: 10px;
+}
 
-      /* Styling for the active link */
-      nav .active {
-        background-color: #fff;
-        color: #333;
-      }
-     
-      
-      main {
-        background-color: #fff;
-        padding: 300px;
-      }
-      
-       footer {
-        background-color: #000000;
-        color: #fff;
-        padding: 20px;
-        width: 100%;
-        position: fixed;
-        text-algin: center;
-        bottom: 0;
-      }
-      
-      footer table {
-        border-collapse: collapse;
-        margin: 0 auto;
-        width: 100%;
-      }
+/* Styling for the navigation links */
+nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 10px;
+}
 
-      td,
-      th {
-        padding: 8px;
-        text-align: left;
-        width: 25%;
-      }
+/* Styling for the active link */
+nav .active {
+	background-color: #fff;
+	color: #333;
+}
 
-      /* Styling für die Tabellenüberschrift */
-      th {
-        font-size: 18px;
-        font-weight: bold;
-      }
+main {
+	background-color: #fff;
+	padding: 300px;
+}
 
+footer {
+	background-color: #000000;
+	color: #fff;
+	padding: 20px;
+	width: 100%;
+	position: fixed;
+	text-algin: center;
+	bottom: 0;
+}
 
-        
-     
-    </style>
+footer table {
+	border-collapse: collapse;
+	margin: 0 auto;
+	width: 100%;
+}
+
+td, th {
+	padding: 8px;
+	text-align: left;
+	width: 25%;
+}
+
+/* Styling für die Tabellenüberschrift */
+th {
+	font-size: 18px;
+	font-weight: bold;
+}
+</style>
 
 </head>
 <body>
 
-<header>
-	<img src="../img/Header.png" allign=center alt="header" width=100% height=auto>
+	<header>
+		<img src="../img/Header.png" allign=center alt="header" width=100%
+			height=auto>
 
-</header>
-
-
-<nav>
-      <a href="./TrainerHome.html">Dashboard</a>
-      <a href="./TrainerKalender.html" >Kalender</a>
-      <a href="./TrainerTeamverwaltung.html">Teamverwaltung</a>
-      <a href="./TrainerTerminverwaltung.html" class="active">Terminverwaltung</a>
-
-</nav>
+	</header>
 
 
-<main>
+	<nav>
+		<a href="./TrainerHome.html">Dashboard</a> <a
+			href="./TrainerKalender.html">Kalender</a> <a
+			href="./TrainerTeamverwaltung.html">Teamverwaltung</a> <a
+			href="./TrainerTerminverwaltung.html" class="active">Terminverwaltung</a>
 
-<p>Body-Inhalt</p>
-
-</main>
+	</nav>
 
 
-<footer>
-	<table>
+	<main>
+
+		<section>
+			<table border="1">
+				<tr>
+					<th>Beschreibung</th>
+					<th>Ort</th>
+					<th>Datum</th>
+					<th>Uhrzeit</th>
+					<th>Optionen</th>
+				</tr>
+				<tr>
+					<th>Beispielevent</th>
+					<th>Fahlenbach</th>
+					<th>12.05.2023</th>
+					<th>8:00 - 14:00 Uhr</th>
+					<th><button type="submit" title="Kommentar hinzufügen"
+							name="kommentieren">&#x1F4AC;</button>
+						<button type="submit" title="Termin bearbeiten" name="bearbeiten">&#x270E;</button>
+						<button type="submit" title="Termin löschen" name="terminlöschen">&#x1F5D1;</button>
+					</th>
+				</tr>
+				<tr>
+					<th>Beispielevent</th>
+					<th>Fahlenbach</th>
+					<th>12.05.2023</th>
+					<th>8:00 - 14:00 Uhr</th>
+					<th><button type="submit" title="Kommentar hinzufügen"
+							name="kommentieren">&#x1F4AC;</button>
+						<button type="submit" title="Termin bearbeiten" name="bearbeiten">&#x270E;</button>
+						<button type="submit" title="Termin löschen" name="terminlöschen">&#x1F5D1;</button>
+					</th>
+				</tr>
+				<tr>
+					<th>Beispielevent</th>
+					<th>Fahlenbach</th>
+					<th>12.05.2023</th>
+					<th>8:00 - 14:00 Uhr</th>
+					<th><button type="submit" title="Kommentar hinzufügen"
+							name="kommentieren">&#x1F4AC;</button>
+						<button type="submit" title="Termin bearbeiten" name="bearbeiten">&#x270E;</button>
+						<button type="submit" title="Termin löschen" name="terminlöschen">&#x1F5D1;</button>
+					</th>
+				</tr>
+			</table>
+		</section>
+
+		<section>
+			<table border="1">
+				<tr>
+					<th><h1>Einen neuen Termin anlegen</h1></th>
+				</tr>
+				<tr>
+					<th>
+						<form action="" method="post">
+							<p>
+								Kurzbeschreibung: <br> <input type="text"
+									name="kurzbeschreibung" size="30" maxlength="30" required
+									placeholder="Kurzbeschreibung eingeben">
+							</p>
+							<p>
+								Ort: <br> <input type="text" name="ort" size="30"
+									maxlength="30" required placeholder="Ort eingeben">
+							</p>
+							<p>
+								Datum: <br> <input type="date" name="datum">
+							</p>
+							<p>
+								Uhrzeit: <br> Von: <input type="time"
+									name="startzeit"> <br> Bis: <input
+									type="time" name="endzeit">
+							</p>
+							<p>
+								Beschreibung: <br> 
+								<textarea name="trainer_eingabe" rows="10" cols="50" placeholder="Beschreibung eingeben..."></textarea>
+							</p>
+							<p>
+								<button type="submit" name="anlegen">Termin anlegen</button>
+							</p>
+						</form>
+
+
+					</th>
+				</tr>
+
+			</table>
+		</section>
+
+	</main>
+
+
+	<footer>
+		<table>
 			<tr>
 				<th><u>Vereinsverwaltung</u></th>
 				<th><u>Technischer Support</u></th>
 				<th><u>Über uns</u></th>
-				<th rowspan="4"><img src="../img/Firmenlogo.png" alt="Firmenlogo" style="float:center;"></th>
+				<th rowspan="4"><img src="../img/Firmenlogo.png"
+					alt="Firmenlogo" style="float: center;"></th>
 			</tr>
 			<tr>
 				<td>Unsere indivuellen Vereinslösungen</td>
@@ -119,9 +199,9 @@
 				<td></td>
 				<td>Werde Teil unseres jungen Teams.</td>
 			</tr>
-	</table>
+		</table>
 
-</footer>
+	</footer>
 
 </body>
 </html>
