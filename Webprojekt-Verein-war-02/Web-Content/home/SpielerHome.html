@@ -110,17 +110,28 @@ th {
 				<td>Trainingsbeispiel</td>
 				<td>29.04.2022</td>
 				<td>Bitte Laufschuhe mitbringen!</td>
-				<td>18</td>
-				<td>7</td>
+			<td><form>
+					<label for="zusage"></label>
+					<button type="submit" id="zusage" name="zusage" value="true">Zusage</button>
+					</form></td>
+				<td><form>
+						<label for="absage"></label>
+						<button type="submit" id="absage" name="absage" value="true">Absage</button>
+					</form></td>
 			</tr>
 
 			<tr>
 				<td>Trainingsbeispiel</td>
 				<td>31.04.2022</td>
-				<td>
-				<td>
-				<td>20</td>
-				<td>5</td>
+				<td>Heute eine Stunde Abschlussspiel!</td>
+				<td><form>
+					<label for="zusage"></label>
+					<button type="submit" id="zusage" name="zusage" value="true">Zusage</button>
+					</form></td>
+				<td><form>
+						<label for="absage"></label>
+						<button type="submit" id="absage" name="absage" value="true">Absage</button>
+					</form></td>
 			</tr>
 		</table>
 		<form>
@@ -128,15 +139,20 @@ th {
 			<table border="1">
 				<tr>
 					<th>Beschreibung</th>
+					<th>von</th>
 					<th>bis</th>
 				</tr>
 				<tr>
-					<td><textarea name="abwesenheit_eingabe" rows="1" cols="20"></textarea></td>
-					<td><input type="date" id="datum" name="datum"></td>
+					<td><textarea name="abwesenheit_eingabe" rows="1" cols="100"></textarea></td>
+					<td><input type="date" id="datum" name="startdatum"></td>
+					<td><input type="date" id="datum" name="enddatum"></td>
 			</table>
+			<button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit
+				absenden!</button>
 
 		</form>
-		
+		<br>
+
 		<table border="1">
 			<tr>
 				<th>Nachrichtenforum</th>
@@ -144,7 +160,7 @@ th {
 
 			<tr>
 				<td>Glückwunsch zum Sieg, Buben!</td>
-			
+
 			</tr>
 
 		</table>
