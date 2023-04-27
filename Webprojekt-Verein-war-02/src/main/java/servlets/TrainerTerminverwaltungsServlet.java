@@ -8,9 +8,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import bean.TrainerTerminverwaltungsBean;
-/**
- * Servlet implementation class TrainerTerminverwaltungsServlet
- */
+
+
+
 @WebServlet("/TrainerTerminverwaltungsServlet")
 public class TrainerTerminverwaltungsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,9 +22,11 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setCharacterEncoding("UTF-8");
 		
 		TrainerTerminverwaltungsBean trainerTerminverwaltungsBean = new TrainerTerminverwaltungsBean();
+		
 		trainerTerminverwaltungsBean.setKurzbeschreibung(request.getParameter("kurzbeschreibung"));
 		trainerTerminverwaltungsBean.setOrt(request.getParameter("ort"));
 		trainerTerminverwaltungsBean.setDatum(request.getParameter("datum"));
