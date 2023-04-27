@@ -39,12 +39,13 @@ public class RegistrierungsServlet extends HttpServlet {
 		registerform.setVorname(request.getParameter("vorname"));
 		registerform.setNachname(request.getParameter("nachname"));
 		registerform.setPasswort(request.getParameter("passwort"));
+		registerform.setEmail(request.getParameter("email"));
 		registerform.setTeam(request.getParameter("team"));
 		
 		final HttpSession session = request.getSession();
 		session.setAttribute("registerform", registerform);
 		
-		response.sendRedirect("/Webprojekt-Verein-war-02/regerfolgreich.jsp");
+		response.sendRedirect("jsps/regerfolgreich.jsp");
 		
 	}
 
