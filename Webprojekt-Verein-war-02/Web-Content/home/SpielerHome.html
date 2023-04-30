@@ -110,31 +110,36 @@ th {
 				<td>Trainingsbeispiel</td>
 				<td>29.04.2022</td>
 				<td>Bitte Laufschuhe mitbringen!</td>
-			<td><form>
+				
+			<td><form action="/Webprojekt-Verein-war-02/SpielerRueckmeldungServlet" method="get">
 					<label for="zusage"></label>
-					<button type="submit" id="zusage" name="zusage" value="true">Zusage</button>
-					</form></td>
-				<td><form>
+					<button type="submit" id="zusage" name="rueckmeldung" value="zugesagt">Zusage</button>
+				</td>
+				<td>
 						<label for="absage"></label>
-						<button type="submit" id="absage" name="absage" value="true">Absage</button>
-					</form></td>
+						<button type="submit" id="absage" name="rueckmeldung" value="abgesagt">Absage</button>
+				</td>
+				</form>
 			</tr>
 
 			<tr>
 				<td>Trainingsbeispiel</td>
 				<td>31.04.2022</td>
 				<td>Heute eine Stunde Abschlussspiel!</td>
-				<td><form>
+				
+				<td><form action="/Webprojekt-Verein-war-02/SpielerRueckmeldungServlet" method="get">
 					<label for="zusage"></label>
-					<button type="submit" id="zusage" name="zusage" value="true">Zusage</button>
-					</form></td>
-				<td><form>
+					<button type="submit" id="zusage" name="rueckmeldung" value="zugesagt">Zusage</button>
+				</td>
+				<td>
 						<label for="absage"></label>
-						<button type="submit" id="absage" name="absage" value="true">Absage</button>
-					</form></td>
+						<button type="submit" id="absage" name="rueckmeldung" value="abgesagt">Absage</button>
+				</td>
+				</form>
 			</tr>
 		</table>
-		<form>
+		
+		<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet" action="post">
 			<p>Abwesenheit anlegen</p>
 			<table border="1">
 				<tr>
@@ -143,12 +148,12 @@ th {
 					<th>bis</th>
 				</tr>
 				<tr>
+				
 					<td><textarea name="abwesenheit_eingabe" rows="1" cols="100"></textarea></td>
-					<td><input type="date" id="datum" name="startdatum"></td>
-					<td><input type="date" id="datum" name="enddatum"></td>
+					<td><input type="date" id="startdatum" name="startdatum"></td>
+					<td><input type="date" id="enddatum" name="enddatum"></td>
 			</table>
-			<button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit
-				absenden!</button>
+			<button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit absenden!</button>
 
 		</form>
 		<br>
