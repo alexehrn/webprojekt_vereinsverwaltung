@@ -16,8 +16,7 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     
-    public TrainerTerminverwaltungsServlet() {
-        
+    public TrainerTerminverwaltungsServlet() {   
     }
 
 	
