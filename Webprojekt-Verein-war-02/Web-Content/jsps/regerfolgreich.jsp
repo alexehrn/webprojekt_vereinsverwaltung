@@ -10,8 +10,10 @@
 		<meta charset="UTF-8">
 		<title>Registrierungsformular ausgeben</title>
 	</head>
+	
 	<body>
-		
+	
+	<%@ include file="head.jspf" %> 	
 		
 	<h2>Registrierung erfolgreich</h2>
 		<h3>Ihre Formulareingaben</h3>
@@ -23,5 +25,8 @@
 		<br><b>Passwort: </b>${registerform.passwort}
 		<br><b>Mannschaft: </b>${registerform.team}
 		
+		
+	
+	<%@ include file="footer.jspf" %> 
 	</body>
 </html>

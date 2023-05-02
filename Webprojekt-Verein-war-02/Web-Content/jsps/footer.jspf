@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+		<footer>
+		<table>
+			<tr>
+				<th><u>Vereinsverwaltung</u></th>
+				<th><u>Technischer Support</u></th>
+				<th><u>Über uns</u></th>
+				<th rowspan="4"><img src="../img/Firmenlogo.png"
+					alt="Firmenlogo" style="float: center;"></th>
+			</tr>
+			<tr>
+				<td>Unsere indivuellen Vereinslösungen</td>
+				<td>&#9997; ingo&#64;softwarehouse.de</td>
+				<td>Wir vertreiben individuelle</td>
+			</tr>
+			<tr>
+				<td>eignen sich optimal von der</td>
+				<td>&#x260E; 0171/1146397</td>
+				<td>Softwarelösungen im großen Stil.</td>
+			</tr>
+			<tr>
+				<td>Kreisklasse bis zur Champions League.</td>
+				<td></td>
+				<td>Werde Teil unseres jungen Teams.</td>
+			</tr>
+		</table>
+
+	</footer>
+
+</body>
+</html>
+
