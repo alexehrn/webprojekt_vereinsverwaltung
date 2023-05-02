@@ -5,7 +5,10 @@
 		<a href="./SpielerHome.jsp" class="active">Dashboard</a> 
 		<a href="./SpielerKalender.jsp">Kalender</a>
 
-	</nav>
+</nav>
+
+
+
 	<main>
 		<p>Termine</p>
 		<table border="1">
