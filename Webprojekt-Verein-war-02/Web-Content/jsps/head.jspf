@@ -48,7 +48,7 @@ nav .active {
 
 main {
 	background-color: #fff;
-	padding: 300px;
+	padding: 20px;
 }
 
 footer {

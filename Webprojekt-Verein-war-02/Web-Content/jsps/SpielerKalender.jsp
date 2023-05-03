@@ -5,9 +5,8 @@
    	  <a href="./SpielerHome.jsp">Dashboard</a>
       <a href="./SpielerKalender.jsp" class="active">Kalender</a>
 
-</nav>	
-
+</nav>	 
 	<main>
-		<p>Hier kommt der Kalender hin</p>
+		<%@ include file="kalender.jspf" %> 
 	</main>
 <%@ include file="footer.jspf" %> 
