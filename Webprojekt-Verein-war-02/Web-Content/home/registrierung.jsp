@@ -56,7 +56,7 @@
 
 	</main>
 	<footer>
-		<a href="../index.html">Zurück zum Login</a>
+		<a href="../index.jsp">Zurück zum Login</a>
 	</footer>
 
 

@@ -37,7 +37,7 @@
 	</main>
 	<footer>
 		<p>
-			Noch kein Konto?<br> <a href="./home/registrierung.html"><button
+			Noch kein Konto?<br> <a href="./home/registrierung.jsp"><button
 					type="submit" name="registrieren">Registrieren</button></a>
 		</p>
 	</footer>
