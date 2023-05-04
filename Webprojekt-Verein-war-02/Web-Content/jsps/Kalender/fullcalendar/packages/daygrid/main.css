@@ -9,7 +9,7 @@
 }
 
 .fc-dayGrid-view .fc-body .fc-row {
-  min-height: 4em;
+  height: 175px;
   /* ensure that all rows are at least this tall */
 }
 

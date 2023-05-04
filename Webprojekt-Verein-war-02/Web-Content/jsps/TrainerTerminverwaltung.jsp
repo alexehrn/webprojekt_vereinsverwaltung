@@ -3,63 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="head.jspf"%>
 
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Teamverwaltung</title>
-<style>
-body {
-	font-family: Arial;
-}
-
-/* Styling for the navigation */
-nav {
-	display: flex;
-	justify-content: space-between;
-	background-color: #000000;
-	color: #fff;
-	padding: 10px;
-}
-
-/* Styling for the navigation links */
-nav a {
-	color: #fff;
-	text-decoration: none;
-	padding: 10px;
-}
-
-/* Styling for the active link */
-nav .active {
-	background-color: #fff;
-	color: #333;
-}
-
-main {
-	background-color: #fff;
-	padding: 300px;
-}
-
-td, th {
-	padding: 8px;
-	text-align: left;
-	width: 25%;
-}
-
-/* Styling für die Tabellenüberschrift */
-th {
-	font-size: 18px;
-	font-weight: bold;
-}
-</style>
-
-</head>
-<body>
-
-
-
-
 	<nav>
 		 <a href="./TrainerHome.jsp">Dashboard</a>                                         <!-- LINK STIMMT NOCH NICHT!! -->
 		<a	href="./TrainerKalender.jsp">Kalender</a>                                     <!-- LINK STIMMT NOCH NICHT!! -->
@@ -162,7 +105,4 @@ th {
 
 	</main>
 
-
-</body>
-</html>
 <%@ include file="footer.jspf"%>

@@ -62,7 +62,7 @@
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
       },
       defaultView: 'dayGridMonth',
-      defaultDate: '2020-02-12',
+      defaultDate: '2023-05-12',
       navLinks: true, // can click day/week names to navigate views
       editable: true,
       eventLimit: true, // allow "more" link when too many events
