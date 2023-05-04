@@ -536,7 +536,7 @@ a.fc-more:hover {
 --------------------------------------------------------------------------------------------------*/
 .fc-now-indicator {
   position: absolute;
-  border: 0 solid red;
+  border: 0 solid #000000;
 }
 
 /* Utilities
@@ -580,7 +580,7 @@ TODO: more distinction between this file and common.css
 }
 
 .fc-unthemed td.fc-today {
-  background: #40e0d0;
+  background: #C9C9C9;
 }
 
 .fc-unthemed .fc-disabled-day {
@@ -717,14 +717,14 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 /* "primary" coloring */
 .fc-button-primary {
   color: #fff;
-  background-color: #f67280;
-  border-color: #f67280;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .fc-button-primary:hover {
   color: #fff;
-  background-color: #f67280;
-  border-color: #f67280;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 
@@ -736,15 +736,15 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 
 .fc-button-primary:disabled {
   color: #fff;
-  background-color: #f67280;
-  border-color: #f67280;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .fc-button-primary:not(:disabled):active,
 .fc-button-primary:not(:disabled).fc-button-active {
   color: #fff;
-  background-color: #f67280;
-  border-color: #f67280;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .fc-button-primary:not(:disabled):active:focus,
