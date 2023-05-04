@@ -45,7 +45,7 @@ public class RegistrierungsServlet extends HttpServlet {
 		final HttpSession session = request.getSession();
 		session.setAttribute("registerform", registerform);
 		
-		response.sendRedirect("jsps/regerfolgreich.jsp");
+		response.sendRedirect("home/regerfolgreich.jsp");
 		
 	}
 

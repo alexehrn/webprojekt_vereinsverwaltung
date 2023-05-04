@@ -1,14 +1,41 @@
+<%@ page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Registrierung</title>
+
+
+<style>
+
+body {
+ display: flex;
+  align-items: center;
+  justify-content: center;
+	height:100vh;
+	
+  background-image: url(../img/Login.JPG);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; /* oder contain, je nach Wunsch */
+}
+
+
+main{
+ 
+ width: 300px;
+  margin: 0px auto;
+ background-color: rgba(255, 255, 255, 0.7);
+ text-align: center
+
+}
+</style>
 </head>
 <body>
-	<h1>Registrierung</h1>
+	
 
 	<main>
-
+		<h1>Registrierung</h1>
 
 		<form action="/Webprojekt-Verein-war-02/RegistrierungsServlet" method="post" accept-charset="utf-8">
 			<p>Ich bin:<br>
@@ -55,9 +82,7 @@
 		</form>
 
 	</main>
-	<footer>
-		<a href="../index.jsp">Zurück zum Login</a>
-	</footer>
+	
 
 
 
