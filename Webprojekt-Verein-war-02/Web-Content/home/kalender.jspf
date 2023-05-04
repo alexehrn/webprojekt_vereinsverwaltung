@@ -11,6 +11,8 @@
 
     
     <link rel="stylesheet" href="Kalender/fonts/icomoon/style.css">
+    
+
   
     <link href='Kalender/fullcalendar/packages/core/main.css' rel='stylesheet' />
     <link href='Kalender/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
@@ -21,6 +23,8 @@
     
     <!-- Style -->
     <link rel="stylesheet" href="Kalender/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css"!important>
 
     <title>Calendar #10</title>
   </head>

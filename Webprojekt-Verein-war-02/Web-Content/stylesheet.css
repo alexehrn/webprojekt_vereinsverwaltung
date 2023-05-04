@@ -10,18 +10,25 @@
 	cursor: pointer;
 }
 
+
+
+
+
 body {
 	font-family: Arial;
+	 margin-left: 0;
 }
 
 /* Styling for the navigation */
 nav {
-	display: flex;
-	justify-content: space-between;
-	text-align: center;
+	display: flex !important;
+	justify-content: space-between !important;
 	background-color: #000000;
+	margin-top: 0;
+  margin-left: 0;
 	color: #fff;
 	padding: 10px;
+	
 }
 
 /* Styling for the navigation links */
@@ -58,14 +65,14 @@ footer table {
 	width: 100%;
 }
 
-td, th {
+footer td, th {
 	padding: 8px;
 	text-align: left;
 	width: 25%;
 }
 
 /* Styling für die Tabellenüberschrift */
-th {
+footer th {
 	font-size: 18px;
 	font-weight: bold;
 }

@@ -14,6 +14,6 @@
 
 	<header>
 		<button id="logout-btn">&#x23FB; Logout</button>
-		<img src="../img/Header.png" allign=center alt="header" width=100% height=auto>
+		<img src="../img/Header.png" vertical-align="top" align="center" alt="header" width=100% height=auto>
 
 	</header>
