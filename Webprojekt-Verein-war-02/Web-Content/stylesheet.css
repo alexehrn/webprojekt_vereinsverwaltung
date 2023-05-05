@@ -52,7 +52,7 @@ main {
 footer {
 	background-color: #000000;
 	color: #fff;
-	padding: 20px;
+	padding: 20px 100px;
 	width: 100%;
 	position: auto;
 	text-algin: center;
@@ -75,4 +75,9 @@ footer td, th {
 footer th {
 	font-size: 18px;
 	font-weight: bold;
+}
+
+footer img {
+	display: block;
+  float: center;
 }
