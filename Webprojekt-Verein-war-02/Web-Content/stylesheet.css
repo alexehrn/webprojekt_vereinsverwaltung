@@ -11,9 +11,6 @@
 }
 
 
-
-
-
 body {
 	font-family: Arial;
 	 margin-left: 0;
@@ -52,7 +49,9 @@ main {
 footer {
 	background-color: #000000;
 	color: #fff;
-	padding: 20px 100px;
+	padding-top: 50px;
+  	padding-bottom: 50px;
+ 
 	width: 100%;
 	position: auto;
 	text-algin: center;
