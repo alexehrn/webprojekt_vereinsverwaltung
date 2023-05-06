@@ -46,8 +46,8 @@ main{
 			</p>
 
 			<p>
-				E-Mail:<br> <input type="text" name="email"
-					size="30" maxlength="30" required placeholder="Ihr Benutzername">
+				E-Mail:<br> <input type="email" name="email"
+					size="30" maxlength="30" required placeholder="Ihre E-Mail-Adresse">
 			</p>
 			<p>
 				Passwort: <br> <input type="password" name="passwort" size="30"

@@ -52,7 +52,7 @@ main{
 			</p>
 			
 			<p>
-				E-Mail: <br> <input type="text" name="email" size="30"
+				E-Mail: <br> <input type="email" name="email" size="30"
 					maxlength="30" required placeholder="Ihre E-Mail-Adresse">
 			</p>
 			<p>

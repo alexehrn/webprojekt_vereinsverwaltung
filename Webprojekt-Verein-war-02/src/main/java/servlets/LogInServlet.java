@@ -36,12 +36,18 @@ public class LogInServlet extends HttpServlet {
 		
 		loginbean login = new loginbean();
 
+		login.setAuswahl(request.getParameter("auswahl"));
 		login.setEmail(request.getParameter("email"));
 		login.setPasswort(request.getParameter("passwort"));
 		
-
-		RequestDispatcher disp = request.getRequestDispatcher("jsps/regerfolgreich.jsp");
-		disp.forward(request, response);
+		if(login.getAuswahl()=="Spieler") {
+			RequestDispatcher disp = request.getRequestDispatcher("jsps/SpielerHome.jsp");
+			disp.forward(request, response);
+		}
+		else {
+			RequestDispatcher disp = request.getRequestDispatcher("jsps/TrainerHome.jsp");
+			disp.forward(request, response);
+		}
 		
 		
 	}
