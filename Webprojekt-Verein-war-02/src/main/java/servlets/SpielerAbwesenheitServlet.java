@@ -49,7 +49,7 @@ public class SpielerAbwesenheitServlet extends HttpServlet {
 		final HttpSession session = request.getSession();
 		session.setAttribute("abwesenheit", abwesenheit);
 		
-		response.sendRedirect("");
+		response.sendRedirect(""); //geht zum Start zurück
 	}
 
 	/**
