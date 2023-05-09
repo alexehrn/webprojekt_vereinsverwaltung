@@ -34,7 +34,6 @@ nav a {
 	padding: 10px;
 }
 
-/* Styling for the active link */
 nav .active {
 	background-color: #fff;
 	color: #333;
