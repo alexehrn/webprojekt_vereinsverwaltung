@@ -9,15 +9,15 @@
 <style>
 
 body {
- display: flex;
-  align-items: center;
-  justify-content: center;
+ 	display: flex;
+  	align-items: center;
+  	justify-content: center;
 	height:100vh;
 	
-  background-image: url(../img/Login.JPG);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover; /* oder contain, je nach Wunsch */
+  	background-image: url(../img/Login.JPG);
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-size: cover;
 }
 
 

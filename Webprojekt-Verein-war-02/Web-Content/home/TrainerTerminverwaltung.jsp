@@ -14,10 +14,11 @@
 
 	<main>
 
-		<section>
+	<h1>Upcoming Events</h1>
+
 			<table border="1">
 				<tr>
-					<th>Beschreibung</th>
+					<th>Kurzbeschreibung</th>
 					<th>Ort</th>
 					<th>Datum</th>
 					<th>Uhrzeit</th>
@@ -58,15 +59,14 @@
 					</td>
 				</tr>
 			</table>
-		</section>
 
-		<section>
-			<table border="1">
-				<tr>
-					<th><h1>Einen neuen Termin anlegen</h1></th>
-				</tr>
-				<tr>
-					<th>
+
+<h1>Einen neuen Termin anlegen</h1>
+
+
+		
+					
+				
 						<form
 							action="/Webprojekt-Verein-war-02/TrainerTerminverwaltungsServlet"
 							method="post">
@@ -83,11 +83,12 @@
 								Datum: <br> <input type="date" name="datum">
 							</p>
 							<p>
-								Uhrzeit: <br> Von: <input type="time" name="startzeit">
-								<br> Bis: <input type="time" name="endzeit">
+								Uhrzeit: <br>
+								Von: <input type="time" name="startzeit"> <br>
+								Bis: <input type="time" name="endzeit">
 							</p>
 							<p>
-								Beschreibung: <br>
+								Details: <br>
 								<textarea name="trainer_eingabe" rows="10" cols="50"
 									placeholder="Beschreibung eingeben..."></textarea>
 							</p>
@@ -97,11 +98,6 @@
 						</form>
 
 
-					</th>
-				</tr>
-
-			</table>
-		</section>
 
 	</main>
 

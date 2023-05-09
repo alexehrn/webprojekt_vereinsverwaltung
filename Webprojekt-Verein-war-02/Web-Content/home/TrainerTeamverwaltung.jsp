@@ -17,39 +17,39 @@
 		<section>
 			<table border="1">
 				<tr>
-					<th><h1>Name</h1></th>
-					<th><h1>Vorname</h1></th>
-					<th><h1>Position</h1></th>
+					<th>Name</th>
+					<th>Vorname</th>
+					<th>Position</th>
 					<th><button type="submit" title="Neuen Spieler hinzufügen"
 							name="hinzufügen">Hinzufügen</button></th>
 				</tr>
 				<tr>
-					<th>Mustermann</th>
-					<th>Max</th>
-					<th>Stürmer</th>
-					<th><button type="submit" title="Spieler löschen"
-							name="spielerlöschen">&#x1F5D1;</button></th>
+					<td>Mustermann</td>
+					<td>Max</td>
+					<td>Stürmer</td>
+					<td><button type="submit" title="Spieler löschen"
+							name="spielerlöschen">&#x1F5D1;</button></td>
 				</tr>
 				<tr>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th><button type="submit" title="Spieler löschen"
-							name="spielerlöschen">&#x1F5D1;</button></th>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><button type="submit" title="Spieler löschen"
+							name="spielerlöschen">&#x1F5D1;</button></td>
 				</tr>
 				<tr>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th><button type="submit" title="Spieler löschen"
-							name="spielerlöschen">&#x1F5D1;</button></th>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><button type="submit" title="Spieler löschen"
+							name="spielerlöschen">&#x1F5D1;</button></td>
 				</tr>
 				<tr>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th><button type="submit" title="Spieler löschen"
-							name="spielerlöschen">&#x1F5D1;</button></th>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><button type="submit" title="Spieler löschen"
+							name="spielerlöschen">&#x1F5D1;</button></td>
 				</tr>
 			</table>
 		</section>
