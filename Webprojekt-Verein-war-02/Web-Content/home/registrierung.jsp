@@ -37,7 +37,7 @@ main{
 	<main>
 		<h1>Registrierung</h1>
 
-		<form action="/Webprojekt-Verein-war-02/RegistrierungsServlet" method="post" accept-charset="utf-8">
+		<form action="/Webprojekt-Verein-war-02/RegistrierungsServlet" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 			<p>Ich bin:<br>
 			<input type="radio" name="auswahl" id="r1" value="spieler" checked> <label for="r1">Spieler</label> 
 			<input type="radio" name="auswahl" id="r2" value="trainer"> <label for="r2">Trainer</label>
@@ -65,6 +65,13 @@ main{
 				<input type="password" name="passwort" size="30" maxlength="30" minlength="6"
 					required placeholder="Bitte Passwort wiederholen">
 			</p>
+			
+			<p>
+				Profilbild hochladen: <br>
+				<input type="file" name="image" id="image" accept="image/*" required>
+			</p>
+			
+			
 			<p>Team auswählen:</p>
 			<select name="team" size="8">
 				<option value="1Man">1. Mannschaft</option>
