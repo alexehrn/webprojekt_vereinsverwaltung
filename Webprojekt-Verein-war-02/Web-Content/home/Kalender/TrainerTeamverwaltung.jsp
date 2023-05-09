@@ -20,8 +20,8 @@
 					<th>Name</th>
 					<th>Vorname</th>
 					<th>Position</th>
-					<th><a href="./TrainerHinzufuegenSpieler.jsp"><button type="submit" title="Neuen Spieler hinzufügen"
-							name="hinzufügen">Hinzufügen</button></a></th>
+					<th><button type="submit" title="Neuen Spieler hinzufügen"
+							name="hinzufügen">Hinzufügen</button></th>
 				</tr>
 				<tr>
 					<td>Mustermann</td>
