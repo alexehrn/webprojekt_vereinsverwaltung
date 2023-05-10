@@ -40,14 +40,10 @@ public class LogInServlet extends HttpServlet {
 		login.setEmail(request.getParameter("email"));
 		login.setPasswort(request.getParameter("passwort"));
 		
-		if(login.getAuswahl()=="Spieler") {
-			RequestDispatcher disp = request.getRequestDispatcher("jsps/SpielerHome.jsp");
+		
+			RequestDispatcher disp = request.getRequestDispatcher(""); //Richtige JSP fehlt noch
 			disp.forward(request, response);
-		}
-		else {
-			RequestDispatcher disp = request.getRequestDispatcher("jsps/TrainerHome.jsp");
-			disp.forward(request, response);
-		}
+		
 		
 		
 	}
