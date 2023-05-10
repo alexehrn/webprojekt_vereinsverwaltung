@@ -74,24 +74,25 @@
 								Kurzbeschreibung: <br> <input type="text"
 									name="kurzbeschreibung" size="30" maxlength="30" required
 									placeholder="Kurzbeschreibung eingeben">
-							</p>
+							</p>${trainerTeamverwaltungsBean.kurzbeschreibung}
 							<p>
 								Ort: <br> <input type="text" name="ort" size="30"
 									maxlength="30" required placeholder="Ort eingeben">
-							</p>
+							</p>${trainerTeamverwaltungsBean.ort}
 							<p>
 								Datum: <br> <input type="date" name="datum">
-							</p>
+							</p>${trainerTeamverwaltungsBean.datum}
 							<p>
 								Uhrzeit: <br>
 								Von: <input type="time" name="startzeit"> <br>
 								Bis: <input type="time" name="endzeit">
 							</p>
+							
 							<p>
 								Details: <br>
 								<textarea name="trainer_eingabe" rows="10" cols="50"
 									placeholder="Beschreibung eingeben..."></textarea>
-							</p>
+							</p>${trainerTeamverwaltungsBean.beschreibung}
 							<p>
 								<button type="submit" name="anlegen">Termin anlegen</button>
 							</p>

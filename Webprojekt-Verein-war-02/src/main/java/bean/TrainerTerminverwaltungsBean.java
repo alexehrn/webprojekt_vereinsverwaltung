@@ -1,21 +1,29 @@
 package bean;
 
 import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Time;
 
 
 public class TrainerTerminverwaltungsBean implements Serializable {
 private static final long serialVersionUID = 1L;
 
-
+private Long id;
 private String kurzbeschreibung;
 private String ort;
-private String datum;
-private String uhrzeitVON;
-private String uhrzeitBIS;
+private Date datum;
+private Time uhrzeitVON;
+private Time uhrzeitBIS;
 private String beschreibung;
 
 
 
+public Long getId() {
+	return id;
+}
+public void setId(Long id) {
+	this.id = id;
+}
 public String getKurzbeschreibung() {
 	return kurzbeschreibung;
 }
@@ -28,22 +36,22 @@ public String getOrt() {
 public void setOrt(String ort) {
 	this.ort = ort;
 }
-public String getDatum() {
+public Date getDatum() {
 	return datum;
 }
-public void setDatum(String datum) {
+public void setDatum(Date datum) {
 	this.datum = datum;
 }
-public String getUhrzeitVON() {
+public Time getUhrzeitVON() {
 	return uhrzeitVON;
 }
-public void setUhrzeitVON(String uhrzeitVON) {
+public void setUhrzeitVON(Time uhrzeitVON) {
 	this.uhrzeitVON = uhrzeitVON;
 }
-public String getUhrzeitBIS() {
+public Time getUhrzeitBIS() {
 	return uhrzeitBIS;
 }
-public void setUhrzeitBIS(String uhrzeitBIS) {
+public void setUhrzeitBIS(Time uhrzeitBIS) {
 	this.uhrzeitBIS = uhrzeitBIS;
 }
 public String getBeschreibung() {
