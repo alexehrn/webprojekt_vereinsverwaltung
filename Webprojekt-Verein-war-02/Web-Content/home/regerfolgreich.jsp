@@ -19,14 +19,12 @@
 		<h3>Ihre Formulareingaben</h3>
 		
 		<br><b>Auswahl: </b>${registerform.auswahl}
-		<br><b>Id: </b>${registerform.id}
 		<br><b>Vorname: </b>${registerform.vorname}
 		<br><b>Nachname: </b>${registerform.nachname}
 		<br><b>Email: </b>${registerform.email}
 		<br><b>Passwort: </b>${registerform.passwort}
 		<br><b>Mannschaft: </b>${registerform.team}
 		<br><b>Profilbild: </b> <br>
-		<img src="BildVerarbeitungServlet?id=${registerform.id}">
 		
 		
 	

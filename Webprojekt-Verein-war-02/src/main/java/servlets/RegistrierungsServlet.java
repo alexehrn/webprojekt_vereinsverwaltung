@@ -24,11 +24,12 @@ import jakarta.servlet.http.Part;
  * Servlet implementation class RegistrierungsServlet
  */
 @WebServlet("/RegistrierungsServlet")
-@MultipartConfig(
-        maxFileSize=1024*1024*5,
-        maxRequestSize=1024*1024*5*5, 
-        location= "/tmp",
-        fileSizeThreshold=1024*1024*5)
+@MultipartConfig( 
+		maxFileSize=1024*1024*5, 
+		maxRequestSize=1024*1024*5*5,
+		location= "/tmp",
+		fileSizeThreshold=1024*1024)
+
 public class RegistrierungsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
