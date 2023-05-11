@@ -68,8 +68,8 @@ public class SpielerAbwesenheitServlet extends HttpServlet {
 		
 			// Zugriff über Klasse java.sql.PreparedStatement
 			pstmt.setString(1, abwesenheit.getGrund());
-			pstmt.setDate(2, (Date) abwesenheit.getStart()); //Datentyp zu Date gecastet
-			pstmt.setDate(3,(Date) abwesenheit.getEnde());   //Datentyp zu Date gecastet
+			pstmt.setDate(2, abwesenheit.getStart()); 
+			pstmt.setDate(3, abwesenheit.getEnde());   
 			pstmt.executeUpdate();
 			
 			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)

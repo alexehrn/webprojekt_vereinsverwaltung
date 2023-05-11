@@ -37,10 +37,10 @@ main{
 	<main>
 		<h1>Registrierung</h1>
 
-		<form action="/Webprojekt-Verein-war-02/RegistrierungsServlet" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+		<form action="/Webprojekt-Verein-war-02/RegistrierungsServlet" method="post" accept-charset="utf-8"  enctype="multipart/form-data">
 			<p>Ich bin:<br>
-			<input type="radio" name="auswahl" id="r1" value="spieler" checked> <label for="r1">Spieler</label> 
-			<input type="radio" name="auswahl" id="r2" value="trainer"> <label for="r2">Trainer</label>
+			<input type="radio" name="auswahl" id="r1" value="Spieler" checked> <label for="r1">Spieler</label> 
+			<input type="radio" name="auswahl" id="r2" value="Trainer"> <label for="r2">Trainer</label>
 			</p>
 			
 			<p>Vorname: <br> <input type="text" name="vorname" 
@@ -74,17 +74,18 @@ main{
 			
 			<p>Team auswählen:</p>
 			<select name="team" size="8">
-				<option value="1Man">1. Mannschaft</option>
-				<option value="2Man">2. Mannschaft</option>
-				<option value="AJug">A-Jugend</option>
-				<option value="BJug">B-Jugend</option>
-				<option value="CJug">C-Jugend</option>
-				<option value="DJug">D-Jugend</option>
-				<option value="FJug">F-Jugend</option>
-				<option value="GJug">G-Jugend</option>
+				<option value="1. Mannschaft">1. Mannschaft</option>
+				<option value="2. Mannschaft">2. Mannschaft</option>
+				<option value="A-Jugend">A-Jugend</option>
+				<option value="B-Jugend">B-Jugend</option>
+				<option value="C-Jugend">C-Jugend</option>
+				<option value="D-Jugend">D-Jugend</option>
+				<option value="F-Jugend">F-Jugend</option>
+				<option value="G-Jugend">G-Jugend</option>
 			</select>
 			<p>
 				<button type="submit" name="absenden">Registrieren</button>
+				 <button name="reset" type="reset">Zurücksetzen</button>
 			</p>
 		</form>
 

@@ -5,13 +5,40 @@ import java.io.Serializable;
 public class registrierungsbean01 implements Serializable {
 private static final long serialVersionUID = 1L;
 	
+	private Long id;
 	private String auswahl;
 	private String vorname;
 	private String nachname;
 	private String email;
 	private String passwort;
 	private String team;
+	private String filename;
+	private byte[] image;
 	
+	
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
 	public String getVorname() {
 		return vorname;
 	}
