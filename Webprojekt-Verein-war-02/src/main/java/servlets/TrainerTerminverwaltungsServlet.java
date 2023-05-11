@@ -37,6 +37,8 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
+		
+		
 		TrainerTerminverwaltungsBean trainerTerminverwaltungsBean = new TrainerTerminverwaltungsBean();
 		
 		trainerTerminverwaltungsBean.setKurzbeschreibung(request.getParameter("kurzbeschreibung"));

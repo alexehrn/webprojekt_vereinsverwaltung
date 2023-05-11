@@ -17,6 +17,8 @@ public class RueckmeldungsBean implements Serializable{
 	public boolean isRueckmeldung() {
 		return rueckmeldung;
 	}
+	
+	
 
 	public void setRueckmeldung(boolean rueckmeldung) {
 		this.rueckmeldung = rueckmeldung;

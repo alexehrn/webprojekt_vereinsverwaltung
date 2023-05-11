@@ -39,6 +39,7 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 		
 		RueckmeldungsBean rueckmeldung = new RueckmeldungsBean();
 		
+		
 		rueckmeldung.setRueckmeldung(Boolean.valueOf(request.getParameter("rueckmeldung")));
 		
 		persist(rueckmeldung);
