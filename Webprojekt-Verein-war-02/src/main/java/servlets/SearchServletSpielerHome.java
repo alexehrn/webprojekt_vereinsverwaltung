@@ -56,9 +56,7 @@ public class SearchServletSpielerHome extends HttpServlet {
 		
 		private List<TrainerTerminverwaltungsBean> searchTermine() throws ServletException {
 			List<TrainerTerminverwaltungsBean> termine = new ArrayList<TrainerTerminverwaltungsBean>();
-			
-			
-			
+		
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
 				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE trainer LIKE ?")) { //Hier noch Änderungen
