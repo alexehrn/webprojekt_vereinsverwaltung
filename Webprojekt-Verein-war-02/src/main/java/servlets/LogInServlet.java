@@ -71,8 +71,8 @@ public class LogInServlet extends HttpServlet {
 				TrainerBean trainer=readtrainer(email);
 								
 				// Scope "Request"
-				request.setAttribute("trainer", trainer);
-			
+				HttpSession session = request.getSession();
+				session.setAttribute("trainer", trainer);
 				
 				RequestDispatcher disp = request.getRequestDispatcher("home/TrainerHome.jsp");
 				disp.forward(request, response);
