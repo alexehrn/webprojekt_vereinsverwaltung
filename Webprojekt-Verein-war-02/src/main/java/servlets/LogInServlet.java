@@ -59,8 +59,9 @@ public class LogInServlet extends HttpServlet {
 				// DB-Zugriff
 				SpielerBean spieler=readspieler(email);
 								
-				// Scope "Request"
-				request.setAttribute("spieler", spieler);
+				// Scope "Session"
+				HttpSession session = request.getSession();
+				session.setAttribute("spieler", spieler);
 				
 				RequestDispatcher disp = request.getRequestDispatcher("home/SpielerHome.jsp");
 				disp.forward(request, response);
@@ -69,9 +70,9 @@ public class LogInServlet extends HttpServlet {
 				// DB-Zugriff
 				TrainerBean trainer=readtrainer(email);
 								
-				// Scope "Request"
-				request.setAttribute("trainer", trainer);
-			
+				// Scope "Session"
+				HttpSession session = request.getSession();
+				session.setAttribute("trainer", trainer);
 				
 				RequestDispatcher disp = request.getRequestDispatcher("home/TrainerHome.jsp");
 				disp.forward(request, response);
