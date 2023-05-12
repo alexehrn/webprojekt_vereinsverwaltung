@@ -49,6 +49,7 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		trainerTerminverwaltungsBean.setUhrzeitBIS(Time.valueOf(request.getParameter("endzeit")));
 		trainerTerminverwaltungsBean.setBeschreibung(request.getParameter("trainer_eingabe"));
 		
+		
 		persist(trainerTerminverwaltungsBean);
 		
 		final HttpSession session = request.getSession();
