@@ -60,7 +60,8 @@ public class LogInServlet extends HttpServlet {
 				SpielerBean spieler=readspieler(email);
 								
 				// Scope "Request"
-				request.setAttribute("spieler", spieler);
+				HttpSession session = request.getSession();
+				session.setAttribute("spieler", spieler);
 				
 				RequestDispatcher disp = request.getRequestDispatcher("home/SpielerHome.jsp");
 				disp.forward(request, response);
