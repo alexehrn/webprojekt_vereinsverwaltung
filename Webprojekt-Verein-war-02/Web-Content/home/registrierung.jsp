@@ -68,7 +68,8 @@ main{
 			
 			<p>
 				Profilbild hochladen: <br>
-				<input type="file" name="image" id="image" accept="image/*" required>
+				<input type="file" name="image" id="image" accept="image/*" required><br>
+				max. 1 MB
 			</p>
 			
 			

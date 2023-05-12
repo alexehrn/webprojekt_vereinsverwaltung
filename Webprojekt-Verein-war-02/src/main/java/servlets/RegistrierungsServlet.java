@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -90,7 +89,7 @@ public class RegistrierungsServlet extends HttpServlet {
 				pstmt.setBinaryStream(3, filepart.getInputStream());
 				pstmt.setString(4, regbean.getEmail());
 				pstmt.setString(5, regbean.getPasswort());
-				pstmt.setInt(6, getTeamID(regbean.getTeam()));
+				pstmt.setString(6, regbean.getTeam());
 				
 				pstmt.executeUpdate();
 				
@@ -121,7 +120,7 @@ public class RegistrierungsServlet extends HttpServlet {
 				pstmt.setBinaryStream(3, filepart.getInputStream());
 				pstmt.setString(4, regbean.getEmail());
 				pstmt.setString(5, regbean.getPasswort());
-				pstmt.setInt(6, getTeamID(regbean.getTeam()));
+				pstmt.setString(6, regbean.getTeam());
 				
 				pstmt.executeUpdate();
 				
@@ -142,41 +141,7 @@ public class RegistrierungsServlet extends HttpServlet {
 	}
 	
 	
-	private int getTeamID(String team) {
-		int erg=0;
-		
-		switch(team) {
-		case "1. Mannschaft":
-			erg=1;
-			break;
-		case "2. Mannschaft":
-			erg=2;
-			break;
-		case "A-Jugend":
-			erg=3;
-			break;
-		case "B-Jugend":
-			erg=4;
-			break;
-		case "C-Jugend":
-			erg=5;
-			break;
-		case "D-Jugend":
-			erg=6;
-			break;
-		case "E-Jugend":
-			erg=7;
-			break;
-		case "F-Jugend":
-			erg=8;
-			break;
-		case "G-Jugend":
-			erg=9;
-			break;
-		}
-		return erg;
-		
-	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
