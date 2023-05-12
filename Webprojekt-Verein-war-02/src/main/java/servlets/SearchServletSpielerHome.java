@@ -52,9 +52,11 @@ public class SearchServletSpielerHome extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
+	
 		
 		private List<TrainerTerminverwaltungsBean> searchTermine() throws ServletException {
 			List<TrainerTerminverwaltungsBean> termine = new ArrayList<TrainerTerminverwaltungsBean>();
+			
 			
 			
 			// DB-Zugriff
