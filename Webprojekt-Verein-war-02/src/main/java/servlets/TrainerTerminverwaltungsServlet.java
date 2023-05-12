@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Time;
+import java.time.LocalTime;
 
 import javax.sql.DataSource;
 
@@ -72,11 +73,10 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 			// Zugriff über Klasse java.sql.PreparedStatement
 			pstmt.setString(1, trainerTeamverwaltungsBean.getKurzbeschreibung());
 			pstmt.setString(2, trainerTeamverwaltungsBean.getOrt());
-			pstmt.setDate(3, (Date) trainerTeamverwaltungsBean.getDatum());
-			pstmt.setTime(4, (Time) trainerTeamverwaltungsBean.getUhrzeitVON());
-			pstmt.setTime(5, (Time) trainerTeamverwaltungsBean.getUhrzeitBIS());
+			pstmt.setDate(3, trainerTeamverwaltungsBean.getDatum());
+			pstmt.setTime(4, trainerTeamverwaltungsBean.getUhrzeitVON());
+			pstmt.setTime(5, trainerTeamverwaltungsBean.getUhrzeitBIS());
 			pstmt.setString(6, trainerTeamverwaltungsBean.getBeschreibung());
-			
 			
 			pstmt.executeUpdate();
 			

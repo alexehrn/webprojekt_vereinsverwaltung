@@ -1,9 +1,16 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
+
 import bean.TrainerHomeBean;
 import bean.TrainerTerminverwaltungsBean;
 import jakarta.annotation.Resource;
@@ -28,18 +35,17 @@ public class SearchServletSpielerHome extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
+		request.setCharacterEncoding("UTF-8");	
 		
-		String email = request.getParameter("email");
-		String passwort = request.getParameter("passwort");
+		
 		
 		// DB-Zugriff
 		List<TrainerTerminverwaltungsBean> termine = searchTermine();
 		List<TrainerHomeBean> nachrichten = searchNachrichten();
 		
 		// Scope "Request"
-		request.setAttribute("termine", termine);					//Geht das?
-		request.setAttribute("nachrichten", nachrichten);			//Geht das?
+		request.setAttribute("termine", termine);					
+		request.setAttribute("nachrichten", nachrichten);			
 		
 		// Weiterleiten an JSP
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/SpielerHome.jsp");
@@ -49,9 +55,84 @@ public class SearchServletSpielerHome extends HttpServlet {
 		
 		private List<TrainerTerminverwaltungsBean> searchTermine() throws ServletException {
 			List<TrainerTerminverwaltungsBean> termine = new ArrayList<TrainerTerminverwaltungsBean>();
+			
+			// DB-Zugriff
+			try (Connection con = ds.getConnection();
+				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE trainer LIKE ?")) { //Hier noch Änderungen
+
+				pstmt.setString(1,"");																			//Hier noch Änderungen
+				try (ResultSet rs = pstmt.executeQuery()) {
+				
+					while (rs.next()) {
+						TrainerTerminverwaltungsBean termin = new TrainerTerminverwaltungsBean();
+						
+						Long id = Long.valueOf(rs.getLong("termin_id"));
+						termin.setId(id);
+						
+						String kurzbeschreibung = rs.getString("kurzbeschreibung");
+						termin.setKurzbeschreibung(kurzbeschreibung);
+						
+						String ort = rs.getString("ort");
+						termin.setOrt(ort);
+						
+						Date datum = rs.getDate("datum");
+						termin.setDatum(datum);
+						
+						Time beginn = rs.getTime("beginn");
+						termin.setUhrzeitVON(beginn);
+						
+						Time ende = rs.getTime("ende");
+						termin.setUhrzeitBIS(ende);
+						
+						String beschreibung = rs.getString("beschreibung");
+						termin.setBeschreibung(beschreibung);
+						
+						termine.add(termin);
+					}
+				}
+			} catch (Exception ex) {
+				throw new ServletException(ex.getMessage());
+			}
+			
+			return termine;
 		}
 	
-	
+		
+		
+		
+		private List<TrainerHomeBean> searchNachrichten() throws ServletException {
+			List<TrainerHomeBean> nachrichten = new ArrayList<TrainerHomeBean>();
+			
+			// DB-Zugriff
+			try (Connection con = ds.getConnection();
+				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE trainer LIKE ?")) {	//Hier noch Änderungen
+
+				pstmt.setString(1,"");																				//Hier noch Änderungen
+				try (ResultSet rs = pstmt.executeQuery()) {
+				
+					while (rs.next()) {
+						TrainerHomeBean nachricht = new TrainerHomeBean();
+						
+						Long id = Long.valueOf(rs.getLong("nachricht_id"));
+						nachricht.setNachricht_id(id);
+						
+						String text = rs.getString("text");
+						nachricht.setBeschreibung(text);
+						
+						Date datum = rs.getDate("tag");
+						nachricht.setTag(datum);
+//			trainer_ID?
+						
+						nachrichten.add(nachricht);
+					}
+				}
+			} catch (Exception ex) {
+				throw new ServletException(ex.getMessage());
+			}
+			
+			
+			return nachrichten;
+		}
 	
 	
 	
