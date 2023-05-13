@@ -5,54 +5,43 @@
 
 
 	<nav>
-		<a href="./TrainerHome.jsp">Dashboard</a>                                   <!-- LINK STIMMT NOCH NICHT!! -->    
-		<a			href="./TrainerKalender.jsp">Kalender</a>                       <!-- LINK STIMMT NOCH NICHT!! -->   
+		<a href="./TrainerHome.jsp">Dashboard</a>
+		<a href="./TrainerKalender.jsp">Kalender</a>
 		<a href="./TrainerTeamverwaltung.jsp" class="active">Teamverwaltung</a>
 		<a href="./TrainerTerminverwaltung.jsp">Terminverwaltung</a>
 
 	</nav>
 
 	<main>
+	
 
-		<section>
+
 			<table border="1">
 				<tr>
+					<th>Lfd. Nummer</th>
+					<th>Spielerbild</th>
 					<th>Name</th>
 					<th>Vorname</th>
 					<th>Position</th>
 					<th><a href="./TrainerHinzufuegenSpieler.jsp"><button type="submit" title="Neuen Spieler hinzufügen"
 							name="hinzufügen">Hinzufügen</button></a></th>
 				</tr>
-				<tr>
-					<td>Mustermann</td>
-					<td>Max</td>
-					<td>Stürmer</td>
-					<td><button type="submit" title="Spieler löschen"
-							name="spielerlöschen">&#x1F5D1;</button></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td><button type="submit" title="Spieler löschen"
-							name="spielerlöschen">&#x1F5D1;</button></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td><button type="submit" title="Spieler löschen"
-							name="spielerlöschen">&#x1F5D1;</button></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td><button type="submit" title="Spieler löschen"
-							name="spielerlöschen">&#x1F5D1;</button></td>
-				</tr>
+				
+				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
+					<tr>
+						<td>${status.count}</td>
+						<td text-align="center"><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="200" height="300"></td>
+						<td>${currentSpieler.nachname}</td>
+						<td>${currentSpieler.vorname}</td>
+						<td>${currentSpieler.position}</td>
+						<td><button type="submit" title="Spieler löschen" 
+						name="spielerlöschen">&#x1F5D1;</button></td>
+					</tr>
+				</c:forEach>
+			
 			</table>
-		</section>
+				
+		
 
 	</main>
 
