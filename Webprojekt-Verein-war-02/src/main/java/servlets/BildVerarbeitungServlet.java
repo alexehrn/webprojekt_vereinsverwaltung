@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 
 import javax.sql.DataSource;
 
-import bean.registrierungsbean01;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletOutputStream;
@@ -39,12 +38,12 @@ public class BildVerarbeitungServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
+		request.setCharacterEncoding("UTF-8");
 		Long id = Long.valueOf(request.getParameter("id"));
 		
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT spielerfoto FROM spieler WHERE id = ?") ) {
+			 PreparedStatement pstmt = con.prepareStatement("SELECT spielerfoto FROM spieler WHERE spieler_id = ?") ) {
 			pstmt.setLong(1, id);
 			try (ResultSet rs = pstmt.executeQuery()) {
 			
