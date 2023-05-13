@@ -7,7 +7,7 @@
 	<nav>
 		<a href="./TrainerHome.jsp">Dashboard</a>
 		<a href="./TrainerKalender.jsp">Kalender</a>
-		<a href="./TrainerTeamverwaltung.jsp" class="active">Teamverwaltung</a>
+		<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch" class="active">Teamverwaltung</a>
 		<a href="./TrainerTerminverwaltung.jsp">Terminverwaltung</a>
 
 	</nav>

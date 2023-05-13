@@ -6,8 +6,8 @@
 	<nav>
 		 <a href="./TrainerHome.jsp">Dashboard</a>                                         <!-- LINK STIMMT NOCH NICHT!! -->
 		<a	href="./TrainerKalender.jsp">Kalender</a>                                     <!-- LINK STIMMT NOCH NICHT!! -->
-		<a href="./TrainerTeamverwaltung.jsp">Teamverwaltung</a> 
-		<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch" class="active">Terminverwaltung</a>
+		<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch">Teamverwaltung</a> <a
+			href="./TrainerTerminverwaltung.jsp" class="active">Terminverwaltung</a>
 
 	</nav>
 
