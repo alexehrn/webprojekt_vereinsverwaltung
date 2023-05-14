@@ -63,7 +63,7 @@ public class LogInServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("spieler", spieler);
 				
-				RequestDispatcher disp = request.getRequestDispatcher("home/SpielerHome.jsp");
+				RequestDispatcher disp = request.getRequestDispatcher("SearchServletSpielerHome");
 				disp.forward(request, response);
 				
 			}else if (auswahl.equals("Trainer")) {

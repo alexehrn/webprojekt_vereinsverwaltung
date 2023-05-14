@@ -11,6 +11,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import bean.SpielerBean;
 import bean.TrainerHomeBean;
 import bean.TrainerTerminverwaltungsBean;
 import jakarta.annotation.Resource;
@@ -20,6 +21,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 
 @WebServlet("/SearchServletSpielerHome")
@@ -37,11 +39,15 @@ public class SearchServletSpielerHome extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");	
 		
+		//Team aus Session holen
+		HttpSession session = request.getSession();
+		SpielerBean spieler = (SpielerBean) session.getAttribute("spieler");
+		String team = spieler.getTeam();
 		
 		
 		// DB-Zugriff
-		List<TrainerTerminverwaltungsBean> termine = searchTermine();
-		List<TrainerHomeBean> nachrichten = searchNachrichten();
+		List<TrainerTerminverwaltungsBean> termine = searchTermine(team);
+		List<TrainerHomeBean> nachrichten = searchNachrichten(team);
 		
 		// Scope "Request"
 		request.setAttribute("termine", termine);					
@@ -54,14 +60,14 @@ public class SearchServletSpielerHome extends HttpServlet {
 
 	
 		
-		private List<TrainerTerminverwaltungsBean> searchTermine() throws ServletException {
+		private List<TrainerTerminverwaltungsBean> searchTermine(String team) throws ServletException {
 			List<TrainerTerminverwaltungsBean> termine = new ArrayList<TrainerTerminverwaltungsBean>();
 		
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE trainer LIKE ?")) { //Hier noch Änderungen
+				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE mannschaft = ?")) { 
 
-				pstmt.setString(1,"");																			//Hier noch Änderungen
+				pstmt.setString(1,team);																			
 				try (ResultSet rs = pstmt.executeQuery()) {
 				
 					while (rs.next()) {
@@ -101,14 +107,14 @@ public class SearchServletSpielerHome extends HttpServlet {
 		
 		
 		
-		private List<TrainerHomeBean> searchNachrichten() throws ServletException {
+		private List<TrainerHomeBean> searchNachrichten(String team) throws ServletException {
 			List<TrainerHomeBean> nachrichten = new ArrayList<TrainerHomeBean>();
 			
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE trainer LIKE ?")) {	//Hier noch Änderungen
+				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE mannschaft = ?")) {	
 
-				pstmt.setString(1,"");																				//Hier noch Änderungen
+				pstmt.setString(1,team);																				
 				try (ResultSet rs = pstmt.executeQuery()) {
 				
 					while (rs.next()) {
