@@ -31,7 +31,6 @@ private static final long serialVersionUID = 1L;
 			this.position = position;
 		}
 		
-		
 		public Long getId() {
 			return id;
 		}

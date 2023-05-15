@@ -112,7 +112,7 @@ public class SearchServletSpielerHome extends HttpServlet {
 			
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE mannschaft = ?")) {	
+				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM nachricht WHERE mannschaft = ?")) {	
 
 				pstmt.setString(1,team);																				
 				try (ResultSet rs = pstmt.executeQuery()) {
