@@ -39,7 +39,7 @@ public class SearchServletSpielerHome extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");	
 		
-		//Team aus Session holen
+		//Team des Spielers aus Session holen
 		HttpSession session = request.getSession();
 		SpielerBean spieler = (SpielerBean) session.getAttribute("spieler");
 		String team = spieler.getTeam();

@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 
 import javax.sql.DataSource;
 
+import bean.SpielerBean;
 import bean.abwesenheitsbean;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
@@ -38,38 +39,44 @@ public class SpielerAbwesenheitServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		
+		
+		
+		//Spieler aus Session holen
+		final HttpSession session = request.getSession();
+		SpielerBean spieler = (SpielerBean) session.getAttribute("spieler");
+		
 		abwesenheitsbean abwesenheit = new abwesenheitsbean();
-
+		
 		abwesenheit.setGrund(request.getParameter("abwesenheit_eingabe"));
 		abwesenheit.setStart(Date.valueOf(request.getParameter("startdatum")));
 		abwesenheit.setEnde(Date.valueOf(request.getParameter("enddatum")));
 		
-		persist(abwesenheit);
 		
-		final HttpSession session = request.getSession();
+		abwesenheitAnlegen(abwesenheit, spieler);
+		
+		
 		session.setAttribute("abwesenheit", abwesenheit);
 		
-		response.sendRedirect("home/SpielerHome.jsp"); 
+		response.sendRedirect("SearchServletSpielerHome"); 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	
-	private void persist(abwesenheitsbean abwesenheit) throws ServletException {
+	
+	private void abwesenheitAnlegen(abwesenheitsbean abwesenheit, SpielerBean spieler) throws ServletException {
 		// DB-Zugriff
 		String[] generatedKeys = new String[] {"abwesenheits_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
 		
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
-					"INSERT INTO abwesenheit (beschreibung, datum_von, datum_bis) VALUES (?,?,?)", //Spieler noch hinzufügen!!
+					"INSERT INTO abwesenheit (spieler, beschreibung, datum_von, datum_bis) VALUES (?,?,?,?)", 
 					generatedKeys)){
 
 		
 			// Zugriff über Klasse java.sql.PreparedStatement
-			pstmt.setString(1, abwesenheit.getGrund());
-			pstmt.setDate(2, abwesenheit.getStart()); 
-			pstmt.setDate(3, abwesenheit.getEnde());   
+			pstmt.setLong(1, spieler.getId());
+			pstmt.setString(2, abwesenheit.getGrund());
+			pstmt.setDate(3, abwesenheit.getStart()); 
+			pstmt.setDate(4, abwesenheit.getEnde());   
 			pstmt.executeUpdate();
 			
 			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)

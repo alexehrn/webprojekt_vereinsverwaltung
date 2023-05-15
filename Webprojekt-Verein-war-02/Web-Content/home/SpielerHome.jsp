@@ -31,8 +31,8 @@
 				<td>${currentTermin.kurzbeschreibung}</td>
 				<td>${currentTermin.ort}</td>
 				<td>${currentTermin.datum}</td>
-				<td>${currentTermin.beginn}</td>
-				<td>${currentTermin.ende}</td>
+				<td>${currentTermin.uhrzeitVON}</td>
+				<td>${currentTermin.uhrzeitBIS}</td>
 				<td>${currentTermin.beschreibung}</td>
 				<td>
 					<form action="/Webprojekt-Verein-war-02/SpielerRueckmeldungServlet" method="get">
@@ -75,7 +75,7 @@
 	<c:forEach var="currentNachricht" items="${nachrichten}" varStatus="status">
 		<tr>
 		<td>${status.count}</td>
-		<td>${currentNachricht.text}</td>
+		<td>${currentNachricht.beschreibung}</td>
 		</tr>
 		</c:forEach>
 
