@@ -22,6 +22,8 @@ import jakarta.servlet.http.Part;
 /**
  * Servlet implementation class RegistrierungsServlet
  */
+
+/* Alexander Ehrnstrasser: */
 @WebServlet("/RegistrierungsServlet")
 @MultipartConfig( 
 		maxFileSize=1024*1024*5, 

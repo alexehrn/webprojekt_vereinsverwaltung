@@ -1,3 +1,4 @@
+<%-- Alexander Ehrnstrasser: --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -47,8 +48,7 @@
 						<td>${currentSpieler.nachname}</td>
 						<td>${currentSpieler.vorname}</td>
 						<td>${currentSpieler.position}</td>
-						<td><button type="submit" title="Spieler löschen" 
-						name="spielerlöschen">&#x1F5D1;</button></td>
+						<td><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}"><button type="submit" title="Spieler löschen" name="spielerlöschen">&#x1F5D1;</button></a></td>
 					</tr>
 				</c:forEach>
 			
