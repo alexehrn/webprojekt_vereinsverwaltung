@@ -4,7 +4,7 @@
 
 
 <nav>
-   	  <a href="./SpielerHome.jsp">Dashboard</a>
+   	  <a href="/Webprojekt-Verein-war-02/SearchServletSpielerHome">Dashboard</a>
       <a href="./SpielerKalender.jsp" class="active">Kalender</a>
 
 </nav>
