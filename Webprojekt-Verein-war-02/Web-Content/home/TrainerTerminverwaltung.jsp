@@ -4,16 +4,11 @@
 <%@ include file="head.jspf"%>
 
 	<nav>
-<<<<<<< HEAD
-		 <a href="./TrainerHome.jsp">Dashboard</a>                                        
-		<a	href="./TrainerKalender.jsp">Kalender</a>                                     
-		<a href="./TrainerTeamverwaltung.jsp">Teamverwaltung</a> <a
-=======
-		 <a href="./TrainerHome.jsp">Dashboard</a>                                         <!-- LINK STIMMT NOCH NICHT!! -->
-		<a	href="./TrainerKalender.jsp">Kalender</a>                                     <!-- LINK STIMMT NOCH NICHT!! -->
-		<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch">Teamverwaltung</a> <a
->>>>>>> branch 'WebProjekt' of https://github.com/alexehrn/webprojekt_vereinsverwaltung.git
-			href="./TrainerTerminverwaltung.jsp" class="active">Terminverwaltung</a>
+
+		<a href="./TrainerHome.jsp">Dashboard</a>                                        
+		<a href="./TrainerKalender.jsp">Kalender</a>                                     
+		<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch">Teamverwaltung</a>
+		<a href="./TrainerTerminverwaltung.jsp" class="active">Terminverwaltung</a>
 
 	</nav>
 

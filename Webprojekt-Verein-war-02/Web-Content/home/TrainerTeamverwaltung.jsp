@@ -14,7 +14,21 @@
 
 	<main>
 	
-
+			<form method="post" action="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerSuche">
+			<fieldset><legend>Spieler hinzufügen</legend>
+				<p>Hier können neu registrierte Spieler gefunden oder Spieler aus anderen Mannschaften des Vereins hinzugefügt werden</p>
+				<div>
+				  <label for="nachname">Nachname des Spielers:</label>
+				  <input type="text" name="nachname" id="nachname" placeholder="Nachname des Spielers oder freilassen für alle Spieler" size="125">
+				</div>
+				<div>
+				  <button name="submit" type="submit">Suchen</button>
+				</div>
+			</fieldset>
+		</form>
+			
+			
+			<h3>Deine Mannschaft:</h3>
 
 			<table border="1">
 				<tr>
@@ -23,8 +37,7 @@
 					<th>Name</th>
 					<th>Vorname</th>
 					<th>Position</th>
-					<th><a href="./TrainerHinzufuegenSpieler.jsp"><button type="submit" title="Neuen Spieler hinzufügen"
-							name="hinzufügen">Hinzufügen</button></a></th>
+					<th></th>
 				</tr>
 				
 				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">

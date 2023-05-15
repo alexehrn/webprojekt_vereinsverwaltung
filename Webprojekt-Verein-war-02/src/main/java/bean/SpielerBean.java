@@ -10,6 +10,7 @@ private static final long serialVersionUID = 1L;
 		private String vorname;
 		private String nachname;
 		private String position;
+		private String team;
 		
 		public String getVorname() {
 			return vorname;
@@ -29,7 +30,7 @@ private static final long serialVersionUID = 1L;
 		public void setPosition(String position) {
 			this.position = position;
 		}
-		private String team;
+		
 		
 		public Long getId() {
 			return id;

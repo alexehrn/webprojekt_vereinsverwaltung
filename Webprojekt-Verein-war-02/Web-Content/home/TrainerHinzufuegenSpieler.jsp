@@ -17,40 +17,23 @@
 	<h1>Spielerpool</h1>
 			<table border="1">
 				<tr>
-					<th>Bild</th>
+					<th></th>
 					<th>Name</th>
 					<th>Vorname</th>
 					<th>Registriert als</th>
 					<th></th>
 				</tr>
-				<tr>
-					<td>Hier kommt ein Bild</td>
-					<td>Max</td>
-					<td>Maier</td>
-					<td>A-Jugend</td>
-					<td><button type="submit" title="Neuen Spieler hinzufügen" name="hinzufügen">Hinzufügen</button></td>
-				</tr>
-				<tr>
-					<td>Hier kommt ein Bild</td>
-					<td>Max</td>
-					<td>Maier</td>
-					<td>A-Jugend</td>
-					<td><button type="submit" title="Neuen Spieler hinzufügen" name="hinzufügen">Hinzufügen</button></td>
-				</tr>
-				<tr>
-					<td>Hier kommt ein Bild</td>
-					<td>Max</td>
-					<td>Maier</td>
-					<td>A-Jugend</td>
-					<td><button type="submit" title="Neuen Spieler hinzufügen" name="hinzufügen">Hinzufügen</button></td>
-				</tr>
-				<tr>
-					<td>Hier kommt ein Bild</td>
-					<td>Max</td>
-					<td>Maier</td>
-					<td>A-Jugend</td>
-					<td><button type="submit" title="Neuen Spieler hinzufügen" name="hinzufügen">Hinzufügen</button></td>
-				</tr>
+				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
+					<tr>
+
+						<td text-align="center"><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="200" height="300"></td>
+						<td>${currentSpieler.nachname}</td>
+						<td>${currentSpieler.vorname}</td>
+						<td>${currentSpieler.team}</td>
+						<td><button type="submit" title="Spieler hinzufuegen" name="spielerhinzufuegen">Spieler hinzufügen</button><button type="submit" title="Spieler löschen" name="spielerlöschen">&#x1F5D1;</button></td>
+					</tr>
+				</c:forEach>
+			
 			</table>
 
 	</main>
