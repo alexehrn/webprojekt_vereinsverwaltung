@@ -24,9 +24,9 @@
 		<br><b>Email: </b>${registerform.email}
 		<br><b>Passwort: </b>${registerform.passwort}
 		<br><b>Mannschaft: </b>${registerform.team}
-		
-		
-		
+		<br>
+		<br>
+		<a href="../index.jsp">zurück zum Login</a>
 	
 	<%@ include file="footer.jspf" %> 
 	</body>
