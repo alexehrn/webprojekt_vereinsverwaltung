@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalTime;
 
 import javax.sql.DataSource;
 
@@ -85,10 +86,10 @@ public class SearchServletSpielerHome extends HttpServlet {
 						Date datum = rs.getDate("datum");
 						termin.setDatum(datum);
 						
-						Time beginn = rs.getTime("beginn");
+						LocalTime beginn = rs.getLocalTime("beginn");
 						termin.setUhrzeitVON(beginn);
 						
-						Time ende = rs.getTime("ende");
+						LocalTime ende = rs.getLocalTime("ende");
 						termin.setUhrzeitBIS(ende);
 						
 						String beschreibung = rs.getString("beschreibung");
