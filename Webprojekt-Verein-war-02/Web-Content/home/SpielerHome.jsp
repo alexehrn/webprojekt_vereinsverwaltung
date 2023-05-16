@@ -3,7 +3,7 @@
 <%@ include file="head.jspf"%>
 
 <nav>
-	<a href="./SpielerHome.jsp" class="active">Dashboard</a> <a
+	<a href="/Webprojekt-Verein-war-02/SearchServletSpielerHome" class="active">Dashboard</a> <a
 		href="./SpielerKalender.jsp">Kalender</a>
 
 </nav>

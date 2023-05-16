@@ -23,6 +23,7 @@ import jakarta.servlet.http.HttpSession;
 /**
  * Servlet implementation class TrainerTeamverwaltungSpielerSuche
  */
+/* Alexander Ehrnstrasser: */
 @WebServlet("/TrainerTeamverwaltungSpielerSuche")
 public class TrainerTeamverwaltungSpielerSuche extends HttpServlet {
 	private static final long serialVersionUID = 1L;

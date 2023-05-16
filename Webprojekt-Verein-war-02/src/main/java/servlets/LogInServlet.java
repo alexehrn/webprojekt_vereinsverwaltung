@@ -23,6 +23,8 @@ import jakarta.servlet.http.HttpSession;
 /**
  * Servlet implementation class LogInServlet
  */
+
+/* Alexander Ehrnstrasser: */
 @WebServlet("/LogInServlet")
 public class LogInServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
