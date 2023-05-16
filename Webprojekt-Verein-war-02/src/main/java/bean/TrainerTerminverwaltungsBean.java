@@ -19,6 +19,7 @@ private String beschreibung;
 
 
 
+
 public Long getId() {
 	return id;
 }
