@@ -1,33 +1,30 @@
 #logout-btn {
-	top: 10px;
-	right: 10px;
-	padding: 10px 20px;
-	background-color: #C0C0C0;
-	color: #000000;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #C0C0C0;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999;
 }
 
 
 body {
-	font-family: Arial;
-	 margin-left: 0;
+	font-family: Helvetica, Arial, Verdana;
 }
 
-/* Styling for the navigation */
 nav {
 	display: flex !important;
 	justify-content: space-between !important;
 	background-color: #000000;
-	margin-top: 0;
-  margin-left: 0;
 	color: #fff;
 	padding: 10px;
 	
 }
 
-/* Styling for the navigation links */
 nav a {
 	color: #fff;
 	text-decoration: none;
@@ -67,7 +64,7 @@ footer td, th {
 	width: 25%;
 }
 
-/* Styling für die Tabellenüberschrift */
+
 footer th {
 	font-size: 18px;
 	font-weight: bold;

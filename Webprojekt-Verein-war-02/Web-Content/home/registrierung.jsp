@@ -6,31 +6,8 @@
 <meta charset="UTF-8">
 <title>Registrierung</title>
 
+<link rel="stylesheet" type="text/css" href="./css/styleloginundregist.css">
 
-<style>
-
-body {
- 	display: flex;
-  	align-items: center;
-  	justify-content: center;
-	height:100vh;
-	
-  	background-image: url(../img/Login.JPG);
-  	background-repeat: no-repeat;
-  	background-attachment: fixed;
-  	background-size: cover;
-}
-
-
-main{
- 
- width: 300px;
-  margin: 0px auto;
- background-color: rgba(255, 255, 255, 0.7);
- text-align: center
-
-}
-</style>
 </head>
 <body>
 	
@@ -66,6 +43,9 @@ main{
 				<input type="password" name="passwort" size="30" maxlength="30" minlength="6"
 					required placeholder="Bitte Passwort wiederholen">
 			</p>
+			
+			<%-- JavaSkript wenn Trainer ausgewählt ist keine möglichkeit bild hochzuladen --%>
+			
 			
 			<p>
 				Profilbild hochladen: <br>
