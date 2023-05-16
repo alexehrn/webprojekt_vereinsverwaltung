@@ -43,6 +43,7 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		TrainerTerminverwaltungsBean trainerTerminverwaltungsBean = new TrainerTerminverwaltungsBean();
 		
 		
+		
 		trainerTerminverwaltungsBean.setKurzbeschreibung(request.getParameter("kurzbeschreibung"));
 		trainerTerminverwaltungsBean.setOrt(request.getParameter("ort"));
 		trainerTerminverwaltungsBean.setDatum(Date.valueOf(request.getParameter("datum")));
