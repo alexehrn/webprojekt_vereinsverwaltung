@@ -45,8 +45,8 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		trainerTerminverwaltungsBean.setKurzbeschreibung(request.getParameter("kurzbeschreibung"));
 		trainerTerminverwaltungsBean.setOrt(request.getParameter("ort"));
 		trainerTerminverwaltungsBean.setDatum(Date.valueOf(request.getParameter("datum")));
-		trainerTerminverwaltungsBean.setUhrzeitVON(Time.valueOf(request.getParameter("startzeit")));
-		trainerTerminverwaltungsBean.setUhrzeitBIS(Time.valueOf(request.getParameter("endzeit")));
+		trainerTerminverwaltungsBean.setUhrzeitVON(LocalTime.parse(request.getParameter("startzeit")));
+		trainerTerminverwaltungsBean.setUhrzeitBIS(LocalTime.parse(request.getParameter("endzeit")));
 		trainerTerminverwaltungsBean.setBeschreibung(request.getParameter("trainer_eingabe"));
 		
 		
@@ -75,8 +75,8 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 			pstmt.setString(1, trainerTeamverwaltungsBean.getKurzbeschreibung());
 			pstmt.setString(2, trainerTeamverwaltungsBean.getOrt());
 			pstmt.setDate(3, trainerTeamverwaltungsBean.getDatum());
-			pstmt.setTime(4, trainerTeamverwaltungsBean.getUhrzeitVON());
-			pstmt.setTime(5, trainerTeamverwaltungsBean.getUhrzeitBIS());
+			pstmt.setTime(4, java.sql.Time.valueOf(trainerTeamverwaltungsBean.getUhrzeitVON()));
+			pstmt.setTime(5, java.sql.Time.valueOf(trainerTeamverwaltungsBean.getUhrzeitBIS()));
 			pstmt.setString(6, trainerTeamverwaltungsBean.getBeschreibung());
 			
 			pstmt.executeUpdate();

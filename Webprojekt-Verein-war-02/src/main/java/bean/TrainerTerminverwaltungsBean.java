@@ -3,6 +3,7 @@ package bean;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalTime;
 
 
 public class TrainerTerminverwaltungsBean implements Serializable {
@@ -12,8 +13,8 @@ private Long id;
 private String kurzbeschreibung;
 private String ort;
 private Date datum;
-private Time uhrzeitVON;
-private Time uhrzeitBIS;
+private LocalTime UhrzeitVON;
+private LocalTime uhrzeitBIS;
 private String beschreibung;
 
 
@@ -42,16 +43,16 @@ public Date getDatum() {
 public void setDatum(Date datum) {
 	this.datum = datum;
 }
-public Time getUhrzeitVON() {
-	return uhrzeitVON;
+public LocalTime getUhrzeitVON() {
+	return UhrzeitVON;
 }
-public void setUhrzeitVON(Time uhrzeitVON) {
-	this.uhrzeitVON = uhrzeitVON;
+public void setUhrzeitVON(LocalTime UhrzeitVON) {
+	this.UhrzeitVON = UhrzeitVON;
 }
-public Time getUhrzeitBIS() {
+public LocalTime getUhrzeitBIS() {
 	return uhrzeitBIS;
 }
-public void setUhrzeitBIS(Time uhrzeitBIS) {
+public void setUhrzeitBIS(LocalTime uhrzeitBIS) {
 	this.uhrzeitBIS = uhrzeitBIS;
 }
 public String getBeschreibung() {
