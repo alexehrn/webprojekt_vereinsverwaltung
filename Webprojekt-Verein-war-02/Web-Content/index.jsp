@@ -5,31 +5,7 @@
 <meta charset="UTF-8">
 <title>Login</title>
 
-<style>
-
-body {
- display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-image: url(img/Login.JPG);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover; /* oder contain, je nach Wunsch */
-}
-
-
-main{
- width: 300px;
-  margin: 0px auto;
- background-color: rgba(255, 255, 255, 0.6);
-   text-align: center
-}
-
-
-
-</style>
-
+<link rel="stylesheet" type="text/css" href="./home/css/styleloginundregist.css">
 
 </head>
 <body>
