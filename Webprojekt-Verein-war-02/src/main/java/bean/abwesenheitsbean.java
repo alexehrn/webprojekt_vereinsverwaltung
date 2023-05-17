@@ -10,16 +10,29 @@ public class abwesenheitsbean implements Serializable {
 	private String grund;
 	private Date start;
 	private Date ende;
+	private String vorname;
+	private String nachname;
 	
 	
 	
+	public String getVorname() {
+		return vorname;
+	}
+	public void setVorname(String vorname) {
+		this.vorname = vorname;
+	}
+	public String getNachname() {
+		return nachname;
+	}
+	public void setNachname(String nachname) {
+		this.nachname = nachname;
+	}
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
 	}
-	
 
 	public String getGrund() {
 		return grund;

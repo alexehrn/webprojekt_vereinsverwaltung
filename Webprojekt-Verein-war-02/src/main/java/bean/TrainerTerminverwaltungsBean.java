@@ -13,7 +13,7 @@ private Long id;
 private String kurzbeschreibung;
 private String ort;
 private Date datum;
-private LocalTime UhrzeitVON;
+private LocalTime uhrzeitVON;
 private LocalTime uhrzeitBIS;
 private String beschreibung;
 
@@ -46,10 +46,10 @@ public void setDatum(Date datum) {
 	this.datum = datum;
 }
 public LocalTime getUhrzeitVON() {
-	return UhrzeitVON;
+	return uhrzeitVON;
 }
 public void setUhrzeitVON(LocalTime UhrzeitVON) {
-	this.UhrzeitVON = UhrzeitVON;
+	this.uhrzeitVON = UhrzeitVON;
 }
 public LocalTime getUhrzeitBIS() {
 	return uhrzeitBIS;

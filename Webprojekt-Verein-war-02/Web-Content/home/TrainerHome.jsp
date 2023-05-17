@@ -5,10 +5,10 @@
 
 
 	<nav>
-		<a href="./TrainerHome.jsp" class="active">Dashboard</a>                                
+		<a href="/Webprojekt-Verein-war-02/TrainerHomeServlet" class="active">Dashboard</a>                                
 		<a href="./TrainerKalender.jsp">Kalender</a>                      
 		<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch">Teamverwaltung</a>
-		<a href="./TrainerTerminverwaltung.jsp">Terminverwaltung</a>
+		<a href="/Webprojekt-Verein-war-02/SearchServletTrainerTerminverwaltung">Terminverwaltung</a>
 
 	</nav>
 
@@ -41,22 +41,20 @@
 		<p>Abwesenheit</p>
 		<table border="1">
 			<tr>
+				<th></th>
 				<th>Diese Woche abwesend:</th>
-				<th>bis</th>
+				<th>Zeitraum</th>
 				<th>Grund</th>
 			</tr>
-
+		
+		<c:forEach var="currentAbwesenheit" items="${abwesenheit}" varStatus="status">
 			<tr>
-				<td>Alexander Ehrnstrasser</td>
-				<td>31.04.2023</td>
-				<td>Malle Opening</td>
+				<td>${status.count}</td>
+				<td>${currentAbwesenheit.vorname} ${currentAbwesenheit.nachname}</td>
+				<td>${currentAbwesenheit.start} ${currentAbwesenheit.ende}</td>
+				<td>${currentAbwesenheit.grund}</td>
 			</tr>
-
-			<tr>
-				<td>Fabian Wolfsteiner</td>
-				<td>31.04.2022</td>
-				<td>Verletzung: Beim Rasieren geschnitten</td>
-			</tr>
+		</c:forEach>
 		</table>
 
 

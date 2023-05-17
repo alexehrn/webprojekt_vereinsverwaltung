@@ -59,7 +59,7 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 			 /*final Statement stmt = con.createStatement()*/
 			PreparedStatement pstmt = con.prepareStatement(
 				
-					"INSERT INTO rueckmeldung (spieler_id,termin_id, meldung) VALUES (1, 1, ?)", 
+					"INSERT INTO rueckmeldung (spieler_id,termin_id, meldung) VALUES (1, ?, ?)", 
 					generatedKeys)){
 
 			// Zugriff über Klasse java.sql.Statement

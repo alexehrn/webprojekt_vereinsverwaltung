@@ -17,6 +17,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import bean.TrainerBean;
+import bean.SpielerBean;
 import bean.TrainerTerminverwaltungsBean;
 
 
@@ -42,8 +44,7 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		
 		TrainerTerminverwaltungsBean trainerTerminverwaltungsBean = new TrainerTerminverwaltungsBean();
 		
-		
-		
+		//Attribute in Bean
 		trainerTerminverwaltungsBean.setKurzbeschreibung(request.getParameter("kurzbeschreibung"));
 		trainerTerminverwaltungsBean.setOrt(request.getParameter("ort"));
 		trainerTerminverwaltungsBean.setDatum(Date.valueOf(request.getParameter("datum")));
@@ -52,27 +53,37 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		trainerTerminverwaltungsBean.setBeschreibung(request.getParameter("trainer_eingabe"));
 		
 		
-		persist(trainerTerminverwaltungsBean);
 		
-		final HttpSession session = request.getSession();
+		
+		
+		//Team aus Session holen
+		HttpSession session = request.getSession();
+		TrainerBean trainer = (TrainerBean) session.getAttribute("trainer");
+		String team = trainer.getTeam();
+		
+		persist(trainerTerminverwaltungsBean, team);		
+		
+		
+		//Scope "Request"
 		session.setAttribute("trainerTerminverwaltungsBean", trainerTerminverwaltungsBean);//Redirect weil Formulareingabe? --> würde sonst öfter schicken
-
-		response.sendRedirect("jsps/TrainerTermin_anlegen.jsp");
+		
+		//Weiterleiten an  JSP
+		response.sendRedirect("/Webprojekt-Verein-war-02/SearchServletTrainerTerminverwaltung");
 	
 	}
 	
-	private void persist(TrainerTerminverwaltungsBean trainerTeamverwaltungsBean) throws ServletException {
+	private void persist(TrainerTerminverwaltungsBean trainerTeamverwaltungsBean, String team) throws ServletException {
 		// DB-Zugriff
 		String[] generatedKeys = new String[] {"id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
-		
+	
 		try (Connection con = ds.getConnection();
 			 /*final Statement stmt = con.createStatement()*/
 			PreparedStatement pstmt = con.prepareStatement(
-					"INSERT INTO termine (kurzbeschreibung, ort, datum, beginn, ende, beschreibung) VALUES (?,?, ?, ?, ?, ?)", 
+					"INSERT INTO termine (kurzbeschreibung, ort, datum, beginn, ende, beschreibung, mannschaft) VALUES (?, ?, ?, ?, ?, ?, ?)", 
 					generatedKeys)){
 
 		
-	
+			
 			// Zugriff über Klasse java.sql.PreparedStatement
 			pstmt.setString(1, trainerTeamverwaltungsBean.getKurzbeschreibung());
 			pstmt.setString(2, trainerTeamverwaltungsBean.getOrt());
@@ -80,6 +91,9 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 			pstmt.setTime(4, java.sql.Time.valueOf(trainerTeamverwaltungsBean.getUhrzeitVON()));
 			pstmt.setTime(5, java.sql.Time.valueOf(trainerTeamverwaltungsBean.getUhrzeitBIS()));
 			pstmt.setString(6, trainerTeamverwaltungsBean.getBeschreibung());
+			pstmt.setString(7, team);
+			
+			
 			
 			pstmt.executeUpdate();
 			

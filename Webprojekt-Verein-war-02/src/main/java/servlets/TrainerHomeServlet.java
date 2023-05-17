@@ -1,6 +1,8 @@
 package servlets;
 
+import bean.TrainerBean;
 import bean.TrainerHomeBean;
+import bean.TrainerTerminverwaltungsBean;
 import bean.abwesenheitsbean;
 
 import java.io.IOException;
@@ -8,11 +10,15 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
 import jakarta.annotation.Resource;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -29,22 +35,36 @@ public class TrainerHomeServlet extends HttpServlet {
 	private DataSource ds;
  
     public TrainerHomeServlet() {
-        
+        super();
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		
 		TrainerHomeBean trainerHomeBean = new TrainerHomeBean();
+		
 		
 		trainerHomeBean.setBeschreibung(request.getParameter("trainer_eingabe"));
 		trainerHomeBean.setTag(new java.sql.Date(new java.util.Date().getTime()));		//Automatisches erstellen des Heutigen Datums --> mit ChatGPT Herausgefunden												//aktuellen Tag einfügen
 		
 		persist(trainerHomeBean);
 		
+		//Team des Trainers aus Session holen
 		final HttpSession session = request.getSession();
-		session.setAttribute("TrainerHombeBean", trainerHomeBean);//Redirect weil Formulareingabe? --> würde sonst öfter schicken
+		TrainerBean trainer = (TrainerBean) session.getAttribute("trainer");
+		String team = trainer.getTeam();
+		
 
+		
+		// Weiterleiten an JSP
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("/Webprojekt-Verein-war-02/SearchServletTrainerHome");
+		dispatcher.forward(request, response);
+		
+		
+		session.setAttribute("TrainerHomeBean", trainerHomeBean);//Redirect weil Formulareingabe? --> würde sonst öfter schicken
+		
+		
 		response.sendRedirect("");
 		
 	}
@@ -74,6 +94,7 @@ public class TrainerHomeServlet extends HttpServlet {
 			throw new ServletException(ex.getMessage());
 		}
 	}
+	
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

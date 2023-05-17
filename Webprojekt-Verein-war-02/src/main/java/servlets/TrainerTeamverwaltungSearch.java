@@ -80,9 +80,6 @@ public class TrainerTeamverwaltungSearch extends HttpServlet {
 					String nachname = rs.getString("nachname");
 					spieler.setNachname(nachname);
 					
-					String position = rs.getString("position");
-					spieler.setPosition(position);
-					
 					spielerliste.add(spieler);
 				}
 			}

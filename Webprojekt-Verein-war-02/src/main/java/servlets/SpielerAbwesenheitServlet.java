@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import javax.sql.DataSource;
 
 import bean.SpielerBean;
+import bean.TrainerBean;
 import bean.abwesenheitsbean;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
@@ -43,7 +44,10 @@ public class SpielerAbwesenheitServlet extends HttpServlet {
 		
 		//Spieler aus Session holen
 		final HttpSession session = request.getSession();
+		
+		//Team aus Session holen
 		SpielerBean spieler = (SpielerBean) session.getAttribute("spieler");
+		String team = spieler.getTeam();
 		
 		abwesenheitsbean abwesenheit = new abwesenheitsbean();
 		
@@ -52,7 +56,8 @@ public class SpielerAbwesenheitServlet extends HttpServlet {
 		abwesenheit.setEnde(Date.valueOf(request.getParameter("enddatum")));
 		
 		
-		abwesenheitAnlegen(abwesenheit, spieler);
+		abwesenheitAnlegen(abwesenheit, spieler, team);
+		
 		
 		
 		session.setAttribute("abwesenheit", abwesenheit);
@@ -62,13 +67,13 @@ public class SpielerAbwesenheitServlet extends HttpServlet {
 
 	
 	
-	private void abwesenheitAnlegen(abwesenheitsbean abwesenheit, SpielerBean spieler) throws ServletException {
+	private void abwesenheitAnlegen(abwesenheitsbean abwesenheit, SpielerBean spieler, String team) throws ServletException {
 		// DB-Zugriff
 		String[] generatedKeys = new String[] {"abwesenheits_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
 		
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
-					"INSERT INTO abwesenheit (spieler, beschreibung, datum_von, datum_bis) VALUES (?,?,?,?)", 
+					"INSERT INTO abwesenheit (spieler, beschreibung, datum_von, datum_bis, mannschaft) VALUES (?,?,?,?,?)", 
 					generatedKeys)){
 
 		
@@ -76,7 +81,8 @@ public class SpielerAbwesenheitServlet extends HttpServlet {
 			pstmt.setLong(1, spieler.getId());
 			pstmt.setString(2, abwesenheit.getGrund());
 			pstmt.setDate(3, abwesenheit.getStart()); 
-			pstmt.setDate(4, abwesenheit.getEnde());   
+			pstmt.setDate(4, abwesenheit.getEnde());
+			pstmt.setString(5, team);
 			pstmt.executeUpdate();
 			
 			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)

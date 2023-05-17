@@ -76,7 +76,7 @@ public class LogInServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("trainer", trainer);
 				
-				RequestDispatcher disp = request.getRequestDispatcher("home/TrainerHome.jsp");
+				RequestDispatcher disp = request.getRequestDispatcher("SearchServletTrainerHome");
 				disp.forward(request, response);
 			}
 			

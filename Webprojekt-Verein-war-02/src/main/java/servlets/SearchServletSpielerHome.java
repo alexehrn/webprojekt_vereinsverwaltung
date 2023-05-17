@@ -86,10 +86,10 @@ public class SearchServletSpielerHome extends HttpServlet {
 						Date datum = rs.getDate("datum");
 						termin.setDatum(datum);
 						
-						LocalTime beginn = rs.getLocalTime("beginn");
+						LocalTime beginn = rs.getTime("beginn").toLocalTime();
 						termin.setUhrzeitVON(beginn);
 						
-						LocalTime ende = rs.getLocalTime("ende");
+						LocalTime ende = rs.getTime("ende").toLocalTime();
 						termin.setUhrzeitBIS(ende);
 						
 						String beschreibung = rs.getString("beschreibung");
