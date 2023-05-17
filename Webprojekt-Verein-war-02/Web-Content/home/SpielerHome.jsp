@@ -70,12 +70,12 @@
 
 	<table border="1">
 		<tr>
-			<th>Nummer</th>
+			<th>Tag</th>
 			<th>Nachrichtenforum</th>
 		</tr>
 	<c:forEach var="currentNachricht" items="${nachrichten}" varStatus="status">
 		<tr>
-		<td>${status.count}</td>
+		<td>${currentNachricht.tag}</td>
 		<td>${currentNachricht.beschreibung}</td>
 		</tr>
 		</c:forEach>

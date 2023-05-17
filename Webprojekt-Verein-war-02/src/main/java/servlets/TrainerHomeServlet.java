@@ -43,46 +43,47 @@ public class TrainerHomeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		TrainerHomeBean trainerHomeBean = new TrainerHomeBean();
-		
-		
-		trainerHomeBean.setBeschreibung(request.getParameter("trainer_eingabe"));
-		trainerHomeBean.setTag(new java.sql.Date(new java.util.Date().getTime()));		//Automatisches erstellen des Heutigen Datums --> mit ChatGPT Herausgefunden												//aktuellen Tag einfügen
-		
-		persist(trainerHomeBean);
-		
 		//Team des Trainers aus Session holen
 		final HttpSession session = request.getSession();
 		TrainerBean trainer = (TrainerBean) session.getAttribute("trainer");
 		String team = trainer.getTeam();
 		
+		TrainerHomeBean trainerHomeBean = new TrainerHomeBean();
+		
+		trainerHomeBean.setBeschreibung(request.getParameter("trainer_eingabe"));
+		trainerHomeBean.setTag(new java.sql.Date(new java.util.Date().getTime()));		//Automatisches erstellen des Heutigen Datums --> mit ChatGPT Herausgefunden												//aktuellen Tag einfügen
+		
+		persist(trainerHomeBean, team);
+		
+		
+		
 
 		
 		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("/Webprojekt-Verein-war-02/SearchServletTrainerHome");
-		dispatcher.forward(request, response);
+		response.sendRedirect("SearchServletTrainerHome"); //Redirect weil Formulareingabe? --> würde sonst öfter schicken
+		
+	
 		
 		
-		session.setAttribute("TrainerHomeBean", trainerHomeBean);//Redirect weil Formulareingabe? --> würde sonst öfter schicken
 		
 		
-		response.sendRedirect("");
 		
 	}
 	
-	private void persist(TrainerHomeBean trainerHomeBean) throws ServletException {
+	private void persist(TrainerHomeBean trainerHomeBean, String team) throws ServletException {
 		// DB-Zugriff
 		String[] generatedKeys = new String[] {"nachricht_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
 		
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
-					"INSERT INTO nachricht (text, tag) VALUES (?,?)", 
+					"INSERT INTO nachricht (mannschaft, text, tag) VALUES (?,?,?)", 
 					generatedKeys)){
 
 		
 			// Zugriff über Klasse java.sql.PreparedStatement
-			pstmt.setString(1, trainerHomeBean.getBeschreibung());
-			pstmt.setDate(2, trainerHomeBean.getTag());
+			pstmt.setString(1, team);
+			pstmt.setString(2, trainerHomeBean.getBeschreibung());
+			pstmt.setDate(3, trainerHomeBean.getTag());
 			pstmt.executeUpdate();
 			
 			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)

@@ -114,7 +114,7 @@ public class SearchServletSpielerHome extends HttpServlet {
 			
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM nachricht WHERE mannschaft = ?")) {	
+				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM nachricht WHERE mannschaft = ? ORDER BY tag DESC")) {	
 
 				pstmt.setString(1,team);																				
 				try (ResultSet rs = pstmt.executeQuery()) {
@@ -130,7 +130,7 @@ public class SearchServletSpielerHome extends HttpServlet {
 						
 						Date datum = rs.getDate("tag");
 						nachricht.setTag(datum);
-//			trainer_ID?
+
 						
 						nachrichten.add(nachricht);
 					}
