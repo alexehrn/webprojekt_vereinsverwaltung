@@ -11,6 +11,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import bean.RueckmeldungsBean;
 import bean.TrainerBean;
 import bean.abwesenheitsbean;
 import jakarta.annotation.Resource;
@@ -54,10 +55,12 @@ public class SearchServletTrainerHome extends HttpServlet {
 
 		// DB-Zugriff
 		List<abwesenheitsbean> abwesenheiten = searchAbwesenheiten(team);
-
+		List<RueckmeldungsBean> rueckmeldungen = searchRueckmeldung(team);
+		
 		// Scope "Request"
 		request.setAttribute("abwesenheit", abwesenheiten);
-
+		request.setAttribute("rueckmeldung", rueckmeldungen);
+		
 		// Weiterleiten an JSP
 		//final RequestDispatcher dispatcher = request.getRequestDispatcher("/Webprojekt-Verein-war-02/TrainerHomeServlet");
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/TrainerHome.jsp");
@@ -105,6 +108,39 @@ public class SearchServletTrainerHome extends HttpServlet {
 		}
 		
 		return abwesenheiten;
+	}
+	
+	private List<RueckmeldungsBean> searchRueckmeldung(String team) throws ServletException {
+		List<RueckmeldungsBean> rueckmeldungen = new ArrayList<RueckmeldungsBean>();
+	
+		// DB-Zugriff
+		try (Connection con = ds.getConnection();
+			 PreparedStatement pstmt = con.prepareStatement("SELECT termine.beschreibung, termine.datum, COUNT(rueckmeldung.meldung)=1 AS zusagen, COUNT(rueckmeldung.meldung)=0 AS absagen FROM rueckmeldung INNER JOIN termine ON (rueckmeldung.termin_id = termine.termin_id) WHERE termine.mannschaft=?")) { 
+
+			pstmt.setString(1,team);																			
+			try (ResultSet rs = pstmt.executeQuery()) {
+			
+				while (rs.next()) {
+					RueckmeldungsBean rueckmeldung = new RueckmeldungsBean();
+					
+					
+					
+					Long zusagen = Long.valueOf(rs.getLong(""));
+					rueckmeldung.setZusagen(zusagen);
+					
+					Long absagen = Long.valueOf(rs.getLong(""));
+					rueckmeldung.setAbsagen(absagen);
+					
+					
+					
+					rueckmeldungen.add(rueckmeldung);
+				}
+			}
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+		
+		return rueckmeldungen;
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
