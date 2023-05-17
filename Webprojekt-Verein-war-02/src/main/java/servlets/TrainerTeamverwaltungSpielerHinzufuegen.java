@@ -28,6 +28,7 @@ public class TrainerTeamverwaltungSpielerHinzufuegen extends HttpServlet {
 	private DataSource ds;
 	
 
+	
     /**
      * Default constructor. 
      */

@@ -6,11 +6,11 @@ import java.io.Serializable;
 public class SpielerBean implements Serializable {
 private static final long serialVersionUID = 1L;
 
+
 		private Long id;
 		private String email;
 		private String vorname;
 		private String nachname;
-		private String position;
 		private String team;
 		
 		public String getVorname() {
@@ -25,12 +25,8 @@ private static final long serialVersionUID = 1L;
 		public void setNachname(String nachname) {
 			this.nachname = nachname;
 		}
-		public String getPosition() {
-			return position;
-		}
-		public void setPosition(String position) {
-			this.position = position;
-		}
+	
+		
 		
 		public Long getId() {
 			return id;

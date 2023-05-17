@@ -9,6 +9,7 @@ import java.time.LocalTime;
 public class TrainerTerminverwaltungsBean implements Serializable {
 private static final long serialVersionUID = 1L;
 
+
 private Long id;
 private String kurzbeschreibung;
 private String ort;

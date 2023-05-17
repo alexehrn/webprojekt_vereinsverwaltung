@@ -6,6 +6,7 @@ import java.sql.Date;
 public class TrainerHomeBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	
 		private Long nachricht_id;
 		private String beschreibung;
 		private Date tag;

@@ -26,6 +26,7 @@ public class TrainerTeamverwaltungSpielerLoeschen extends HttpServlet {
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 	
+	
     /**
      * Default constructor. 
      */

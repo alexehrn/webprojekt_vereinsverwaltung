@@ -58,6 +58,7 @@ public class TrainerTeamverwaltungSearch extends HttpServlet {
 		dispatcher.forward(request, response);	
 	}
 
+	
 	private List<SpielerBean> search(String team) throws ServletException {
 		List<SpielerBean> spielerliste = new ArrayList<SpielerBean>();
 		
