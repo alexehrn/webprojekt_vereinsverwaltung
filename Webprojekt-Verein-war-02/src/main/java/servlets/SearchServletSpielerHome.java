@@ -67,7 +67,7 @@ public class SearchServletSpielerHome extends HttpServlet {
 		
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE mannschaft = ?")) { 
+				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE mannschaft = ? AND datum > CURDATE()")) { 
 
 				pstmt.setString(1,team);																			
 				try (ResultSet rs = pstmt.executeQuery()) {
@@ -114,7 +114,7 @@ public class SearchServletSpielerHome extends HttpServlet {
 			
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM nachricht WHERE mannschaft = ? ORDER BY tag DESC")) {	
+				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM nachricht WHERE mannschaft = ? AND tag >= DATE_SUB(CURDATE(), INTERVAL 7 DAY) ORDER BY tag DESC")) { //tag >= DATE_SUB(CURDATE(), INTERVAL 7 DAY) --> ChatGPT	
 
 				pstmt.setString(1,team);																				
 				try (ResultSet rs = pstmt.executeQuery()) {
