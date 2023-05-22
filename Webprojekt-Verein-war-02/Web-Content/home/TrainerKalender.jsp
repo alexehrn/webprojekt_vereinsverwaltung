@@ -1,6 +1,8 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<title>Trainer-Kalender</title>
 <%@ include file="head.jspf"%>
 
 
@@ -12,8 +14,7 @@
 
 	</nav>
 
-	<main>
-		<%@ include file="kalender.jspf" %> 
-	</main>
+
+	<%@ include file="kalender.jspf" %> 
 
 <%@ include file="footer.jspf"%>

@@ -1,144 +1,197 @@
+<%-- Alexander Ehrnstrasser: --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
-
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
     
-    <link rel="stylesheet" href="Kalender/fonts/icomoon/style.css">
+    #calendar {
+      width: 100%;
+      background-color: #f9f9f9;
+    }
     
-
-  
-    <link href='Kalender/fullcalendar/packages/core/main.css' rel='stylesheet' />
-    <link href='Kalender/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+    #header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+    }
     
+    #prev-month-btn,
+    #next-month-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ddd;
+      color: #333;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 5px;
+    }
     
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="Kalender/css/bootstrap.min.css">
+    #prev-month-btn {
+      left: 10px;
+    }
     
-    <!-- Style -->
-    <link rel="stylesheet" href="Kalender/css/style.css">
-
-    <link rel="stylesheet" type="text/css" href="../stylesheet.css"!important>
-
-    <title>Calendar #10</title>
-  </head>
-  <body>
-
-
-
-
-
-    <div id='calendar'></div>
-
-
-  
+    #next-month-btn {
+      right: 10px;
+    }
     
+    #current-month {
+      margin: 0;
+    }
     
-
-    <script src="Kalender/js/jquery-3.3.1.min.js"></script>
-    <script src="Kalender/js/popper.min.js"></script>
-    <script src="Kalender/js/bootstrap.min.js"></script>
-
-    <script src='Kalender/fullcalendar/packages/core/main.js'></script>
-    <script src='Kalender/fullcalendar/packages/interaction/main.js'></script>
-    <script src='Kalender/fullcalendar/packages/daygrid/main.js'></script>
-    <script src='Kalender/fullcalendar/packages/timegrid/main.js'></script>
-    <script src='Kalender/fullcalendar/packages/list/main.js'></script>
-
+    #calendar-body {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 1px;
+    }
     
+    .day {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      height: 100px;
+      position: relative;
+      text-align: center;
+    }
+    
+    .current-day {
+      background-color: #ff6f00;
+    }
+    
+    .event {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 12px;
+      padding: 2px 0;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="calendar">
+      <div id="header">
+        <h1 id="current-month"></h1>
+        <button id="prev-month-btn" onclick="previousMonth()">&lt;</button>
+        <button id="next-month-btn" onclick="nextMonth()">&gt;</button>
+      </div>
+      <div id="calendar-body"></div>
+    </div>
+  </main>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
-      height: 'parent',
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-      },
-      defaultView: 'dayGridMonth',
-      defaultDate: '2023-05-12',
-      navLinks: true, // can click day/week names to navigate views
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2020-02-01',
-        },
-        {
-          title: 'Long Event',
-          start: '2020-02-07',
-          end: '2020-02-10'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2020-02-09T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2020-02-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2020-02-11',
-          end: '2020-02-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2020-02-12T10:30:00',
-          end: '2020-02-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2020-02-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2020-02-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2020-02-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2020-02-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2020-02-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2020-02-28'
+  <script>
+    var monthNames = [
+      "Januar", "Februar", "März", "April", "Mai", "Juni",
+      "Juli", "August", "September", "Oktober", "November", "Dezember"
+    ];
+    
+    var currentDate = new Date();
+    var currentMonth = currentDate.getMonth();
+    var currentYear = currentDate.getFullYear();
+    
+    // Beispieltermine
+    var events = [
+      { date: new Date(currentYear, currentMonth, 10), title: "Event 1", time: "09:00 - 12:00" },
+      { date: new Date(currentYear, currentMonth, 10), title: "Event 2", time: "14:00 - 16:00" },
+      { date: new Date(currentYear, currentMonth, 21), title: "Event 3", time: "18:00 - 20:00" },
+      { date: new Date(currentYear, currentMonth, 15), title: "Event 4", time: "10:00 - 12:00" },
+      { date: new Date(currentYear, currentMonth, 22), title: "Event 5", time: "16:00 - 18:00" },
+      { date: new Date(currentYear, currentMonth, 25), title: "Event 6", time: "14:30 - 15:30" },
+    ];
+    
+    function generateCalendar() {
+      var calendarBody = document.getElementById("calendar-body");
+      calendarBody.innerHTML = "";
+    
+      var firstDay = new Date(currentYear, currentMonth, 1).getDay();
+      var daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      var startDay = (firstDay === 0) ? 6 : firstDay - 1; // Adjust start day to Monday
+    
+      var date = 1;
+      for (var i = 0; i < 6; i++) {
+        for (var j = 0; j < 7; j++) {
+          var dayCell = document.createElement("div");
+          dayCell.classList.add("day");
+    
+          if (i === 0 && j < startDay) {
+            dayCell.classList.add("prev-month");
+          } else if (date > daysInMonth) {
+            dayCell.classList.add("next-month");
+          } else {
+            var dayDate = new Date(currentYear, currentMonth, date);
+    
+            var eventText = getEventText(dayDate);
+            dayCell.innerHTML = "<span class='date'>" + date + "</span>";
+    
+            if (currentDate.toDateString() === dayDate.toDateString()) {
+              dayCell.classList.add("current-day");
+            }
+    
+            if (eventText.length > 0) {
+              var eventList = document.createElement("ul");
+              eventList.classList.add("event-list");
+    
+              eventText.forEach(function(event) {
+                var eventItem = document.createElement("li");
+                eventItem.innerHTML = event;
+                eventList.appendChild(eventItem);
+              });
+    
+              dayCell.appendChild(eventList);
+            }
+    
+            date++;
+          }
+    
+          calendarBody.appendChild(dayCell);
         }
-      ]
-    });
-
-    calendar.render();
-  });
-
-    </script>
+      }
     
-
-    <script src="Kalender/js/main.js"></script>
+      document.getElementById("current-month").textContent = monthNames[currentMonth] + " " + currentYear;
+    }
     
-
-
-
-  </body>
+    function getEventText(date) {
+      var eventText = [];
+    
+      events.forEach(function(event) {
+        if (event.date.toDateString() === date.toDateString()) {
+          eventText.push(event.title + " " + event.time);
+        }
+      });
+    
+      return eventText;
+    }
+    
+    function previousMonth() {
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      generateCalendar();
+    }
+    
+    function nextMonth() {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      generateCalendar();
+    }
+    
+    generateCalendar();
+  </script>
+</body>
 </html>
-
