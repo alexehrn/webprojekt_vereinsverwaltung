@@ -22,8 +22,8 @@
 			<th>Beginn</th>
 			<th>Ende</th>
 			<th>Information</th>
-			<th>Zusagen</th>
-			<th>Absagen</th>
+			<th>Meldung</th>
+			<th>Status</th>
 		</tr>
 
 		<c:forEach var="currentTermin" items="${termine}" varStatus="status">
@@ -38,10 +38,12 @@
 				<td>
 					<form action="/Webprojekt-Verein-war-02/SpielerRueckmeldungServlet" method="get">
 						<label for="zusage"></label>
-						<button type="submit" id="zusage" name="rueckmeldung" value="zugesagt">Zusage</button></td>
-				<td>
+						<button type="submit" id="zusage" name="rueckmeldung" value="zugesagt">Zusage</button>
 						<label for="absage"></label>
 						<button type="submit" id="absage" name="rueckmeldung" value="abgesagt">Absage</button></td>
+				<td>
+				Status
+				</td>
 					</form>
 			</tr>
 			</c:forEach>

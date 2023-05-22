@@ -9,17 +9,17 @@ import java.sql.ResultSet;
 import javax.sql.DataSource;
 
 import bean.RueckmeldungsBean;
+import bean.SpielerBean;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 
-/**
- * Servlet implementation class SpielerRueckmeldungServlet
- */
+
 @WebServlet("/SpielerRueckmeldungServlet")
 public class SpielerRueckmeldungServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,53 +28,52 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 	private DataSource ds;
 	
     public SpielerRueckmeldungServlet() {
-        // TODO Auto-generated constructor stub
+    	super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
+		
+		
+		//Spieler aus Session holen
+		HttpSession session = request.getSession();
+		SpielerBean spieler = (SpielerBean) session.getAttribute("spieler");
 		
 		RueckmeldungsBean rueckmeldung = new RueckmeldungsBean();
 		
+		rueckmeldung.setRueckmeldung(request.getParameter("rueckmeldung"));
+		Long terminId = Long.valueOf(request.getParameter("id"));
 		
-		rueckmeldung.setRueckmeldung(Boolean.valueOf(request.getParameter("rueckmeldung")));
 		
-		persist(rueckmeldung);
 		
-		response.getWriter().append("Erfolgreich ").append(request.getParameter("rueckmeldung"));
+		//falls noch keine Rückmeldung gegeben wurde --> rueckmeldung == Keine Rückmeldung
+		rueckmeldungAnlegen(rueckmeldung, spieler, terminId);
+		
+		session.setAttribute("rueckmeldung", rueckmeldung); //braucht man das?
+		
+		response.sendRedirect("SearchServletSpielerHome");
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	
-	private void persist(RueckmeldungsBean rueckmeldung) throws ServletException {
+	private void rueckmeldungAnlegen(RueckmeldungsBean rueckmeldung,SpielerBean spieler, Long terminId)  throws ServletException {
+		
 		// DB-Zugriff
 		String[] generatedKeys = new String[] {"id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
 		
 		try (Connection con = ds.getConnection();
-			 /*final Statement stmt = con.createStatement()*/
 			PreparedStatement pstmt = con.prepareStatement(
-				
-					"INSERT INTO rueckmeldung (spieler_id,termin_id, meldung) VALUES (1, ?, ?)", 
+					"INSERT INTO rueckmeldung (spieler_id,termin_id, meldung) VALUES (?, ?, ?)", 
 					generatedKeys)){
 
-			// Zugriff über Klasse java.sql.Statement
-/*			stmt.executeUpdate("INSERT INTO employees (first,last,age) VALUES ('" +
-								form.getFirstname() + "','" +
-								form.getLastname() + "','" +
-								form.getAge() + "')"
-					);
-*/		
+
 			// Zugriff über Klasse java.sql.PreparedStatement
-		
-			pstmt.setBoolean(2, rueckmeldung.isRueckmeldung());
-			
-			
+				
+			pstmt.setLong(1, spieler.getId());
+			pstmt.setLong(2, terminId);
+			pstmt.setString(3, rueckmeldung.getRueckmeldung());
 			
 			pstmt.executeUpdate();
 			

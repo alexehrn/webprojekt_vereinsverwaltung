@@ -6,10 +6,8 @@ import java.sql.Date;
 public class RueckmeldungsBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	private boolean rueckmeldung;
+	private String rueckmeldung;
 	private Long id;
-	private Long zusagen;
-	private Long absagen;
 	private String beschreibung;
 	private Date datum;
 
@@ -25,31 +23,18 @@ public class RueckmeldungsBean implements Serializable{
 	public void setDatum(Date datum) {
 		this.datum = datum;
 	}
-	public Long getZusagen() {
-		return zusagen;
-	}
-	public void setZusagen(Long zusagen) {
-		this.zusagen = zusagen;
-	}
-	public Long getAbsagen() {
-		return absagen;
-	}
-	public void setAbsagen(Long absagen) {
-		this.absagen = absagen;
-	}
+
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public boolean isRueckmeldung() {
+	public String getRueckmeldung() {
 		return rueckmeldung;
 	}
 	
-	
-
-	public void setRueckmeldung(boolean rueckmeldung) {
+	public void setRueckmeldung(String rueckmeldung) {
 		this.rueckmeldung = rueckmeldung;
 	}
 }
