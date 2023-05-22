@@ -55,11 +55,11 @@ public class SearchServletTrainerHome extends HttpServlet {
 
 		// DB-Zugriff
 		List<abwesenheitsbean> abwesenheiten = searchAbwesenheiten(team);
-		List<RueckmeldungsBean> rueckmeldungen = searchRueckmeldung(team);
+		//List<RueckmeldungsBean> rueckmeldungen = searchRueckmeldung(team);
 		
 		// Scope "Request"
 		request.setAttribute("abwesenheit", abwesenheiten);
-		request.setAttribute("rueckmeldung", rueckmeldungen);
+		//request.setAttribute("rueckmeldung", rueckmeldungen);
 		
 		// Weiterleiten an JSP
 		//final RequestDispatcher dispatcher = request.getRequestDispatcher("/Webprojekt-Verein-war-02/TrainerHomeServlet");

@@ -55,11 +55,11 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 
 		
 		// DB-Zugriff
-		List<abwesenheitsbean> abwesenheiten = searchAbwesenheiten(team);
+		List<TrainerTerminverwaltungsBean> termine = searchTermine(team);
 		
 		
 		// Scope "Request"
-		request.setAttribute("abwesenheiten", abwesenheiten);					
+		request.setAttribute("termine", termine);					
 				
 				
 		// Weiterleiten an JSP
@@ -69,39 +69,45 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 	
-	private List<abwesenheitsbean> searchAbwesenheiten(String team) throws ServletException {
-		List<abwesenheitsbean> abwesenheiten = new ArrayList<abwesenheitsbean>();
+	private List<TrainerTerminverwaltungsBean> searchTermine(String team) throws ServletException {
+		List<TrainerTerminverwaltungsBean> termine = new ArrayList<TrainerTerminverwaltungsBean>();
 	
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM abwesenheit WHERE mannschaft=?")) { 
+			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE mannschaft=?")) { 
 
 			pstmt.setString(1,team);																			
 			try (ResultSet rs = pstmt.executeQuery()) {
 			
 				while (rs.next()) {
-					abwesenheitsbean abwesenheit = new abwesenheitsbean();
+					TrainerTerminverwaltungsBean termin = new TrainerTerminverwaltungsBean();
 					
-					Long id = Long.valueOf(rs.getLong("abwesenheits_id"));
-					abwesenheit.setId(id);
+					Long id = Long.valueOf(rs.getLong("termin_id"));
+					termin.setId(id);
+					
+					String kurzbeschreibung = rs.getString("kurzbeschreibung");
+					termin.setKurzbeschreibung(kurzbeschreibung);
+					
+					Date datum = rs.getDate("datum");
+					termin.setDatum(datum);
+					
+					LocalTime beginn = rs.getTime("beginn").toLocalTime();
+					termin.setUhrzeitVON(beginn);
+					
+					LocalTime ende = rs.getTime("ende").toLocalTime();
+					termin.setUhrzeitBIS(ende);
 					
 					String beschreibung = rs.getString("beschreibung");
-					abwesenheit.setGrund(beschreibung);
+					termin.setBeschreibung(beschreibung);
 					
-					Date startdatum = rs.getDate("datum_von");
-					abwesenheit.setStart(startdatum);
-					
-					Date enddatum = rs.getDate("datum_bis");
-					abwesenheit.setEnde(enddatum);
-					
-					abwesenheiten.add(abwesenheit);
+					termine.add(termin);
 				}
 			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 		
-		return abwesenheiten;
+		return termine;
 	}
 
 	
