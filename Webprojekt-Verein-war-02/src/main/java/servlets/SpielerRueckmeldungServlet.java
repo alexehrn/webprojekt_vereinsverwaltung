@@ -71,7 +71,9 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 					);
 */		
 			// Zugriff über Klasse java.sql.PreparedStatement
-			pstmt.setBoolean(1, rueckmeldung.isRueckmeldung());
+		
+			pstmt.setBoolean(2, rueckmeldung.isRueckmeldung());
+			
 			
 			
 			pstmt.executeUpdate();

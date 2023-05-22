@@ -74,7 +74,7 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 	
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE mannschaft=?")) { 
+			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE mannschaft=? && datum >= CURRENT_DATE ORDER BY datum ASC, ende ASC, beginn ASC")) { 
 
 			pstmt.setString(1,team);																			
 			try (ResultSet rs = pstmt.executeQuery()) {

@@ -74,7 +74,7 @@ public class SearchServletTrainerHome extends HttpServlet {
 	
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT abwesenheit.abwesenheits_id, spieler.vorname, spieler.nachname, abwesenheit.datum_von, abwesenheit.datum_bis, abwesenheit.beschreibung FROM abwesenheit INNER JOIN spieler ON (abwesenheit.spieler = spieler.spieler_id) WHERE abwesenheit.mannschaft=?")) { 
+			 PreparedStatement pstmt = con.prepareStatement("SELECT abwesenheit.abwesenheits_id, spieler.vorname, spieler.nachname, abwesenheit.datum_von, abwesenheit.datum_bis, abwesenheit.beschreibung FROM abwesenheit INNER JOIN spieler ON (abwesenheit.spieler = spieler.spieler_id) WHERE abwesenheit.mannschaft=? && abwesenheit.datum_bis >= CURRENT_DATE ORDER BY abwesenheit.datum_von ASC, abwesenheit.datum_bis ASC")) { 
 
 			pstmt.setString(1,team);																			
 			try (ResultSet rs = pstmt.executeQuery()) {

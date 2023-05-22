@@ -6,10 +6,9 @@
 
 <nav>
 	<a href="/Webprojekt-Verein-war-02/TrainerHomeServlet" class="active">Dashboard</a>
-	<a href="./TrainerKalender.jsp">Kalender</a> <a
-		href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch">Teamverwaltung</a>
-	<a
-		href="/Webprojekt-Verein-war-02/SearchServletTrainerTerminverwaltung">Terminverwaltung</a>
+	<a href="./TrainerKalender.jsp">Kalender</a>
+	<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch">Teamverwaltung</a>
+	<a href="/Webprojekt-Verein-war-02/SearchServletTrainerTerminverwaltung">Terminverwaltung</a>
 
 </nav>
 
@@ -27,7 +26,7 @@
 		<c:forEach var="currentRueckmeldung" items="${rueckmeldung}"
 			varStatus="status">
 			<tr>
-				
+
 				<td>${currentRueckmeldung.beschreibung}</td>
 				<td>${currentRueckmeldung.datum}</td>
 				<td>${currentRueckmeldung.zusagen}</td>
@@ -57,7 +56,7 @@
 				<td>${status.count}</td>
 				<td>${currentAbwesenheit.vorname}
 					${currentAbwesenheit.nachname}</td>
-				<td>${currentAbwesenheit.start}${currentAbwesenheit.ende}</td>
+				<td>${currentAbwesenheit.start} bis ${currentAbwesenheit.ende}</td>
 				<td>${currentAbwesenheit.grund}</td>
 			</tr>
 		</c:forEach>
