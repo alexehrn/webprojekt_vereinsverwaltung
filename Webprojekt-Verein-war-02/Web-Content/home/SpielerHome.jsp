@@ -37,14 +37,14 @@
 				<td>${currentTermin.beschreibung}</td>
 				<td>
 					<form action="/Webprojekt-Verein-war-02/SpielerRueckmeldungServlet" method="get">
-						<label for="zusage"></label>
-						<button type="submit" id="${currentTermin.id}" name="rueckmeldung" value="zugesagt">Zusage</button>
-						<label for="absage"></label>
-						<button type="submit" id="absage" name="rueckmeldung" value="abgesagt">Absage</button></td>
+						<input type="hidden" name="id" value="${currentTermin.id}">
+						<button type="submit" name="rueckmeldung" value="Zugesagt">Zusage</button>
+						<button type="submit" name="rueckmeldung" value="Abgesagt">Absage</button></td>
+					</form>
 				<td>
 				Status
 				</td>
-					</form>
+					
 			</tr>
 			</c:forEach>
 	</table>
