@@ -38,7 +38,7 @@
 				<td>
 					<form action="/Webprojekt-Verein-war-02/SpielerRueckmeldungServlet" method="get">
 						<label for="zusage"></label>
-						<button type="submit" id="zusage" name="rueckmeldung" value="zugesagt">Zusage</button>
+						<button type="submit" id="${currentTermin.id}" name="rueckmeldung" value="zugesagt">Zusage</button>
 						<label for="absage"></label>
 						<button type="submit" id="absage" name="rueckmeldung" value="abgesagt">Absage</button></td>
 				<td>
@@ -49,8 +49,7 @@
 			</c:forEach>
 	</table>
 
-	<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet"
-		action="post">
+	<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet" action="post">
 		<p>Abwesenheit anlegen</p>
 		<table border="1">
 			<tr>
