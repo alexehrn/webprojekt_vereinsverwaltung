@@ -48,7 +48,7 @@ public class SearchServletSpielerHome extends HttpServlet {
 		
 		
 		// DB-Zugriff
-		List<TrainerTerminverwaltungsBean> termine = searchTermine(team);
+		List<TrainerTerminverwaltungsBean> termine = searchTermine(team, spieler);
 		List<TrainerHomeBean> nachrichten = searchNachrichten(team);
 		
 		// Scope "Request"
@@ -62,14 +62,15 @@ public class SearchServletSpielerHome extends HttpServlet {
 
 	
 		
-		private List<TrainerTerminverwaltungsBean> searchTermine(String team) throws ServletException {
+		private List<TrainerTerminverwaltungsBean> searchTermine(String team, SpielerBean spieler) throws ServletException {
 			List<TrainerTerminverwaltungsBean> termine = new ArrayList<TrainerTerminverwaltungsBean>();
 		
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine WHERE mannschaft = ? AND datum > CURDATE()")) { 
+				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine LEFT OUTER JOIN rueckmeldung ON (termine.termin_id = rueckmeldung.termin_id) WHERE termine.mannschaft = ? AND rueckmeldung.spieler_id AND datum > CURDATE();")) { 
 
-				pstmt.setString(1,team);																			
+				pstmt.setString(1,team);
+				pstmt.setLong(2, spieler.getId() );
 				try (ResultSet rs = pstmt.executeQuery()) {
 				
 					while (rs.next()) {
@@ -95,6 +96,9 @@ public class SearchServletSpielerHome extends HttpServlet {
 						
 						String beschreibung = rs.getString("beschreibung");
 						termin.setBeschreibung(beschreibung);
+						
+						String rueckmeldung = rs.getString("meldung");
+						termin.setRueckmeldung(rueckmeldung);
 						
 						termine.add(termin);
 					}

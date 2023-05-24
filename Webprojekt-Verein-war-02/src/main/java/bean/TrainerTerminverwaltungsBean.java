@@ -17,9 +17,7 @@ private Date datum;
 private LocalTime uhrzeitVON;
 private LocalTime uhrzeitBIS;
 private String beschreibung;
-
-
-
+private String rueckmeldung;
 
 
 public Long getId() {
@@ -63,6 +61,12 @@ public String getBeschreibung() {
 }
 public void setBeschreibung(String beschreibung) {
 	this.beschreibung = beschreibung;
+}
+public String getRueckmeldung() {
+	return rueckmeldung;
+}
+public void setRueckmeldung(String rueckmeldung) {
+	this.rueckmeldung = rueckmeldung;
 }
 
 

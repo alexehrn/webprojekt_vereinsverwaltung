@@ -44,7 +44,7 @@
 				<td>
 				Status
 				</td>
-					
+				   
 			</tr>
 			</c:forEach>
 	</table>
