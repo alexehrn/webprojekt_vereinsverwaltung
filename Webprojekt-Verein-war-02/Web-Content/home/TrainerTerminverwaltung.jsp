@@ -11,6 +11,7 @@
 		</head>
 
 <body>
+<%@ include file="head.jspf"%>
 
 <nav>
 	<a href="./TrainerHome.jsp">Dashboard</a>
