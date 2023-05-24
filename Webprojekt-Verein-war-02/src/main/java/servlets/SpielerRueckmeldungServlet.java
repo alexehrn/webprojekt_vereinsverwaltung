@@ -111,6 +111,7 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 			pstmt.setLong(1, spieler.getId());
 			pstmt.setLong(2, terminId);
 			pstmt.setString(3, rueckmeldung.getRueckmeldung());
+			
 
 			pstmt.executeUpdate();
 

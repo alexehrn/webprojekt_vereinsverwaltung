@@ -20,6 +20,7 @@ private String beschreibung;
 private String rueckmeldung;
 
 
+
 public Long getId() {
 	return id;
 }
