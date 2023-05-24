@@ -48,6 +48,21 @@
       margin: 0;
     }
     
+    #weekday-bar {
+	  display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 1px;
+	  background-color: #f9f9f9;
+	  text-align: center;
+	  font-weight: bold;
+	 
+	}
+
+.weekday {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+    
     #calendar-body {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
@@ -86,6 +101,15 @@
         <button id="prev-month-btn" onclick="previousMonth()">&lt;</button>
         <button id="next-month-btn" onclick="nextMonth()">&gt;</button>
       </div>
+      <div id="weekday-bar">
+  <div class="weekday">Montag</div>
+  <div class="weekday">Dienstag</div>
+  <div class="weekday">Mittwoch</div>
+  <div class="weekday">Donnerstag</div>
+  <div class="weekday">Freitag</div>
+  <div class="weekday">Samstag</div>
+  <div class="weekday">Sonntag</div>
+</div>
       <div id="calendar-body"></div>
     </div>
   </main>
