@@ -1,8 +1,17 @@
 <%-- Alexander Ehrnstrasser: --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<title>Trainer-Teamverwaltung</title>
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Trainer-Teamverwaltung</title>
+			<base href="${pageContext.request.requestURI}" />
+			<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+			
+		</head>
+
+<body>
 <%@ include file="head.jspf"%>
 
 

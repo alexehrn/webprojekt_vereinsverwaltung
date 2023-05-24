@@ -1,19 +1,4 @@
 <%-- Alexander Ehrnstrasser: --%>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<base href="${pageContext.request.requestURI}" />
-<title>Spieler-Dashboard</title>
-
-<link rel="stylesheet" type="text/css" href="../stylesheet.css">
-
-</head>
-<body>
-
 	<header>
 		<a href="../index.jsp"><button id="logout-btn">&#x23FB; Logout</button></a>
 		<img src="../img/Header.png" vertical-align="top" align="center" alt="header" width=100% height=auto>
