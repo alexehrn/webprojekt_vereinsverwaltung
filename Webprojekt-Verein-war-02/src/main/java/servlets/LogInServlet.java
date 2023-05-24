@@ -61,14 +61,21 @@ public class LogInServlet extends HttpServlet {
 				
 				// DB-Zugriff
 				SpielerBean spieler=readspieler(email);
-								
-				// Scope "Session"
-				HttpSession session = request.getSession();
-				session.setAttribute("spieler", spieler);
 				
-				RequestDispatcher disp = request.getRequestDispatcher("SearchServletSpielerHome");
-				disp.forward(request, response);
 				
+				if (spieler.getZugeordnet()==true) {
+					// Scope "Session"
+					HttpSession session = request.getSession();
+					session.setAttribute("spieler", spieler);
+					
+					RequestDispatcher disp = request.getRequestDispatcher("SearchServletSpielerHome");
+					disp.forward(request, response);
+				} else if (spieler.getZugeordnet()==false) {
+					
+					RequestDispatcher disp = request.getRequestDispatcher("./home/SpielerNochNichtZugeordnet.jsp");
+					disp.forward(request, response);
+				}
+							
 			}else if (auswahl.equals("Trainer")) {
 				// DB-Zugriff
 				TrainerBean trainer=readtrainer(email);
@@ -167,7 +174,8 @@ public class LogInServlet extends HttpServlet {
 				if (rs != null && rs.next()) {
 					spieler.setId(Long.valueOf(rs.getLong("spieler_id")));
 					spieler.setEmail(rs.getString("email"));
-					spieler.setTeam(rs.getString("mannschaft"));		
+					spieler.setTeam(rs.getString("mannschaft"));	
+					spieler.setZugeordnet(rs.getBoolean("zugeordnet"));
 				}
 			}
 		} catch (Exception ex) {

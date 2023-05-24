@@ -12,7 +12,9 @@ private static final long serialVersionUID = 1L;
 		private String vorname;
 		private String nachname;
 		private String team;
+		private Boolean zugeordnet;
 		
+	
 		public String getVorname() {
 			return vorname;
 		}
@@ -25,9 +27,7 @@ private static final long serialVersionUID = 1L;
 		public void setNachname(String nachname) {
 			this.nachname = nachname;
 		}
-	
-		
-		
+			
 		public Long getId() {
 			return id;
 		}
@@ -46,6 +46,13 @@ private static final long serialVersionUID = 1L;
 		}
 		public void setTeam(String team) {
 			this.team = team;
+		}
+		
+		public Boolean getZugeordnet() {
+			return zugeordnet;
+		}
+		public void setZugeordnet(Boolean zugeordnet) {
+			this.zugeordnet = zugeordnet;
 		}
 
 
