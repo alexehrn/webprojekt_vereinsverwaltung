@@ -58,10 +58,10 @@
 	 
 	}
 
-.weekday {
-  border: 1px solid #ccc;
-  padding: 10px;
-}
+	.weekday {
+	  border: 1px solid #ccc;
+	  padding: 10px;
+	}
     
     #calendar-body {
       display: grid;

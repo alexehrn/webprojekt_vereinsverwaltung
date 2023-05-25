@@ -11,6 +11,9 @@
   z-index: 9999;
 }
 
+*{
+	box-sizing: border-box;
+}
 
 body {
 	font-family: Helvetica, Arial, Verdana;
@@ -19,8 +22,8 @@ body {
 }
 
 nav {
-	display: flex !important;
-	justify-content: space-between !important;
+	display: flex;
+	justify-content: space-between;
 	background-color: #000000;
 	color: #fff;
 	padding: 10px;
@@ -46,33 +49,28 @@ main {
 footer {
 	background-color: #000000;
 	color: #fff;
-	padding-top: 50px;
-  	padding-bottom: 50px;
+	padding-top: 25px;
+  	padding-bottom: 25px;
 	width: 100%;
 	position: auto;
-	text-algin: center;
-	bottom: 0;
 }
 
 footer table {
-	border-collapse: collapse;
 	margin: 0 auto;
-	width: 100%;
-}
-
-footer td, th {
-	padding: 8px;
-	text-align: left;
-	width: 25%;
 }
 
 
 footer th {
+	width: 350px;
 	font-size: 18px;
 	font-weight: bold;
 }
 
+footer td, th {
+	text-align: left;
+}
+
 footer img {
-	display: block;
-  float: center;
+	float: left;
+	padding-left: 60px;
 }

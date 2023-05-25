@@ -6,24 +6,16 @@
 				<th><u>Vereinsverwaltung</u></th>
 				<th><u>Technischer Support</u></th>
 				<th><u>Über uns</u></th>
-				<th rowspan="4"><img src="../img/Firmenlogo.png" alt="Firmenlogo"></th>
+				<th rowspan="2"><img src="../img/Firmenlogo.png" alt="Firmenlogo"></th>
 			</tr>
 			<tr>
-				<td>Unsere indivuellen Vereinslösungen</td>
-				<td>&#9997; ingo&#64;softwarehouse.de</td>
-				<td>Wir vertreiben individuelle</td>
-			</tr>
-			<tr>
-				<td>eignen sich optimal von der</td>
-				<td>&#x260E; 0171/1146397</td>
-				<td>Softwarelösungen im großen Stil.</td>
-			</tr>
-			<tr>
-				<td>Kreisklasse bis zur Champions League.</td>
+				<td>Unsere indivuellen Vereinslösungen <br><br>eignen sich optimal von der<br><br>Kreisklasse bis zur Champions League.</td>
+				<td>&#9997; ingo&#64;softwarehouse.de <br><br> &#x260E; 0171/1146397</td>
+				<td>Wir vertreiben individuelle <br><br> Softwarelösungen im großen Stil. <br><br> Werde Teil unseres jungen Teams.</td>
 				<td></td>
-				<td>Werde Teil unseres jungen Teams.</td>
 			</tr>
 		</table>
+
 
 	</footer>
 
