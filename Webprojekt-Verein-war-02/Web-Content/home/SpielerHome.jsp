@@ -54,9 +54,7 @@
 						<button type="submit" name="rueckmeldung" value="Abgesagt">Absage</button></td>
 					</form>
 				<td>
-				Status
-				
-				</td>
+				${currentTermin.rueckmeldung}</td>
 				   
 			</tr>
 			</c:forEach>

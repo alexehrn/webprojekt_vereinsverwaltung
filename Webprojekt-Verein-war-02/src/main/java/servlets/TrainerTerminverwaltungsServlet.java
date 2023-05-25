@@ -62,7 +62,7 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		TrainerBean trainer = (TrainerBean) session.getAttribute("trainer");
 		String team = trainer.getTeam();
 		
-		persist(trainerTerminverwaltungsBean, team);		
+		terminAnlegen(trainerTerminverwaltungsBean, team);	
 		
 		
 		//Scope "Request"
@@ -73,25 +73,22 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 	
 	}
 	
-	private void persist(TrainerTerminverwaltungsBean trainerTeamverwaltungsBean, String team) throws ServletException {
+	private void terminAnlegen(TrainerTerminverwaltungsBean trainerTerminverwaltungsBean, String team) throws ServletException {
 		// DB-Zugriff
 		String[] generatedKeys = new String[] {"id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
 	
 		try (Connection con = ds.getConnection();
-			 /*final Statement stmt = con.createStatement()*/
 			PreparedStatement pstmt = con.prepareStatement(
 					"INSERT INTO termine (kurzbeschreibung, ort, datum, beginn, ende, beschreibung, mannschaft) VALUES (?, ?, ?, ?, ?, ?, ?)", 
 					generatedKeys)){
-
-		
 			
 			// Zugriff über Klasse java.sql.PreparedStatement
-			pstmt.setString(1, trainerTeamverwaltungsBean.getKurzbeschreibung());
-			pstmt.setString(2, trainerTeamverwaltungsBean.getOrt());
-			pstmt.setDate(3, trainerTeamverwaltungsBean.getDatum());
-			pstmt.setTime(4, java.sql.Time.valueOf(trainerTeamverwaltungsBean.getUhrzeitVON()));
-			pstmt.setTime(5, java.sql.Time.valueOf(trainerTeamverwaltungsBean.getUhrzeitBIS()));
-			pstmt.setString(6, trainerTeamverwaltungsBean.getBeschreibung());
+			pstmt.setString(1, trainerTerminverwaltungsBean.getKurzbeschreibung());
+			pstmt.setString(2, trainerTerminverwaltungsBean.getOrt());
+			pstmt.setDate(3, trainerTerminverwaltungsBean.getDatum());
+			pstmt.setTime(4, java.sql.Time.valueOf(trainerTerminverwaltungsBean.getUhrzeitVON()));
+			pstmt.setTime(5, java.sql.Time.valueOf(trainerTerminverwaltungsBean.getUhrzeitBIS()));
+			pstmt.setString(6, trainerTerminverwaltungsBean.getBeschreibung());
 			pstmt.setString(7, team);
 			
 			
@@ -103,13 +100,14 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 			try (ResultSet rs = pstmt.getGeneratedKeys()) {
 				int i = 1;
 				while (rs.next()) {
-					trainerTeamverwaltungsBean.setId(rs.getLong(i));
+					trainerTerminverwaltungsBean.setId(rs.getLong(i));
 				}
 			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 	}
+
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

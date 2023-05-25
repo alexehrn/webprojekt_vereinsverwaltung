@@ -45,11 +45,10 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 		if (rueckmeldungVorhanden(spieler, terminId)) {
 			rueckmeldungAktualisieren(rueckmeldung, spieler, terminId);
 		} else {
-			rueckmeldungAnlegen(rueckmeldung, spieler, terminId);
+			rueckmeldungAnlegen(spieler, terminId);
 		}
 
-	//	session.setAttribute("rueckmeldung", rueckmeldung); 
-
+	    session.setAttribute("rueckmeldung", rueckmeldung); 
 		response.sendRedirect("SearchServletSpielerHome");
 
 	}
@@ -96,32 +95,25 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 		}
 	}
 
-	private void rueckmeldungAnlegen(RueckmeldungsBean rueckmeldung, SpielerBean spieler, Long terminId)
+	private void rueckmeldungAnlegen(SpielerBean spieler, Long terminId)
 			throws ServletException {
 
 		// DB-Zugriff
-		String[] generatedKeys = new String[] { "id" }; // Name der Spalte(n), die automatisch generiert wird(werden)
+		
 
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO rueckmeldung (spieler_id,termin_id, meldung) VALUES (?, ?, ?)", generatedKeys)) {
+						"INSERT INTO rueckmeldung (spieler_id,termin_id, meldung) VALUES (?, ?, 'Keine Rückmeldung')")) {
 
 			// Zugriff über Klasse java.sql.PreparedStatement
 
 			pstmt.setLong(1, spieler.getId());
 			pstmt.setLong(2, terminId);
-			pstmt.setString(3, rueckmeldung.getRueckmeldung());
+			
 			
 
 			pstmt.executeUpdate();
 
-			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
-			try (ResultSet rs = pstmt.getGeneratedKeys()) {
-				int i = 1;
-				while (rs.next()) {
-					rueckmeldung.setId(rs.getLong(i));
-				}
-			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
