@@ -122,7 +122,7 @@ public class SearchServletSpielerHome extends HttpServlet {
 			List<abwesenheitsbean> abwesenheiten = new ArrayList<abwesenheitsbean>();
 			// DB-Zugriff
 						try (Connection con = ds.getConnection();
-							 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM abwesenheit WHERE spieler = ? AND datum_bis >= CURDATE() ORDER BY datum_von ASC, datum_bis ASC;")) { 
+							 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM abwesenheit WHERE spieler = ? AND datum_bis >= CURRENT_DATE() ORDER BY datum_bis ASC, datum_von ASC;")) { 
 
 							pstmt.setLong(1,spieler.getId());																				
 							try (ResultSet rs = pstmt.executeQuery()) {

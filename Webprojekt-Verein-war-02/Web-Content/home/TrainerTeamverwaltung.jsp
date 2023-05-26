@@ -16,7 +16,7 @@
 
 
 	<nav>
-		<a href="./TrainerHome.jsp">Dashboard</a>
+		<a href="/Webprojekt-Verein-war-02/TrainerHomeServlet">Dashboard</a>   
 		<a href="./TrainerKalender.jsp">Kalender</a>
 		<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch" class="active">Teamverwaltung</a>
 		<a href="/Webprojekt-Verein-war-02/SearchServletTrainerTerminverwaltung">Terminverwaltung</a>
