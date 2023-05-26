@@ -17,6 +17,7 @@ import bean.RueckmeldungsBean;
 import bean.SpielerBean;
 import bean.TrainerHomeBean;
 import bean.TrainerTerminverwaltungsBean;
+import bean.abwesenheitsbean;
 import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -53,10 +54,11 @@ public class SearchServletSpielerHome extends HttpServlet {
 		// DB-Zugriff
 		List<TrainerTerminverwaltungsBean> termine = searchTermine(team, spieler);
 		List<TrainerHomeBean> nachrichten = searchNachrichten(team);
-			
+		List<abwesenheitsbean> abwesenheiten = searchAbwesenheiten(spieler);
 		
 		// Scope "Request"
-		request.setAttribute("termine", termine);					
+		request.setAttribute("termine", termine);
+		request.setAttribute("abwesenheiten", abwesenheiten);
 		request.setAttribute("nachrichten", nachrichten);			
 		
 		// Weiterleiten an JSP
@@ -116,6 +118,37 @@ public class SearchServletSpielerHome extends HttpServlet {
 			return termine;
 		}
 	
+		private List<abwesenheitsbean> searchAbwesenheiten(SpielerBean spieler) throws ServletException {
+			List<abwesenheitsbean> abwesenheiten = new ArrayList<abwesenheitsbean>();
+			// DB-Zugriff
+						try (Connection con = ds.getConnection();
+							 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM abwesenheit WHERE spieler = ? AND datum_bis >= CURDATE() ORDER BY datum_von ASC, datum_bis ASC;")) { 
+
+							pstmt.setLong(1,spieler.getId());																				
+							try (ResultSet rs = pstmt.executeQuery()) {
+							
+								while (rs.next()) {
+									abwesenheitsbean abwesenheit = new abwesenheitsbean();
+									
+									String grund = rs.getString("beschreibung");
+									abwesenheit.setGrund(grund);
+									
+									Date datum_von = rs.getDate("datum_von");
+									abwesenheit.setStart(datum_von);
+
+									Date datum_bis = rs.getDate("datum_bis");
+									abwesenheit.setEnde(datum_bis);
+									
+									abwesenheiten.add(abwesenheit);
+								}
+							}
+						} catch (Exception ex) {
+							throw new ServletException(ex.getMessage());
+						}
+						
+						
+						return abwesenheiten;
+					}
 		
 		
 		

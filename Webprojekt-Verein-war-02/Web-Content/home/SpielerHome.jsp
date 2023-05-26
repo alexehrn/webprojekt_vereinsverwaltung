@@ -91,6 +91,25 @@
 	</form>
 	<br>
 
+	<p>Meine Abwesenheiten</p>
+		<table border="1">
+			<tr>
+				<th>Nummer</th>
+				<th>Beschreibung</th>
+				<th>von</th>
+				<th>bis</th>
+			</tr>
+		<c:forEach var="currentAbwesenheit" items="${abwesenheiten}" varStatus="status">
+			<tr>
+				<td>${status.count}</td>
+				<td>${currentAbwesenheit.grund}</td>
+				<td>${currentAbwesenheit.start}</td>
+				<td>${currentAbwesenheit.ende}</td>
+			</tr>
+		</c:forEach>
+		</table>
+	<br>
+
 	<table border="1">
 		<tr>
 			<th>Tag</th>
