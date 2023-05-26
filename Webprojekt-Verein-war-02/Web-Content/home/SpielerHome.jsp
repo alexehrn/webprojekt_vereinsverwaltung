@@ -54,8 +54,19 @@
 						<button type="submit" name="rueckmeldung" value="Abgesagt">Absage</button></td>
 					</form>
 				<td>
-				${currentTermin.rueckmeldung}</td>
-				   
+				
+				<!-- Anfang ChatGPT -->
+				<c:choose>
+  					<c:when test="${currentTermin.rueckmeldung == null}">
+    					Keine Rückmeldung
+ 					</c:when>
+ 					<c:otherwise>
+  						${currentTermin.rueckmeldung}
+					</c:otherwise>
+				</c:choose>
+				<!-- Ende ChatGPT -->
+				
+				</td>  
 			</tr>
 			</c:forEach>
 	</table>

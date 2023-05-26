@@ -45,7 +45,7 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 		if (rueckmeldungVorhanden(spieler, terminId)) {
 			rueckmeldungAktualisieren(rueckmeldung, spieler, terminId);
 		} else {
-			rueckmeldungAnlegen(spieler, terminId);
+			rueckmeldungAnlegen(rueckmeldung, spieler, terminId);
 		}
 
 	    session.setAttribute("rueckmeldung", rueckmeldung); 
@@ -95,7 +95,7 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 		}
 	}
 
-	private void rueckmeldungAnlegen(SpielerBean spieler, Long terminId)
+	private void rueckmeldungAnlegen(RueckmeldungsBean rueckmeldung, SpielerBean spieler, Long terminId)
 			throws ServletException {
 
 		// DB-Zugriff
@@ -103,12 +103,13 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO rueckmeldung (spieler_id,termin_id, meldung) VALUES (?, ?, 'Keine Rückmeldung')")) {
+						"INSERT INTO rueckmeldung (spieler_id,termin_id, meldung) VALUES (?, ?, ?)")) {
 
 			// Zugriff über Klasse java.sql.PreparedStatement
 
 			pstmt.setLong(1, spieler.getId());
 			pstmt.setLong(2, terminId);
+			pstmt.setString(3, rueckmeldung.getRueckmeldung());
 			
 			
 
