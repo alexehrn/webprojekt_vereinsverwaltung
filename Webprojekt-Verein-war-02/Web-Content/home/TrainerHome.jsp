@@ -43,12 +43,7 @@
 				<td>${currentRueckmeldung.absagen}</td>
 			</tr>
 		</c:forEach>
-		<tr>
-			<td>Trainingsbeispiel</td>
-			<td>31.04.2022</td>
-			<td>20</td>
-			<td>5</td>
-		</tr>
+
 	</table>
 
 	<p>Abwesenheit</p>

@@ -55,11 +55,11 @@ public class SearchServletTrainerHome extends HttpServlet {
 
 		// DB-Zugriff
 		List<abwesenheitsbean> abwesenheiten = searchAbwesenheiten(team);
-		//List<RueckmeldungsBean> rueckmeldungen = searchRueckmeldung(team);
+		List<RueckmeldungsBean> rueckmeldungen = searchRueckmeldung(team);
 		
 		// Scope "Request"
 		request.setAttribute("abwesenheit", abwesenheiten);
-		//request.setAttribute("rueckmeldung", rueckmeldungen);
+		request.setAttribute("rueckmeldung", rueckmeldungen);
 		
 		// Weiterleiten an JSP
 		//final RequestDispatcher dispatcher = request.getRequestDispatcher("/Webprojekt-Verein-war-02/TrainerHomeServlet");
@@ -74,7 +74,7 @@ public class SearchServletTrainerHome extends HttpServlet {
 	
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT abwesenheit.abwesenheits_id, spieler.vorname, spieler.nachname, abwesenheit.datum_von, abwesenheit.datum_bis, abwesenheit.beschreibung FROM abwesenheit INNER JOIN spieler ON (abwesenheit.spieler = spieler.spieler_id) WHERE abwesenheit.mannschaft=?")) { 
+			 PreparedStatement pstmt = con.prepareStatement("SELECT abwesenheit.abwesenheits_id, spieler.vorname, spieler.nachname, abwesenheit.datum_von, abwesenheit.datum_bis, abwesenheit.beschreibung FROM abwesenheit INNER JOIN spieler ON (abwesenheit.spieler = spieler.spieler_id) WHERE abwesenheit.mannschaft=? && abwesenheit.datum_bis >= CURRENT_DATE ORDER BY abwesenheit.datum_bis ASC, abwesenheit.datum_von ASC")) { 
 
 			pstmt.setString(1,team);																			
 			try (ResultSet rs = pstmt.executeQuery()) {
@@ -115,7 +115,7 @@ public class SearchServletTrainerHome extends HttpServlet {
 	
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT termine.beschreibung, termine.datum, COUNT(rueckmeldung.meldung)=1 AS zusagen, COUNT(rueckmeldung.meldung)=0 AS absagen FROM rueckmeldung INNER JOIN termine ON (rueckmeldung.termin_id = termine.termin_id) WHERE termine.mannschaft=?")) { 
+			 PreparedStatement pstmt = con.prepareStatement("SELECT termine.kurzbeschreibung, termine.datum, (SELECT COUNT(*) FROM rueckmeldung WHERE rueckmeldung.meldung LIKE '%Zugesagt%') AS anzahlzusagen, (SELECT COUNT(*) FROM rueckmeldung WHERE rueckmeldung.meldung LIKE '%Abgesagt%') AS anzahlabsagen FROM termine INNER JOIN rueckmeldung ON (termine.termin_id = rueckmeldung.termin_id) WHERE termine.mannschaft = ? && termine.datum >= CURRENT_DATE ORDER BY termine.datum ASC")) { 
 
 			pstmt.setString(1,team);																			
 			try (ResultSet rs = pstmt.executeQuery()) {
@@ -123,17 +123,25 @@ public class SearchServletTrainerHome extends HttpServlet {
 				while (rs.next()) {
 					RueckmeldungsBean rueckmeldung = new RueckmeldungsBean();
 					
+					String beschreibung = rs.getString("kurzbeschreibung");
+					rueckmeldung.setBeschreibung(beschreibung);
 					
+					Date datum = rs.getDate("datum");
+					rueckmeldung.setDatum(datum);
 					
-				Long zusagen = Long.valueOf(rs.getLong(""));
-				rueckmeldung.setZusagen(zusagen);
+					Long zusagen = rs.getLong("anzahlzusagen");
+					rueckmeldung.setZusagen(zusagen);
 					
-				Long absagen = Long.valueOf(rs.getLong(""));
-				rueckmeldung.setAbsagen(absagen);
+					Long absagen = rs.getLong("anzahlabsagen");
+					rueckmeldung.setAbsagen(absagen);
 					
 					
 					
 					rueckmeldungen.add(rueckmeldung);
+					
+					
+					
+			
 				}
 			}
 		} catch (Exception ex) {
