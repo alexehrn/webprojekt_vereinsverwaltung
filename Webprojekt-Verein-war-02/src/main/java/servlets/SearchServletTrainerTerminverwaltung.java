@@ -91,6 +91,9 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 					Date datum = rs.getDate("datum");
 					termin.setDatum(datum);
 					
+					String ort = rs.getString("ort");
+					termin.setOrt(ort);
+					
 					LocalTime beginn = rs.getTime("beginn").toLocalTime();
 					termin.setUhrzeitVON(beginn);
 					
