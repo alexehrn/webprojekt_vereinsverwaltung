@@ -73,11 +73,15 @@ public class SearchServletSpielerHome extends HttpServlet {
 		
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
-				 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM termine LEFT OUTER JOIN rueckmeldung ON(termine.termin_id=rueckmeldung.termin_id) WHERE termine.mannschaft = ? AND (rueckmeldung.spieler_id =? OR rueckmeldung.spieler_id is NULL) AND termine.datum >= CURDATE();")) { 
+				 PreparedStatement pstmt = con.prepareStatement("SELECT *\r\n"
+				 		+ "FROM termine\r\n"
+				 		+ "LEFT OUTER JOIN rueckmeldung ON termine.termin_id = rueckmeldung.termin_id AND rueckmeldung.spieler_id = ?\r\n"
+				 		+ "WHERE termine.mannschaft = ? AND (rueckmeldung.spieler_id = ? OR rueckmeldung.spieler_id IS NULL) AND termine.datum >= CURDATE();")) { 
 
 				
-				pstmt.setString(1,team);
-				pstmt.setLong(2, spieler.getId());
+				pstmt.setLong(1, spieler.getId());
+				pstmt.setString(2,team);
+				pstmt.setLong(3, spieler.getId());
 				
 				try (ResultSet rs = pstmt.executeQuery()) {
 				

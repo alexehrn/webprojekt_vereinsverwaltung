@@ -41,9 +41,9 @@ public class TrainerTerminLoeschen extends HttpServlet {
 		delete(id);
 		
 		// Weiterleiten an JSP
-		response.sendRedirect("./TrainerHomeServlet");	
-		response.sendRedirect("./TrainerTerminverwaltungsServlet");
-		response.sendRedirect("./SearchServletSpielerHome");	
+		response.sendRedirect("./SearchServletTrainerTerminverwaltung");	
+
+		
 	}
 	private void delete(Long id) throws ServletException {
 		

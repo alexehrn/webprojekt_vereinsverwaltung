@@ -41,7 +41,6 @@ public class TrainerTeamverwaltungSpielerLoeschen extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
 		Long id = Long.valueOf(request.getParameter("id"));
 		
-		
 		// DB-Zugriff
 		delete(id);
 		
