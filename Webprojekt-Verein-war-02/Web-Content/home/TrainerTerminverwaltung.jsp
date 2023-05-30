@@ -14,7 +14,7 @@
 <%@ include file="head.jspf"%>
 
 <nav>
-	<a href="/Webprojekt-Verein-war-02/TrainerHomeServlet">Dashboard</a>   
+	<a href="/Webprojekt-Verein-war-02/SearchServletTrainerHome">Dashboard</a>   
 	 <a
 		href="./TrainerKalender.jsp">Kalender</a> <a
 		href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch">Teamverwaltung</a>
