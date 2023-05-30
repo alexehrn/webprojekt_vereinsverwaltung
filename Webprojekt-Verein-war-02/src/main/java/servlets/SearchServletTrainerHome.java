@@ -115,7 +115,7 @@ public class SearchServletTrainerHome extends HttpServlet {
 	
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT termine.kurzbeschreibung, termine.datum, (SELECT COUNT(*) FROM rueckmeldung WHERE rueckmeldung.meldung LIKE '%Zugesagt%') AS anzahlzusagen, (SELECT COUNT(*) FROM rueckmeldung WHERE rueckmeldung.meldung LIKE '%Abgesagt%') AS anzahlabsagen FROM termine INNER JOIN rueckmeldung ON (termine.termin_id = rueckmeldung.termin_id) WHERE termine.mannschaft = ? && termine.datum >= CURRENT_DATE ORDER BY termine.datum ASC")) { 
+			 PreparedStatement pstmt = con.prepareStatement("SELECT termine.kurzbeschreibung, termine.datum, (SELECT COUNT(*) FROM  termine INNER JOIN rueckmeldung ON (termine.termin_id = rueckmeldung.termin_id) WHERE rueckmeldung.meldung LIKE 'Zugesagt') AS anzahlzusagen, (SELECT COUNT(*) FROM termine INNER JOIN rueckmeldung ON (termine.termin_id = rueckmeldung.termin_id) WHERE rueckmeldung.meldung LIKE 'Abgesagt') AS anzahlabsagen FROM termine INNER JOIN rueckmeldung ON (termine.termin_id = rueckmeldung.termin_id) WHERE termine.mannschaft = ? && termine.datum >= CURRENT_DATE ORDER BY termine.datum ASC")) { 
 
 			pstmt.setString(1,team);																			
 			try (ResultSet rs = pstmt.executeQuery()) {
@@ -134,8 +134,6 @@ public class SearchServletTrainerHome extends HttpServlet {
 					
 					Long absagen = rs.getLong("anzahlabsagen");
 					rueckmeldung.setAbsagen(absagen);
-					
-					
 					
 					rueckmeldungen.add(rueckmeldung);
 					
