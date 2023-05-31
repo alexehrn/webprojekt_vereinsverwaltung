@@ -48,8 +48,8 @@
 				<td>${currentTermin.datum}</td>
 				<td>${currentTermin.uhrzeitVON}-${currentTermin.uhrzeitBIS}</td>
 				<td>${currentTermin.beschreibung}</td>
-				<td><button type="submit" title="Termin ändern" name="terminändern">&#9998;</button></td>
-				<td><a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}"><button type="submit" title="Termin löschen" name="terminlöschen">&#x1F5D1;</button></a></td>
+				<td><button type="submit" title="Termin ändern" name="terminändern">&#9998;</button>
+				<a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}"><button type="submit" title="Termin löschen" name="terminlöschen">&#x1F5D1;</button></a></td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -62,7 +62,7 @@
 
 
 
-
+<fieldset> <legend>Neues Event</legend>
 	<form
 		action="/Webprojekt-Verein-war-02/TrainerTerminverwaltungsServlet"
 		method="post">
@@ -92,7 +92,7 @@
 			<button type="submit" name="anlegen">Termin anlegen</button>
 		</p>
 	</form>
-
+</fieldset>
 
 
 </main>

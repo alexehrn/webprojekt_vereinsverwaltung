@@ -24,13 +24,13 @@
 
 
 <main>
-	<p>Termine</p>
-	<table border="1">
+	<h1>Termine</h1>
+	<table>
 		<tr>
 			<th>Nummer</th>
 			<th>Beschreibung</th>
 			<th>Ort</th>
-			<th>Datum</th>
+			<th class="datumsspalte">Datum</th>
 			<th>Beginn</th>
 			<th>Ende</th>
 			<th>Information</th>
@@ -43,7 +43,7 @@
 				<td>${status.count}</td>
 				<td>${currentTermin.kurzbeschreibung}</td>
 				<td>${currentTermin.ort}</td>
-				<td>${currentTermin.datum}</td>
+				<td class="datumsspalte">${currentTermin.datum}</td>
 				<td>${currentTermin.uhrzeitVON}</td>
 				<td>${currentTermin.uhrzeitBIS}</td>
 				<td>${currentTermin.beschreibung}</td>
@@ -72,16 +72,16 @@
 	</table>
 
 	<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet" action="post">
-		<p>Abwesenheit anlegen</p>
-		<table border="1">
+		<h1>Abwesenheit anlegen</h1>
+		<table>
 			<tr>
-				<th>Beschreibung</th>
+				<th>Grund</th>
 				<th>von</th>
 				<th>bis</th>
 			</tr>
 			<tr>
 
-				<td><textarea name="abwesenheit_eingabe" rows="1" cols="100"></textarea></td>
+				<td><input name="abwesenheit_eingabe"></input></td>
 				<td><input type="date" id="startdatum" name="startdatum"></td>
 				<td><input type="date" id="enddatum" name="enddatum"></td>
 		</table>
@@ -91,8 +91,8 @@
 	</form>
 	<br>
 
-	<p>Meine Abwesenheiten</p>
-		<table border="1">
+	<h1>Meine Abwesenheiten</h1>
+		<table>
 			<tr>
 				<th>Nummer</th>
 				<th>Beschreibung</th>
@@ -109,15 +109,18 @@
 		</c:forEach>
 		</table>
 	<br>
+	
+	
+	<h1>Nachrichten der letzten 7 Tage vom Trainerteam</h1>
 
-	<table border="1">
+	<table>
 		<tr>
-			<th>Tag</th>
+			<th class="datumsspalte">Tag</th>
 			<th>Nachrichtenforum</th>
 		</tr>
 	<c:forEach var="currentNachricht" items="${nachrichten}" varStatus="status">
 		<tr>
-		<td>${currentNachricht.tag}</td>
+		<td class="datumsspalte">${currentNachricht.tag}</td>
 		<td>${currentNachricht.beschreibung}</td>
 		</tr>
 		</c:forEach>

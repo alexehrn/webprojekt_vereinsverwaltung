@@ -25,11 +25,11 @@
 <main>
 
 
-	<p>Termine</p>
-	<table border="1">
+	<h1>Termine</h1>
+	<table>
 		<tr>
 			<th>Beschreibung</th>
-			<th>Datum</th>
+			<th class="datumsspalte">Datum</th>
 			<th>Zusagen</th>
 			<th>Absagen</th>
 		</tr>
@@ -38,7 +38,7 @@
 			<tr>
 
 				<td>${currentRueckmeldung.beschreibung}</td>
-				<td>${currentRueckmeldung.datum}</td>
+				<td class="datumsspalte">${currentRueckmeldung.datum}</td>
 				<td>${currentRueckmeldung.zusagen}</td>
 				<td>${currentRueckmeldung.absagen}</td>
 			</tr>
@@ -46,8 +46,8 @@
 
 	</table>
 
-	<p>Abwesenheit</p>
-	<table border="1">
+	<h1>Abwesenheit</h1>
+	<table>
 		<tr>
 			<th></th>
 			<th>Diese Woche abwesend:</th>
@@ -70,8 +70,10 @@
 
 	<form action="/Webprojekt-Verein-war-02/TrainerHomeServlet"
 		method="post" accept-charset="utf-8">
-		<p>Nachricht an das Team senden:</p>
+		<h1>Nachricht an das Team senden:</h1>
 		<textarea name="trainer_eingabe" rows="20" cols="100"></textarea>
+		<br>
+		<br>
 		<button type="submit" name="nachrichtAbsenden" value="submit">Absenden
 			der Nachricht</button>
 	</form>

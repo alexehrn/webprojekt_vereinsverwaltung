@@ -16,11 +16,10 @@
 
 
 	<nav>
-		<a href="./Webprojekt-Verein-war-02/SearchServletTrainerHome">Dashboard</a>                                       
-		<a href="./TrainerKalender.jsp">Kalender</a>                       
-		<a href="./Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch" class="active">Teamverwaltung</a>
-		<a href="./Webprojekt-Verein-war-02/SearchServletTrainerTerminverwaltung">Terminverwaltung</a>
-
+		<a href="/Webprojekt-Verein-war-02/SearchServletTrainerHome">Dashboard</a>   
+		<a href="./TrainerKalender.jsp">Kalender</a>
+		<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSearch" class="active">Teamverwaltung</a>
+		<a href="/Webprojekt-Verein-war-02/SearchServletTrainerTerminverwaltung">Terminverwaltung</a>
 	</nav>
 
 	<main>
@@ -37,7 +36,7 @@
 				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
 					<tr>
 
-						<td text-align="center"><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="200" height="300"></td>
+						<td text-align="center"><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="150" height="200"></td>
 						<td>${currentSpieler.nachname}</td>
 						<td>${currentSpieler.vorname}</td>
 						<td>${currentSpieler.team}</td>

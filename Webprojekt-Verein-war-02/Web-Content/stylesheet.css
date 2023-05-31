@@ -42,8 +42,48 @@ nav .active {
 }
 
 main {
-	background-color: #fff;
+	background-color: #ececec;
 	padding: 20px;
+}
+
+main table{
+	border: solid 1px grey;
+	background-color: #fff; 
+}
+
+main th {
+	background-color: #000000;
+	color: #fff;
+	border: solid 1px grey;
+	height: 40px;
+	padding: 20px; 
+}
+
+main td {
+	border: solid 1px grey; 
+	height: 40px;
+	padding: 10px; }
+
+.datumsspalte{
+	width: 150px;
+	text-align: center;
+}
+
+button {
+	font-size: 20px;
+	background-color: #333333;
+	color: #fff;
+	border-radius: 12px;
+	width: auto;
+	box-shadow: 0 9px #999;
+}
+
+
+input{
+	height: 30px;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 footer {
@@ -65,6 +105,7 @@ footer th {
 	font-size: 18px;
 	font-weight: bold;
 }
+
 
 footer td, th {
 	text-align: left;

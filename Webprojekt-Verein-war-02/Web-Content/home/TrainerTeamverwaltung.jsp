@@ -40,7 +40,7 @@
 			
 			
 			
-			<h3>Deine Mannschaft:</h3>
+			<h1>Deine Mannschaft:</h1>
 
 			<table border="1">
 				<tr>
@@ -54,7 +54,7 @@
 				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
 					<tr>
 						<td>${status.count}</td>
-						<td text-align="center"><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="200" height="300"></td>
+						<td text-align="center"><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="150" height="200"></td>
 						<td>${currentSpieler.nachname}</td>
 						<td>${currentSpieler.vorname}</td>
 						<td><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}"><button type="submit" title="Spieler löschen" name="spielerlöschen">&#x1F5D1;</button></a></td>
