@@ -47,12 +47,11 @@
 	<h1>Upcoming Events</h1>
 	<table>
 		<tr>
-			<th>Nummer</th>
 			<th>Beschreibung</th>
 			<th>Ort</th>
 			<th class="datumsspalte">Datum</th>
-			<th>Beginn</th>
-			<th>Ende</th>
+			<th class="uhrzeitspalte">Beginn</th>
+			<th class="uhrzeitspalte">Ende</th>
 			<th class="langertextspalte">Information</th>
 			<th>Meldung</th>
 			<th>Status</th>
@@ -60,12 +59,11 @@
 
 		<c:forEach var="currentTermin" items="${termine}" varStatus="status">
 			<tr>
-				<td>${status.count}</td>
 				<td>${currentTermin.kurzbeschreibung}</td>
 				<td>${currentTermin.ort}</td>
 				<td class="datumsspalte">${currentTermin.datum}</td>
-				<td>${currentTermin.uhrzeitVON}</td>
-				<td>${currentTermin.uhrzeitBIS}</td>
+				<td class="uhrzeitspalte">${currentTermin.uhrzeitVON}</td>
+				<td class="uhrzeitspalte">${currentTermin.uhrzeitBIS}</td>
 				<td class="langertextspalte">${currentTermin.beschreibung}</td>
 				<td>
 					<form action="/Webprojekt-Verein-war-02/SpielerRueckmeldungServlet" method="get">

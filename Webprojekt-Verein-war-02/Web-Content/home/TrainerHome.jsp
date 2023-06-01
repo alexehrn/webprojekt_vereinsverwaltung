@@ -58,7 +58,7 @@
 		<c:forEach var="currentAbwesenheit" items="${abwesenheit}"
 			varStatus="status">
 			<tr>
-				<td>${status.count}</td>
+				<td class ="nummerspalte">${status.count}</td>
 				<td>${currentAbwesenheit.vorname}
 					${currentAbwesenheit.nachname}</td>
 				<td>${currentAbwesenheit.start} bis ${currentAbwesenheit.ende}</td>

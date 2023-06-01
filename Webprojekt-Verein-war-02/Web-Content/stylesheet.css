@@ -67,6 +67,7 @@ main table{
 main th {
 	background-color: #acacac;
 	color: #000000;
+	font-size: 1.25rem;
 	border: solid 1px grey;
 	height: 40px;
 	padding: 20px; 
@@ -89,6 +90,11 @@ main td {
 .langertextspalte{
 	width: 400px;
 }
+
+.uhrzeitspalte{
+	width: 90px;
+}
+
 
 .zentrieren{
 	display: flex;

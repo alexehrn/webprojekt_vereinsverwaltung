@@ -30,24 +30,22 @@
 
 	<table>
 		<tr>
-			<th>Nummer</th>
 			<th>Kurzbeschreibung</th>
 			<th>Ort</th>
-			<th>Datum</th>
-			<th>Uhrzeit</th>
-			<th>Details</th>
+			<th class="datumsspalte">Datum</th>
+			<th class="datumsspalte">Uhrzeit</th>
+			<th class="langertextspalte">Details</th>
 			<th>Optionen</th>
 		</tr>
 
 
 		<c:forEach var="currentTermin" items="${termine}" varStatus="status">
 			<tr>
-				<td>${status.count}</td>
 				<td>${currentTermin.kurzbeschreibung}</td>
 				<td>${currentTermin.ort}</td>
-				<td>${currentTermin.datum}</td>
-				<td>${currentTermin.uhrzeitVON}-${currentTermin.uhrzeitBIS}</td>
-				<td>${currentTermin.beschreibung}</td>
+				<td class="datumsspalte">${currentTermin.datum}</td>
+				<td class="datumsspalte">${currentTermin.uhrzeitVON}-${currentTermin.uhrzeitBIS}</td>
+				<td class="langertextspalte">${currentTermin.beschreibung}</td>
 				<td class="zentrierteschrift"><button type="submit" title="Termin ändern" name="terminändern">Termin bearbeiten</button>
 				<a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}"><button type="submit" title="Termin löschen" name="terminlöschen">Termin löschen</button></a></td>
 			</tr>

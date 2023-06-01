@@ -42,10 +42,9 @@
 			
 			<h1>Deine Mannschaft:</h1>
 
-			<table border="1">
+			<table>
 				<tr>
 					<th></th>
-					<th>Spielerbild</th>
 					<th>Name</th>
 					<th>Vorname</th>
 					<th></th>
@@ -53,7 +52,6 @@
 				
 				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
 					<tr>
-						<td>${status.count}</td>
 						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="150" height="200"></td>
 						<td class="zentrierteschrift">${currentSpieler.nachname}</td>
 						<td class="zentrierteschrift">${currentSpieler.vorname}</td>
