@@ -22,7 +22,7 @@
 		<a href="/Webprojekt-Verein-war-02/SearchServletTrainerTerminverwaltung">Terminverwaltung</a>
 	</nav>
 
-	<main>
+	<main class="zentrieren">
 	
 	<h1>Spielerpool</h1>
 			<table border="1">

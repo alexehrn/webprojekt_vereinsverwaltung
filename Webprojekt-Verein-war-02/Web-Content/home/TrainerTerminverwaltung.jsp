@@ -24,11 +24,11 @@
 
 
 
-<main>
+<main class="zentrieren">
 
 	<h1>Upcoming Events</h1>
 
-	<table border="1">
+	<table>
 		<tr>
 			<th>Nummer</th>
 			<th>Kurzbeschreibung</th>
@@ -48,8 +48,8 @@
 				<td>${currentTermin.datum}</td>
 				<td>${currentTermin.uhrzeitVON}-${currentTermin.uhrzeitBIS}</td>
 				<td>${currentTermin.beschreibung}</td>
-				<td><button type="submit" title="Termin ändern" name="terminändern">&#9998;</button>
-				<a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}"><button type="submit" title="Termin löschen" name="terminlöschen">&#x1F5D1;</button></a></td>
+				<td class="zentrierteschrift"><button type="submit" title="Termin ändern" name="terminändern">Termin bearbeiten</button>
+				<a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}"><button type="submit" title="Termin löschen" name="terminlöschen">Termin löschen</button></a></td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -85,8 +85,8 @@
 
 		<p>
 			Details: <br>
-			<textarea name="trainer_eingabe" rows="10" cols="50"
-				placeholder="Beschreibung eingeben..."></textarea>
+			<textarea name="trainer_eingabe" rows="20" cols="50"
+				placeholder="Details eingeben..." maxlength="200"></textarea>
 		</p>${trainerTeamverwaltungsBean.beschreibung}
 		<p>
 			<button type="submit" name="anlegen">Termin anlegen</button>

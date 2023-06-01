@@ -22,16 +22,16 @@
 
 </nav>
 
-<main>
+<main class="zentrieren">
 
 
 	<h1>Termine</h1>
-	<table>
+	<table> 
 		<tr>
 			<th>Beschreibung</th>
 			<th class="datumsspalte">Datum</th>
-			<th>Zusagen</th>
-			<th>Absagen</th>
+			<th class="zentrierteschrift">Zusagen</th>
+			<th class="zentrierteschrift">Absagen</th>
 		</tr>
 		<c:forEach var="currentRueckmeldung" items="${rueckmeldung}"
 			varStatus="status">
@@ -39,18 +39,18 @@
 
 				<td>${currentRueckmeldung.beschreibung}</td>
 				<td class="datumsspalte">${currentRueckmeldung.datum}</td>
-				<td>${currentRueckmeldung.zusagen}</td>
-				<td>${currentRueckmeldung.absagen}</td>
+				<td class="zentrierteschrift">${currentRueckmeldung.zusagen}</td>
+				<td class="zentrierteschrift">${currentRueckmeldung.absagen}</td>
 			</tr>
 		</c:forEach>
 
 	</table>
 
-	<h1>Abwesenheit</h1>
+	<h1>Geplante Abwesenheiten</h1>
 	<table>
 		<tr>
 			<th></th>
-			<th>Diese Woche abwesend:</th>
+			<th>Name</th>
 			<th>Zeitraum</th>
 			<th>Grund</th>
 		</tr>
@@ -62,7 +62,7 @@
 				<td>${currentAbwesenheit.vorname}
 					${currentAbwesenheit.nachname}</td>
 				<td>${currentAbwesenheit.start} bis ${currentAbwesenheit.ende}</td>
-				<td>${currentAbwesenheit.grund}</td>
+				<td class="zentrierteschrift">${currentAbwesenheit.grund}</td>
 			</tr>
 		</c:forEach>
 	</table>

@@ -30,6 +30,11 @@ nav {
 	
 }
 
+main h1{
+	color: #000000;
+	
+}
+
 nav a {
 	color: #fff;
 	text-decoration: none;
@@ -42,18 +47,26 @@ nav .active {
 }
 
 main {
-	background-color: #ececec;
+	background-color: #ffffff;
 	padding: 20px;
 }
 
+main h1{
+	text-align: center;
+}
+
 main table{
-	border: solid 1px grey;
+	border-collapse: collapse;
+   	border: 1px solid silver;
 	background-color: #fff; 
+	width: 80%;
+	table-layout: fixed;
+	margin-bottom: 80px;
 }
 
 main th {
-	background-color: #000000;
-	color: #fff;
+	background-color: #acacac;
+	color: #000000;
 	border: solid 1px grey;
 	height: 40px;
 	padding: 20px; 
@@ -64,18 +77,32 @@ main td {
 	height: 40px;
 	padding: 10px; }
 
+.zentrierteschrift{
+	text-align: center;
+}
+
 .datumsspalte{
 	width: 150px;
 	text-align: center;
 }
 
+.langertextspalte{
+	width: 400px;
+}
+
+.zentrieren{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+
 button {
-	font-size: 20px;
-	background-color: #333333;
-	color: #fff;
-	border-radius: 12px;
-	width: auto;
-	box-shadow: 0 9px #999;
+	font-size: 15px;
+	background-color:#acacac;
+	color: #000000;
+	
 }
 
 

@@ -3,6 +3,7 @@
 
 
 body {
+ 	font-family: Helvetica, Arial, Verdana;
  	display: flex;
   	align-items: center;
   	justify-content: center;
