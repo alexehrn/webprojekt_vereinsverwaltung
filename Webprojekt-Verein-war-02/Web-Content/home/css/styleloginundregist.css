@@ -16,7 +16,7 @@ body {
 }
 
 main{
- width: 300px;
+ width: 50%;
  /*margin: 0px auto;*/
  background-color: rgba(255, 255, 255, 0.7);
  
@@ -26,6 +26,7 @@ label{
 	min-width: 8em;
 	display: inline-block;
 	text-align: left;
+	margin-right: 10%;
 }
 
 input{

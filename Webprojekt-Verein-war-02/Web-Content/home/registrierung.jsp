@@ -17,11 +17,12 @@
 
 		<form action="/Webprojekt-Verein-war-02/RegistrierungsServlet" method="post" accept-charset="utf-8"  enctype="multipart/form-data">
 			<fieldset>
-				<div>Ich bin:<br>
-					<label for="r1">Spieler</label>
+				<div>
+					<label>Ich bin: </label>
 					<input type="radio" name="auswahl" id="r1" value="Spieler" checked>  
-					<label for="r2">Trainer</label>
+					<label for="r1">Spieler</label>
 					<input type="radio" name="auswahl" id="r2" value="Trainer"> 
+					<label for="r2">Trainer</label>
 				</div>
 				<div>
 					<label for="vorname">Vorname:</label>
@@ -40,14 +41,14 @@
 					<input type="password" name="passwort" id="passwort" size="30" maxlength="30" minlength="6" required placeholder="Ihr Passwort">
 				</div>
 				<div>
-					<label for="passwort2">Passwort wiederholen:</label>
+					<label for="passwort2">Passwort erneut:</label>
 					<input type="password" name="passwort" id="passwort2" size="30" maxlength="30" minlength="6" required placeholder="Bitte Passwort wiederholen">
 				</div>
 				<%-- JavaSkript wenn Trainer ausgewählt ist keine möglichkeit bild hochzuladen --%>
 				<div>
-					<label for="image">Profilbild hochladen:</label>
+					<label for="image">Profilbild hochladen: (max. 1 MB)</label>
 					<input type="file" name="image" id="image" accept="image/*" required>
-					<br>max. 1 MB
+					
 				</div>
 				<div>
 					<label for="team">Team auswählen:</label>

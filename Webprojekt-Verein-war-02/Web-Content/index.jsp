@@ -18,6 +18,7 @@
 		<form id="loginForm" action="LogInServlet" method="post">
 			<fieldset>
 				<div>
+					<label>Einloggen als:</label>
 					<label for="r1">Spieler</label>
 					<input type="radio" name="auswahl" id="r1" value="Spieler" checked>
 					<label for="r2">Trainer</label>
