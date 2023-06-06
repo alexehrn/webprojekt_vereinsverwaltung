@@ -2,6 +2,7 @@
 /* CSS für Login und Registrierung */
 
 
+
 body {
  	font-family: Helvetica, Arial, Verdana;
  	display: flex;
@@ -16,7 +17,35 @@ body {
 
 main{
  width: 300px;
- margin: 0px auto;
+ /*margin: 0px auto;*/
  background-color: rgba(255, 255, 255, 0.7);
- text-align: center;
+ 
+}
+
+label{
+	min-width: 8em;
+	display: inline-block;
+	text-align: left;
+}
+
+input{
+	width: 20em;
+	height: 30px;
+	font-size: 20px;
+	/*margin-top: 10px;
+	margin-bottom: 10px;*/
+}
+
+input[type="radio"] {
+	width: auto;
+}
+
+form div{
+	padding: 0.2em;
+}
+
+fieldset{
+	padding: 1.5em;
+	border-radius: 5px;
+	margin-bottom: 80px;
 }

@@ -15,23 +15,12 @@
 	box-sizing: border-box;
 }
 
-body {
-	font-family: Helvetica, Arial, Verdana;
-	margin: 0;
-    padding: 0;
-}
-
 nav {
 	display: flex;
 	justify-content: space-between;
 	background-color: #000000;
 	color: #fff;
 	padding: 10px;
-	
-}
-
-main h1{
-	color: #000000;
 	
 }
 
@@ -46,6 +35,11 @@ nav .active {
 	color: #333;
 }
 
+body {
+	font-family: Helvetica, Arial, Verdana;
+}
+
+
 main {
   	background-color: #ffffff;
 	padding: 20px;
@@ -53,6 +47,7 @@ main {
 
 main h1{
 	text-align: center;
+	color: #000000;
 }
 
 main table{
@@ -76,7 +71,15 @@ main th {
 main td {
 	border: solid 1px grey; 
 	height: 40px;
-	padding: 10px; }
+	padding: 10px; 
+	}
+	
+	
+fieldset{
+	padding: 1.5em;
+	border-radius: 5px;
+	margin-bottom: 80px;
+}
 
 .zentrierteschrift{
 	text-align: center;
@@ -103,17 +106,45 @@ main td {
 	flex-direction: column;
 }
 
+label{
+	min-width: 8em;
+	display: inline-block;
+	text-align: left;
+}
 
-fieldset{
-	margin-bottom: 80px;
+label.textarea {
+	vertical-align: top;
+}
+
+input{
+	width: 20em;
+	height: 30px;
+	font-size: 20px;
+	
+}
+
+input[type="radio"], input[type="time"], input[type="date"] {
+	width: auto;
+}
+
+#abwesenheit_eingabe{
+	width: 10em;
+}
+
+#nachname{
+	width: 30em;
 }
 
 textarea{
-	margin-bottom: 40px;
 	width: 80%;
 	font-size: 20px;
+	border: 1px solid black;
 }
 
+
+form div{
+	padding: 0.2em;
+}
 
 button {
 	font-size: 15px;
@@ -127,12 +158,6 @@ button {
 	width: 2em;
 }
 
-input{
-	height: 30px;
-	font-size: 20px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
 
 footer {
 	background-color: #000000;

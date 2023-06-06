@@ -36,14 +36,12 @@
 		<c:forEach var="currentRueckmeldung" items="${rueckmeldung}"
 			varStatus="status">
 			<tr>
-
 				<td>${currentRueckmeldung.beschreibung}</td>
 				<td class="datumsspalte">${currentRueckmeldung.datum}</td>
 				<td class="zentrierteschrift">${currentRueckmeldung.zusagen}</td>
 				<td class="zentrierteschrift">${currentRueckmeldung.absagen}</td>
 			</tr>
 		</c:forEach>
-
 	</table>
 
 	<h1>Geplante Abwesenheiten</h1>
@@ -67,11 +65,16 @@
 		</c:forEach>
 	</table>
 
-
+	<h1>Nachricht an das Team senden:</h1>
 	<form action="/Webprojekt-Verein-war-02/TrainerHomeServlet" method="post" accept-charset="utf-8">
-		<h1>Nachricht an das Team senden:</h1>
-		<textarea name="trainer_eingabe" rows="20" cols="100"></textarea>
-		<button type="submit" name="nachrichtAbsenden" value="submit">Absenden der Nachricht</button>
+		<fieldset>
+			<div>
+				<textarea name="trainer_eingabe" id="trainer_eingabe" rows="6" cols="100"></textarea>
+			</div>
+			<div>
+				<button type="submit" name="nachrichtAbsenden" value="submit">Absenden der Nachricht</button>
+			</div>
+		</fieldset>
 	</form>
 
 

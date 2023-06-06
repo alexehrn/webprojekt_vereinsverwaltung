@@ -56,43 +56,36 @@
 
 
 	<h1>Einen neuen Termin anlegen</h1>
-
-
-
-
-<fieldset> <legend>Neues Event</legend>
-	<form
-		action="/Webprojekt-Verein-war-02/TrainerTerminverwaltungsServlet"
-		method="post">
-		<p>
-			Beschreibung: <br> <input type="text"
-				name="kurzbeschreibung" size="30" maxlength="30" required
-				placeholder="Kurzbeschreibung eingeben">
-		</p>${trainerTeamverwaltungsBean.kurzbeschreibung}
-		<p>
-			Ort: <br> <input type="text" name="ort" size="30" maxlength="30"
-				required placeholder="Ort eingeben">
-		</p>${trainerTeamverwaltungsBean.ort}
-		<p>
-			Datum: <br> <input type="date" name="datum">
-		</p>${trainerTeamverwaltungsBean.datum}
-		<p>
-			Uhrzeit: <br> Von: <input type="time" name="startzeit">
-			<br> Bis: <input type="time" name="endzeit">
-		</p>
-
-		<p>
-			Details: <br>
-			<textarea name="trainer_eingabe" rows="6" cols="50"
-				placeholder="Details eingeben... (max. 200 Zeichen)" maxlength="200"></textarea>
-		</p>${trainerTeamverwaltungsBean.beschreibung}
-		<p>
-			<button type="submit" name="anlegen">Termin anlegen</button>
-		</p>
+	<form action="/Webprojekt-Verein-war-02/TrainerTerminverwaltungsServlet" method="post">
+		<fieldset>
+			<div>
+				<label for="kurzbeschreibung">Beschreibung:</label>
+				<input type="text" name="kurzbeschreibung" id="kurzbeschreibung" size="30" maxlength="30" required placeholder="Beschreibung eingeben">
+			</div>
+			<div>
+				<label for="ort">Ort:</label>
+				<input type="text" name="ort" id="ort" size="30" maxlength="30" required placeholder="Ort eingeben">
+			</div>
+			<div>
+				<label for="datum">Datum:</label>
+				<input type="date" name="datum" id="datum">
+			</div>
+			<div>
+				Uhrzeit: <br> 
+				<label for="startzeit">Von:</label>
+				<input type="time" name="startzeit" id="startzeit">
+				<label for="endzeit">Bis:</label>
+				<input type="time" name="endzeit" id="endzeit">
+			</div>
+			<div>
+				<label for="trainer_eingabe">Details:</label>
+				<textarea name="trainer_eingabe" id="trainer_eingabe" rows="6" cols="50" placeholder="Details eingeben... (max. 200 Zeichen)" maxlength="200"></textarea>
+			</div>
+			<div>
+				<button type="submit" name="anlegen">Termin anlegen</button>
+			</div>
+		</fieldset>
 	</form>
-</fieldset>
-
-
 </main>
 
 <%@ include file="footer.jspf"%>

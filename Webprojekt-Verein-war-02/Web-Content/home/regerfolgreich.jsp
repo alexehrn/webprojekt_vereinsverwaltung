@@ -19,14 +19,13 @@
 		
 	<h2>Registrierung erfolgreich</h2>
 		
-		<br><b>Auswahl: </b>${registerform.auswahl}
-		<br><b>Vorname: </b>${registerform.vorname}
-		<br><b>Nachname: </b>${registerform.nachname}
-		<br><b>Email: </b>${registerform.email}
-		<br><b>Passwort: </b>${registerform.passwort}
-		<br><b>Mannschaft: </b>${registerform.team}
-		<br>
-		<br>
+		<p><b>Auswahl: </b>${registerform.auswahl}</p>
+		<p><b>Vorname: </b>${registerform.vorname}</p>
+		<p><b>Nachname: </b>${registerform.nachname}</p>
+		<p><b>Email: </b>${registerform.email}</p>
+		<p><b>Passwort: </b>${registerform.passwort}</p>
+		<p><b>Mannschaft: </b>${registerform.team}</p>
+		
 		<a href="../index.jsp">zurück zum Login</a>
 	
 	</main>
