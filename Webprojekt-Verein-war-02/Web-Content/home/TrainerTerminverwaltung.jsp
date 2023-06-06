@@ -30,7 +30,7 @@
 
 	<table>
 		<tr>
-			<th>Kurzbeschreibung</th>
+			<th>Beschreibung</th>
 			<th>Ort</th>
 			<th class="datumsspalte">Datum</th>
 			<th class="datumsspalte">Uhrzeit</th>
@@ -65,7 +65,7 @@
 		action="/Webprojekt-Verein-war-02/TrainerTerminverwaltungsServlet"
 		method="post">
 		<p>
-			Kurzbeschreibung: <br> <input type="text"
+			Beschreibung: <br> <input type="text"
 				name="kurzbeschreibung" size="30" maxlength="30" required
 				placeholder="Kurzbeschreibung eingeben">
 		</p>${trainerTeamverwaltungsBean.kurzbeschreibung}
@@ -83,8 +83,8 @@
 
 		<p>
 			Details: <br>
-			<textarea name="trainer_eingabe" rows="20" cols="50"
-				placeholder="Details eingeben..." maxlength="200"></textarea>
+			<textarea name="trainer_eingabe" rows="6" cols="50"
+				placeholder="Details eingeben... (max. 200 Zeichen)" maxlength="200"></textarea>
 		</p>${trainerTeamverwaltungsBean.beschreibung}
 		<p>
 			<button type="submit" name="anlegen">Termin anlegen</button>

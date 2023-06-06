@@ -14,11 +14,15 @@
 	
 	<%@ include file="head.jspf" %> 	
 		
+	<main class="zentrieren">	
+	
 	<h2>Wichtiger Hinweis!</h2>
 	
 	<p>Deiner Registrierung in unserer Vereinsverwaltung-Software war bereits erfolgreich</p>
 	<p>Leider hat dich dein Trainer noch nicht, zu der bei deiner Registrierung gewählte Mannschaft, zugeordnet.</p>
 	<p>Informiere bitte deinen Trainer persönlich, dass er dich zuordnen soll und damit deinen User freigeben soll.</p>
+	
+	</main>
 	
 	<%@ include file="footer.jspf" %> 
 	</body>

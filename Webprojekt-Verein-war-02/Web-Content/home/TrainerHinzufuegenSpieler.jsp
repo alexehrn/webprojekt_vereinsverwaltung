@@ -41,7 +41,7 @@
 						<td>${currentSpieler.vorname}</td>
 						<td>${currentSpieler.team}</td>
 						<td><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerHinzufuegen?id=${currentSpieler.id}"><button type="submit" title="Spieler hinzufuegen" name="spielerhinzufuegen">Spieler hinzufügen</button></a>
-						<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}"><button type="submit" title="Spieler löschen" name="spielerlöschen">&#x1F5D1;</button></a></td>
+						<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}"><button type="submit" title="Spieler löschen" name="spielerlöschen">Spieler löschen</button></a></td>
 					</tr>
 				</c:forEach>
 			

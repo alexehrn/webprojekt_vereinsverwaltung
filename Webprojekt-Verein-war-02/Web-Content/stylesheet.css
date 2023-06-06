@@ -47,7 +47,7 @@ nav .active {
 }
 
 main {
-	background-color: #ffffff;
+  	background-color: #ffffff;
 	padding: 20px;
 }
 
@@ -92,7 +92,7 @@ main td {
 }
 
 .uhrzeitspalte{
-	width: 90px;
+	width: 100px;
 }
 
 
@@ -104,13 +104,28 @@ main td {
 }
 
 
+fieldset{
+	margin-bottom: 80px;
+}
+
+textarea{
+	margin-bottom: 40px;
+	width: 80%;
+	font-size: 20px;
+}
+
+
 button {
 	font-size: 15px;
 	background-color:#acacac;
 	color: #000000;
-	
+	width: 10em;
 }
 
+
+.zuabbutton{
+	width: 2em;
+}
 
 input{
 	height: 30px;

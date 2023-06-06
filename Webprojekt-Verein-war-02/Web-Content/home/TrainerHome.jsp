@@ -68,14 +68,10 @@
 	</table>
 
 
-	<form action="/Webprojekt-Verein-war-02/TrainerHomeServlet"
-		method="post" accept-charset="utf-8">
+	<form action="/Webprojekt-Verein-war-02/TrainerHomeServlet" method="post" accept-charset="utf-8">
 		<h1>Nachricht an das Team senden:</h1>
 		<textarea name="trainer_eingabe" rows="20" cols="100"></textarea>
-		<br>
-		<br>
-		<button type="submit" name="nachrichtAbsenden" value="submit">Absenden
-			der Nachricht</button>
+		<button type="submit" name="nachrichtAbsenden" value="submit">Absenden der Nachricht</button>
 	</form>
 
 

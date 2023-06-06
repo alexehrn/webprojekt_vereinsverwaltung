@@ -14,9 +14,10 @@
 <body>
 	
 	<%@ include file="head.jspf" %> 	
+	
+	<main class="zentrieren">
 		
 	<h2>Registrierung erfolgreich</h2>
-		<h3>Ihre Formulareingaben</h3>
 		
 		<br><b>Auswahl: </b>${registerform.auswahl}
 		<br><b>Vorname: </b>${registerform.vorname}
@@ -27,6 +28,8 @@
 		<br>
 		<br>
 		<a href="../index.jsp">zurück zum Login</a>
+	
+	</main>
 	
 	<%@ include file="footer.jspf" %> 
 	</body>
