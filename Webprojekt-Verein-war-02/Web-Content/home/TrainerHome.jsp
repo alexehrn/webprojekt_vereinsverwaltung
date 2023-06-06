@@ -52,17 +52,18 @@
 			<th>Zeitraum</th>
 			<th>Grund</th>
 		</tr>
+	
 
-		<c:forEach var="currentAbwesenheit" items="${abwesenheit}"
-			varStatus="status">
-			<tr>
-				<td class ="nummerspalte">${status.count}</td>
-				<td>${currentAbwesenheit.vorname}
-					${currentAbwesenheit.nachname}</td>
-				<td>${currentAbwesenheit.start} bis ${currentAbwesenheit.ende}</td>
-				<td class="zentrierteschrift">${currentAbwesenheit.grund}</td>
-			</tr>
-		</c:forEach>
+			<c:forEach var="currentAbwesenheit" items="${abwesenheit}" varStatus="status">
+				<tr>
+					<td class ="nummerspalte">${status.count}</td>
+					<td>${currentAbwesenheit.vorname}
+						${currentAbwesenheit.nachname}</td>
+					<td>${currentAbwesenheit.start} bis ${currentAbwesenheit.ende}</td>
+					<td class="zentrierteschrift">${currentAbwesenheit.grund}</td>
+				</tr>
+			</c:forEach>
+			
 	</table>
 
 	<h1>Nachricht an das Team senden:</h1>
