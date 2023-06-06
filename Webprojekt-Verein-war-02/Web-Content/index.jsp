@@ -16,40 +16,22 @@
 	<main>
 		<h1>Login</h1>
 
-		<form action="LogInServlet" method="post">
-			<p>
+		<form id="loginForm" action="LogInServlet" method="post">
+				<label for="r1">Spieler</label>
 				<input type="radio" name="auswahl" id="r1" value="Spieler" checked>
-				<label for="r1">Spieler</label> <input type="radio" name="auswahl"
-					id="r2" value="Trainer"> <label for="r2">Trainer</label>
-			</p>
-
-			<p>
-				E-Mail:<br> <input type="email" name="email"
-					size="30" maxlength="30" required placeholder="Ihre E-Mail-Adresse">
-			</p>
-			<p>
-				Passwort: <br> <input type="password" name="passwort" size="30"
-					maxlength="30" required placeholder="Ihr Passwort">
-			</p>
-			<p>
-				<button type="submit" name="anmelden">
-					Anmelden
-				</button>
-			</p>
-
+				<label for="r2">Trainer</label>
+				<input type="radio" name="auswahl" id="r2" value="Trainer"> 
+				<label for="email">E-Mail:</label>
+				<input type="email" name="email" id="email" size="30" maxlength="30" required placeholder="Ihre E-Mail-Adresse">
+				<label for="passwort">Passwort:</label>
+				<input type="password" name="passwort" id="passwort" size="30" maxlength="30" required placeholder="Ihr Passwort">
+				<button name="anmelden" type="submit">Anmelden</button>
 		</form>
-
-
-		<p>
-			Noch kein Konto?<br> <a href="./home/registrierung.jsp"><button
-					type="submit" name="registrieren">Registrieren</button></a>
-		</p>
+		
+		Noch kein Konto?<a href="./home/registrierung.jsp">
+		<button name="registrieren" type="submit" >Registrieren</button></a>
+		
 	</main>
-
-
-
-
-
 
 </body>
 </html>
