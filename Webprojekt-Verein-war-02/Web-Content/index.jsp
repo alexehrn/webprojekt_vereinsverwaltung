@@ -19,10 +19,10 @@
 			<fieldset>
 				<div>
 					<label>Einloggen als:</label>
-					<label for="r1">Spieler</label>
 					<input type="radio" name="auswahl" id="r1" value="Spieler" checked>
-					<label for="r2">Trainer</label>
+					<label for="r1">Spieler</label>
 					<input type="radio" name="auswahl" id="r2" value="Trainer">
+					<label for="r2">Trainer</label>
 				</div>
 				<div> 
 					<label for="email">E-Mail:</label>
@@ -38,9 +38,9 @@
 			</fieldset>
 		</form>
 		
-		Noch kein Konto?<a href="./home/registrierung.jsp">
-				<button name="registrieren" type="submit" >Registrieren</button></a>
-		
+		Noch kein Konto?
+		<a href="./home/registrierung.jsp"><button name="registrieren" type="submit" >Registrieren</button></a>
+	
 	</main>
 
 </body>
