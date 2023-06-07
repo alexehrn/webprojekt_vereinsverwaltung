@@ -38,9 +38,10 @@
 			</fieldset>
 		</form>
 		
+		<div>
 		Noch kein Konto?
 		<a href="./home/registrierung.jsp"><button name="registrieren" type="submit" >Registrieren</button></a>
-	
+		</div>
 	</main>
 
 </body>

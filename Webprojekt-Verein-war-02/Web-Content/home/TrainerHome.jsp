@@ -33,15 +33,17 @@
 			<th class="zentrierteschrift">Zusagen</th>
 			<th class="zentrierteschrift">Absagen</th>
 		</tr>
-		<c:forEach var="currentRueckmeldung" items="${rueckmeldung}"
-			varStatus="status">
-			<tr>
-				<td>${currentRueckmeldung.beschreibung}</td>
-				<td class="datumsspalte">${currentRueckmeldung.datum}</td>
-				<td class="zentrierteschrift">${currentRueckmeldung.zusagen}</td>
-				<td class="zentrierteschrift">${currentRueckmeldung.absagen}</td>
-			</tr>
-		</c:forEach>
+		
+				<c:forEach var="currentRueckmeldung" items="${rueckmeldung}" varStatus="status">
+					<tr>
+						<td>${currentRueckmeldung.beschreibung}</td>
+						<td class="datumsspalte">${currentRueckmeldung.datum}</td>
+						<td class="zentrierteschrift">${currentRueckmeldung.zusagen}</td>
+						<td class="zentrierteschrift">${currentRueckmeldung.absagen}</td>
+					</tr>
+				</c:forEach>
+			
+
 	</table>
 
 	<h1>Geplante Abwesenheiten</h1>
@@ -53,18 +55,18 @@
 			<th>Grund</th>
 		</tr>
 	
-
-			<c:forEach var="currentAbwesenheit" items="${abwesenheit}" varStatus="status">
-				<tr>
-					<td class ="nummerspalte">${status.count}</td>
-					<td>${currentAbwesenheit.vorname}
-						${currentAbwesenheit.nachname}</td>
-					<td>${currentAbwesenheit.start} bis ${currentAbwesenheit.ende}</td>
-					<td class="zentrierteschrift">${currentAbwesenheit.grund}</td>
-				</tr>
-			</c:forEach>
 			
-	</table>
+		        <c:forEach var="currentAbwesenheit" items="${abwesenheit}" varStatus="status">
+		            <tr>
+		                <td class="nummerspalte">${status.count}</td>
+		                <td>${currentAbwesenheit.vorname} ${currentAbwesenheit.nachname}</td>
+		                <td>${currentAbwesenheit.start} bis ${currentAbwesenheit.ende}</td>
+		                <td class="zentrierteschrift">${currentAbwesenheit.grund}</td>
+		            </tr>
+		        </c:forEach>
+		   
+
+</table>
 
 	<h1>Nachricht an das Team senden:</h1>
 	<form action="/Webprojekt-Verein-war-02/TrainerHomeServlet" method="post" accept-charset="utf-8">

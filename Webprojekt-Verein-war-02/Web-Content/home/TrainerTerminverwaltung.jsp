@@ -38,18 +38,25 @@
 			<th>Optionen</th>
 		</tr>
 
+			
+		        <c:forEach var="currentTermin" items="${termine}" varStatus="status">
+		            <tr>
+		                <td>${currentTermin.kurzbeschreibung}</td>
+		                <td>${currentTermin.ort}</td>
+		                <td class="datumsspalte">${currentTermin.datum}</td>
+		                <td class="datumsspalte">${currentTermin.uhrzeitVON}-${currentTermin.uhrzeitBIS}</td>
+		                <td class="langertextspalte">${currentTermin.beschreibung}</td>
+		                <td class="zentrierteschrift">
+		                    <button type="submit" title="Termin ändern" name="terminändern">Termin bearbeiten</button>
+		                    <a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}">
+		                        <button type="submit" title="Termin löschen" name="terminlöschen">Termin löschen</button>
+		                    </a>
+		                </td>
+		            </tr>
+		        </c:forEach>
 
-		<c:forEach var="currentTermin" items="${termine}" varStatus="status">
-			<tr>
-				<td>${currentTermin.kurzbeschreibung}</td>
-				<td>${currentTermin.ort}</td>
-				<td class="datumsspalte">${currentTermin.datum}</td>
-				<td class="datumsspalte">${currentTermin.uhrzeitVON}-${currentTermin.uhrzeitBIS}</td>
-				<td class="langertextspalte">${currentTermin.beschreibung}</td>
-				<td class="zentrierteschrift"><button type="submit" title="Termin ändern" name="terminändern">Termin bearbeiten</button>
-				<a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}"><button type="submit" title="Termin löschen" name="terminlöschen">Termin löschen</button></a></td>
-			</tr>
-		</c:forEach>
+		
+		
 	</table>
 
 

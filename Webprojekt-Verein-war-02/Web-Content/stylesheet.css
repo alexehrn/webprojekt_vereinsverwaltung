@@ -114,15 +114,13 @@ label{
 	text-align: left;
 }
 
-label.textarea {
+#trainer_eingabe {
 	vertical-align: top;
 }
 
 input{
 	width: 20em;
 	height: 30px;
-	font-size: 20px;
-	
 }
 
 input[type="radio"], input[type="time"], input[type="date"] {
@@ -139,8 +137,8 @@ input[type="radio"], input[type="time"], input[type="date"] {
 
 textarea{
 	width: 80%;
-	font-size: 20px;
 	border: 1px solid black;
+	
 }
 
 

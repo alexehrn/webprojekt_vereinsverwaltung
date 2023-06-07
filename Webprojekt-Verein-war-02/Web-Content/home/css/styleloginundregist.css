@@ -17,16 +17,21 @@ body {
 
 main{
  width: 50%;
- /*margin: 0px auto;*/
  background-color: rgba(255, 255, 255, 0.7);
  
 }
+
+h1{
+	text-align: center;
+}
+
 
 label{
 	min-width: 8em;
 	display: inline-block;
 	text-align: left;
 	margin-right: 10%;
+	
 }
 
 button {
@@ -36,6 +41,7 @@ button {
 	width: 10em;
 	transition-duration: 0.4s;
   	cursor: pointer;
+  	margin: 0 auto;
 }
 
 button:hover{
@@ -45,10 +51,7 @@ button:hover{
 
 input{
 	width: 20em;
-	height: 30px;
-	font-size: 20px;
-	/*margin-top: 10px;
-	margin-bottom: 10px;*/
+	
 }
 
 input[type="radio"] {
@@ -56,11 +59,19 @@ input[type="radio"] {
 }
 
 form div{
-	padding: 0.2em;
+	padding: 0.3em;
+}
+
+div{
+	padding: 0.3em;
 }
 
 fieldset{
 	padding: 1.5em;
 	border-radius: 5px;
 	margin-bottom: 80px;
+}
+
+#team{
+	vertical-align: top;
 }
