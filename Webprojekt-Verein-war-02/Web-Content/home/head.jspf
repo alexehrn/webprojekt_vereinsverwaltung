@@ -1,6 +1,6 @@
 <%-- Alexander Ehrnstrasser: --%>
 	<header>
-		<a href="../index.jsp"><button id="logout-btn">&#x23FB; Logout</button></a>
+		<a href="../LogOutServlet"><button id="logout-btn">&#x23FB; Logout</button></a>
 		<img src="../img/Header.png" vertical-align="top" align="center" alt="header" width=100% height=auto>
 
 	</header>
