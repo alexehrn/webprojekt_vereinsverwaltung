@@ -44,22 +44,21 @@
 
 			<table>
 				<tr>
-					<th>Nummer</th>
-					<th>Bild</th>
+					<th></th>
+					<th>Name</th>
 					<th>Vorname</th>
-					<th>Nachname</th>
+					<th></th>
 				</tr>
 				
-				
-			        <c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
-			            <tr>
-			            	<td class="nummerspalte">${status.count}</td>
-			            	<td></td>
-			                <td>${currentSpieler.vorname}</td>
-			                <td>${currentSpieler.nachname}</td>
-			            </tr>
-			        </c:forEach>
-			   
+				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
+					<tr>
+						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="150" height="200"></td>
+						<td class="zentrierteschrift">${currentSpieler.nachname}</td>
+						<td class="zentrierteschrift">${currentSpieler.vorname}</td>
+						<td class="zentrierteschrift"><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}"><button type="submit" title="Spieler löschen" name="spielerlöschen">Spieler löschen</button></a></td>
+					</tr>
+				</c:forEach>
+			
 			</table>
 				
 		
