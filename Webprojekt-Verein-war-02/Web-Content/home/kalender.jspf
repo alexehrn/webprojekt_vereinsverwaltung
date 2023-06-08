@@ -23,6 +23,7 @@
       position: relative;
     }
     
+    
     #prev-month-btn,
     #next-month-btn {
       position: absolute;
@@ -73,7 +74,7 @@
       background-color: #fff;
       border: 1px solid #ccc;
       padding: 10px;
-      height: 100px;
+      height: 150px;
       position: relative;
       text-align: center;
     }

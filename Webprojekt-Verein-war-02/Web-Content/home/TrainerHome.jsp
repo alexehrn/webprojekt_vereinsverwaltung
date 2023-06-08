@@ -71,10 +71,10 @@
 	<h1>Nachricht an das Team senden:</h1>
 	<form action="/Webprojekt-Verein-war-02/TrainerHomeServlet" method="post" accept-charset="utf-8">
 		<fieldset>
-			<div>
-				<textarea name="trainer_eingabe" id="trainer_eingabe" rows="6" cols="100"></textarea>
+			<div class="zentrieren">
+				<textarea name="trainer_eingabe" id="trainer_eingabe" rows="10" cols="100"></textarea>
 			</div>
-			<div>
+			<div class="zentrieren">
 				<button type="submit" name="nachrichtAbsenden" value="submit">Absenden der Nachricht</button>
 			</div>
 		</fieldset>

@@ -8,7 +8,6 @@ body {
  	display: flex;
   	align-items: center;
   	justify-content: center;
-	height:100vh;
   	background-image: url(../../img/Login.JPG);
   	background-repeat: no-repeat;
   	background-attachment: fixed;
@@ -16,7 +15,9 @@ body {
 }
 
 main{
- width: 50%;
+ width: 30%;
+ height: 60%;
+ padding: 1.5em;
  background-color: rgba(255, 255, 255, 0.7);
  
 }
@@ -31,7 +32,10 @@ label{
 	display: inline-block;
 	text-align: left;
 	margin-right: 10%;
-	
+}
+
+.nomargin{
+	margin-right: 2%;
 }
 
 button {
@@ -51,12 +55,39 @@ button:hover{
 
 input{
 	width: 20em;
-	
+	height: 30px;
 }
 
 input[type="radio"] {
 	width: auto;
+	margin-right: 1%;
 }
+
+input:focus {
+  background-color: #baf9ff;
+  border: 2px solid #85b6ff;
+}
+
+input:required + span::after{
+	color: red;
+	content: " *";
+}
+
+input:valid + span::after{
+	color:green;
+	content: " ✓";
+}
+
+select:required + span::after{
+	color: red;
+	content: " *";
+}
+
+select:valid + span::after{
+	color:green;
+	content: " ✓";
+}
+
 
 form div{
 	padding: 0.3em;
@@ -66,11 +97,6 @@ div{
 	padding: 0.3em;
 }
 
-fieldset{
-	padding: 1.5em;
-	border-radius: 5px;
-	margin-bottom: 80px;
-}
 
 #team{
 	vertical-align: top;

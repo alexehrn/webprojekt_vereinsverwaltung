@@ -21,7 +21,7 @@ nav {
 	background-color: #000000;
 	color: #fff;
 	padding: 10px;
-	
+	margin-bottom: 50px;
 }
 
 nav a {
@@ -44,7 +44,6 @@ body {
 
 main {
   	background-color: #ffffff;
-	padding: 20px;
 }
 
 main h1{
@@ -57,7 +56,6 @@ main table{
    	border: 1px solid silver;
 	background-color: #fff; 
 	width: 80%;
-	table-layout: fixed;
 	margin-bottom: 80px;
 }
 
@@ -67,20 +65,21 @@ main th {
 	font-size: 1.25rem;
 	border: solid 1px grey;
 	height: 40px;
-	padding: 20px; 
+	padding: 10px; 
 }
 
 main td {
 	border: solid 1px grey; 
+	font-size: 1.05rem;
 	height: 40px;
 	padding: 10px; 
 	}
-	
+
 	
 fieldset{
 	padding: 1.5em;
 	border-radius: 5px;
-	margin-bottom: 80px;
+	margin-bottom: 40px;
 }
 
 .zentrierteschrift{
@@ -98,6 +97,7 @@ fieldset{
 
 .uhrzeitspalte{
 	width: 100px;
+	text-align: center;
 }
 
 
@@ -127,8 +127,13 @@ input[type="radio"], input[type="time"], input[type="date"] {
 	width: auto;
 }
 
+input:focus {
+  background-color: #baf9ff;
+  border: 2px solid #85b6ff;
+}
+
 #abwesenheit_eingabe{
-	width: 10em;
+	width: 15em;
 }
 
 #nachname{
@@ -136,9 +141,15 @@ input[type="radio"], input[type="time"], input[type="date"] {
 }
 
 textarea{
-	width: 80%;
+	font-family: Helvetica, Arial, Verdana;
+	font-size: 15px;
+	width: 100%;
 	border: 1px solid black;
-	
+}
+
+textarea:focus {
+  background-color: #baf9ff;
+  border: 2px solid #85b6ff;
 }
 
 
@@ -153,7 +164,7 @@ button {
 	width: 10em;
 	
 	transition-duration: 0.4s;
-  cursor: pointer;
+  	cursor: pointer;
 }
 
 button:hover{
@@ -162,9 +173,29 @@ button:hover{
 }
 
 
-.zuabbutton{
-	width: 2em;
+.zubutton{
+	width: 3em;
+	transition-duration: 0.4s;
+    cursor: pointer;
 }
+
+.zubutton:hover{
+	background-color: #5ec734;
+  color: white;
+}
+
+
+.abbutton{
+	width: 3em;
+	transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.abbutton:hover{
+	background-color: #c7070c;
+  color: white;
+}
+
 
 
 footer {

@@ -16,13 +16,12 @@
 	<main>
 		<h1>Login</h1>
 		<form id="loginForm" action="LogInServlet" method="post">
-			<fieldset>
 				<div>
 					<label>Einloggen als:</label>
 					<input type="radio" name="auswahl" id="r1" value="Spieler" checked>
-					<label for="r1">Spieler</label>
+					<label for="r1" class="nomargin">Spieler</label>
 					<input type="radio" name="auswahl" id="r2" value="Trainer">
-					<label for="r2">Trainer</label>
+					<label for="r2" class="nomargin">Trainer</label>
 				</div>
 				<div> 
 					<label for="email">E-Mail:</label>
@@ -35,7 +34,6 @@
 				<div>
 					<button name="anmelden" type="submit">Anmelden</button>
 				</div>	
-			</fieldset>
 		</form>
 		
 		<div>

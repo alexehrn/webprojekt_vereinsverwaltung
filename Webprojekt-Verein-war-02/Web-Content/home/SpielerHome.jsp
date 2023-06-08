@@ -65,11 +65,11 @@
 				<td class="uhrzeitspalte">${currentTermin.uhrzeitVON}</td>
 				<td class="uhrzeitspalte">${currentTermin.uhrzeitBIS}</td>
 				<td class="langertextspalte">${currentTermin.beschreibung}</td>
-				<td>
+				<td class="zentrierteschrift">
 					<form action="/Webprojekt-Verein-war-02/SpielerRueckmeldungServlet" method="get">
 						<input type="hidden" name="id" value="${currentTermin.id}">
-						<button class ="zuabbutton" type="submit" name="rueckmeldung" value="Zugesagt">&#10003</button>
-						<button class ="zuabbutton" type="submit" name="rueckmeldung" value="Abgesagt">X</button>
+						<button class ="zubutton" type="submit" name="rueckmeldung" value="Zugesagt">&#10003</button>
+						<button class ="abbutton" type="submit" name="rueckmeldung" value="Abgesagt">X</button>
 					</form>
 				<td>
 				

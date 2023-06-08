@@ -67,7 +67,7 @@
 		<fieldset>
 			<div>
 				<label for="kurzbeschreibung">Beschreibung:</label>
-				<input type="text" name="kurzbeschreibung" id="kurzbeschreibung" size="30" maxlength="30" required placeholder="Beschreibung eingeben">
+				<input type="text" name="kurzbeschreibung" id="kurzbeschreibung" size="30" maxlength="15" required placeholder="Beschreibung (max. 15 Zeichen) eingeben">
 			</div>
 			<div>
 				<label for="ort">Ort:</label>
