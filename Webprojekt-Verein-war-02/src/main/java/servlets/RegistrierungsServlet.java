@@ -60,12 +60,20 @@ public class RegistrierungsServlet extends HttpServlet {
 		registerform.setEmail(request.getParameter("email"));
 		registerform.setTeam(request.getParameter("team"));
 		
-
-		// Filebehandlung
+		
+		if (registerform.getAuswahl().equals("Spieler")) {
 		Part filepart = request.getPart("image");
 		registerform.setFilename(filepart.getSubmittedFileName());
 		
-		persist(registerform, filepart);
+		persistspieler(registerform, filepart);
+		
+		} else if (registerform.getAuswahl().equals("Trainer")) {
+			
+			persisttrainer(registerform);
+		}
+		
+		
+		
 		
 		final HttpSession session = request.getSession();
 		session.setAttribute("registerform", registerform);
@@ -74,10 +82,9 @@ public class RegistrierungsServlet extends HttpServlet {
 		
 	}
 
-	private void persist(registrierungsbean01 regbean, Part filepart) throws ServletException {
+	private void persistspieler(registrierungsbean01 regbean, Part filepart) throws ServletException {
 		
 		
-		if(regbean.getAuswahl().equals("Spieler")) {
 		
 			String[] generatedKeys = new String[] {"spieler_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
 			
@@ -108,22 +115,28 @@ public class RegistrierungsServlet extends HttpServlet {
 				throw new ServletException(ex.getMessage());
 			}
 			
-		} else if (regbean.getAuswahl().equals("Trainer")) {
+		
+		
+		
+	}
+	
+private void persisttrainer(registrierungsbean01 regbean) throws ServletException {
+		
+
 			
 			String[] generatedKeys = new String[] {"trainer_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
 			
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-							"INSERT INTO trainer (vorname,nachname,trainerfoto,email,passwort,mannschaft)" + 
-							" VALUES (?,?,?,?,?,?)", generatedKeys)) {
+							"INSERT INTO trainer (vorname,nachname,email,passwort,mannschaft)" + 
+							" VALUES (?,?,?,?,?)", generatedKeys)) {
 				
 				pstmt.setString(1, regbean.getVorname());
 				pstmt.setString(2, regbean.getNachname());
-				pstmt.setBinaryStream(3, filepart.getInputStream());
-				pstmt.setString(4, regbean.getEmail());
-				pstmt.setString(5, regbean.getPasswort());
-				pstmt.setString(6, regbean.getTeam());
+				pstmt.setString(3, regbean.getEmail());
+				pstmt.setString(4, regbean.getPasswort());
+				pstmt.setString(5, regbean.getTeam());
 				
 				pstmt.executeUpdate();
 				
@@ -138,10 +151,11 @@ public class RegistrierungsServlet extends HttpServlet {
 			} catch (Exception ex) {
 				throw new ServletException(ex.getMessage());
 			}			
-		}
+		
 		
 		
 	}
+	
 	
 	
 
