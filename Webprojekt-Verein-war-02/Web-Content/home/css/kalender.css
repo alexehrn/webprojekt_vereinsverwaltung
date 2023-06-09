@@ -1,0 +1,96 @@
+/* Alles Chat GPT */
+/* CSS für Kalender */
+
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    main{
+    padding: 20px;
+    }
+    
+    #calendar {
+      width: 100%;
+      background-color: #f9f9f9;
+    }
+    
+    #header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+    }
+    
+    
+    #prev-month-btn,
+    #next-month-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ddd;
+      color: #333;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+    
+    #prev-month-btn {
+      left: 10px;
+    }
+    
+    #next-month-btn {
+      right: 10px;
+    }
+    
+    #current-month {
+      margin: 0;
+      color: #ffffff;
+    }
+    
+    #weekday-bar {
+	  display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 1px;
+	  background-color: #f9f9f9;
+	  text-align: center;
+	  font-weight: bold;
+	 
+	}
+
+	.weekday {
+	  border: 1px solid #ccc;
+	  padding: 10px;
+	}
+    
+    #calendar-body {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 1px;
+    }
+    
+    .day {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      height: 150px;
+      position: relative;
+      text-align: center;
+    }
+    
+    .current-day {
+      background-color: #ff6f00;
+    }
+    
+    .event {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 12px;
+      padding: 2px 0;
+      text-align: left;
+    }

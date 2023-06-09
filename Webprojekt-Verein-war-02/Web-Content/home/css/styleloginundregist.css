@@ -8,6 +8,7 @@ body {
  	display: flex;
   	align-items: center;
   	justify-content: center;
+  	height: 100vh;
   	background-image: url(../../img/Login.JPG);
   	background-repeat: no-repeat;
   	background-attachment: fixed;
@@ -15,12 +16,12 @@ body {
 }
 
 main{
- width: 30%;
- height: 60%;
+ width: 38%;
  padding: 1.5em;
  background-color: rgba(255, 255, 255, 0.7);
  
 }
+
 
 h1{
 	text-align: center;
@@ -35,7 +36,11 @@ label{
 }
 
 .nomargin{
-	margin-right: 2%;
+	margin-right: 0;
+}
+
+.zentrieren{
+	text-align: center;
 }
 
 button {
@@ -43,15 +48,47 @@ button {
 	background-color:#acacac;
 	color: #000000;
 	width: 10em;
-	transition-duration: 0.4s;
+	transition-duration: 0.5s;
   	cursor: pointer;
   	margin: 0 auto;
 }
 
-button:hover{
-  background-color: #555555;
+
+.anmeldebutton{
+	width: 75%;
+	margin-bottom: 10%;
+}
+
+/*Code wurde von https://www.w3schools.com/css/css3_buttons.asp übernommen und leicht angepasst*/
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
   color: white;
 }
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+  color: white;
+}
+
+/*Ende des übernommenen Codes*/
 
 input{
 	width: 20em;
@@ -60,7 +97,7 @@ input{
 
 input[type="radio"] {
 	width: auto;
-	margin-right: 1%;
+	margin-right: 0;
 }
 
 input:focus {
@@ -91,10 +128,17 @@ select:valid + span::after{
 
 form div{
 	padding: 0.3em;
+	padding-left: 8%;
 }
 
 div{
 	padding: 0.3em;
+	padding-left: 8%;
+}
+
+select{
+	font-size: 1em;
+	padding-bottom: 2%;
 }
 
 

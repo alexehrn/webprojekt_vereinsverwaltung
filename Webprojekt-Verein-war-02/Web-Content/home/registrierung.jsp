@@ -50,7 +50,7 @@
 				</div>
 				<%-- JavaSkript wenn Trainer ausgewählt ist keine möglichkeit bild hochzuladen --%>
 				<div>
-					<label for="image">Profilbild:</label>
+					<label for="image">Bild (max. 1MB):</label>
 					<input type="file" placeholder="max. 1MB" name="image" id="image" accept="image/*" required>
 					<span></span>
 				</div>
@@ -68,8 +68,8 @@
 					</select>
 					<span></span>
 				</div>
-				<div>
-					<button type="submit" name="absenden">Registrieren</button>
+				<div class="zentrieren">
+					<button type="submit" name="absenden"><span>Registrieren </span></button>
 					<button name="reset" type="reset">Zurücksetzen</button>
 				</div>
 		</form>

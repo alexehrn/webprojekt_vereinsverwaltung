@@ -31,14 +31,12 @@
 					<label for="passwort">Passwort:</label>
 					<input type="password" name="passwort" id="passwort" size="30" maxlength="30" required placeholder="Ihr Passwort">
 				</div>
-				<div>
-					<button name="anmelden" type="submit">Anmelden</button>
+				<div class="zentrieren">
+					<button class="anmeldebutton" name="anmelden" type="submit"><span>Anmelden </span></button>
 				</div>	
 		</form>
 		
-		<div>
-		Noch kein Konto?
-		<a href="./home/registrierung.jsp"><button name="registrieren" type="submit" >Registrieren</button></a>
+		<div> Noch kein Konto? <a href="./home/registrierung.jsp"><button name="registrieren" type="submit" ><span>Registrieren </span></button></a>
 		</div>
 	</main>
 

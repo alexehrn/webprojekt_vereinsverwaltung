@@ -87,7 +87,7 @@ fieldset{
 }
 
 .datumsspalte{
-	width: 150px;
+	width: 120px;
 	text-align: center;
 }
 
@@ -98,6 +98,10 @@ fieldset{
 .uhrzeitspalte{
 	width: 100px;
 	text-align: center;
+}
+
+.buttonspalte{
+	width: 120px!important;
 }
 
 
@@ -162,7 +166,6 @@ button {
 	background-color:#acacac;
 	color: #000000;
 	width: 10em;
-	
 	transition-duration: 0.4s;
   	cursor: pointer;
 }

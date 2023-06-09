@@ -53,7 +53,7 @@
 			<th class="uhrzeitspalte">Beginn</th>
 			<th class="uhrzeitspalte">Ende</th>
 			<th class="langertextspalte">Information</th>
-			<th>Meldung</th>
+			<th class="buttonspalte">Meldung</th>
 			<th>Status</th>
 		</tr>
 
