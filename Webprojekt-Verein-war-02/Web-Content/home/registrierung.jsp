@@ -89,7 +89,7 @@ window.onload = function() {
 			
 				<div>
 					<label for="image">Bild (max. 1MB):</label>
-					<input type="file" placeholder="max. 1MB" name="image" id="image" accept="image/*" required>
+					<input type="file" name="image" id="image" accept="image/*" required>
 					<span></span>
 				</div>
 				<div>

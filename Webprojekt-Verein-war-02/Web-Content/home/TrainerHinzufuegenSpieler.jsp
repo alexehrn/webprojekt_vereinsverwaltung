@@ -36,11 +36,11 @@
 				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
 					<tr>
 
-						<td text-align="center"><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="150" height="200"></td>
-						<td>${currentSpieler.nachname}</td>
-						<td>${currentSpieler.vorname}</td>
-						<td>${currentSpieler.team}</td>
-						<td><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerHinzufuegen?id=${currentSpieler.id}"><button type="submit" title="Spieler hinzufuegen" name="spielerhinzufuegen">Spieler hinzufügen</button></a>
+						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="150" height="200"></td>
+						<td class="zentrierteschrift">${currentSpieler.nachname}</td>
+						<td class="zentrierteschrift">${currentSpieler.vorname}</td>
+						<td class="zentrierteschrift">${currentSpieler.team}</td>
+						<td class="zentrierteschrift"><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerHinzufuegen?id=${currentSpieler.id}"><button type="submit" title="Spieler hinzufuegen" name="spielerhinzufuegen">Spieler hinzufügen</button></a>
 						<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}"><button type="submit" title="Spieler löschen" name="spielerlöschen">Spieler löschen</button></a></td>
 					</tr>
 				</c:forEach>

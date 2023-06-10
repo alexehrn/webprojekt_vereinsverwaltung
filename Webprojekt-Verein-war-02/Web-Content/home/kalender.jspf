@@ -4,11 +4,11 @@
 <html>
 <head>
   
-  <link rel="stylesheet" type="text/css" href="./css/kalender.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheet.css">
   
 </head>
-<body>
-  <main>
+<body id="kalenderbody">
+  <main id="kalendermain">
     <div id="calendar">
       <div id="header">
         <h1 id="current-month"></h1>

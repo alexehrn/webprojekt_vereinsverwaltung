@@ -3,9 +3,9 @@
 		<footer>
 		<table>
 			<tr>
-				<th><u>Vereinsverwaltung</u></th>
-				<th><u>Technischer Support</u></th>
-				<th><u>Über uns</u></th>
+				<th>Vereinsverwaltung</th>
+				<th>Technischer Support</th>
+				<th>Über uns</th>
 				<th rowspan="2"><img src="../img/Firmenlogo.png" alt="Firmenlogo"></th>
 			</tr>
 			<tr>
