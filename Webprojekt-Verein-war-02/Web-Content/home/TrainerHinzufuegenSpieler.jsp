@@ -36,7 +36,7 @@
 				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
 					<tr>
 
-						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" width="150" height="200"></td>
+						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" class="spielerfoto"></td>
 						<td class="zentrierteschrift">${currentSpieler.nachname}</td>
 						<td class="zentrierteschrift">${currentSpieler.vorname}</td>
 						<td class="zentrierteschrift">${currentSpieler.team}</td>

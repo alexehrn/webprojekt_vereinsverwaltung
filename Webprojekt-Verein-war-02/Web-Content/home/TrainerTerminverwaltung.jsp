@@ -75,14 +75,14 @@
 			</div>
 			<div>
 				<label for="datum">Datum:</label>
-				<input type="date" name="datum" id="datum">
+				<input type="date" name="datum" id="datum" required>
 			</div>
 			<div>
 				Uhrzeit: <br> 
 				<label for="startzeit">Von:</label>
-				<input type="time" name="startzeit" id="startzeit">
+				<input type="time" name="startzeit" id="startzeit" required>
 				<label for="endzeit">Bis:</label>
-				<input type="time" name="endzeit" id="endzeit">
+				<input type="time" name="endzeit" id="endzeit" required>
 			</div>
 			<div>
 				<label for="trainer_eingabe">Details:</label>

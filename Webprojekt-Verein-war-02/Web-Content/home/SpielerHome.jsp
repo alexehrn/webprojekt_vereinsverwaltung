@@ -111,9 +111,9 @@
 			</tr>
 			<tr>
 				<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet" action="post">
-				<td>Grund: <input name="abwesenheit_eingabe" id="abwesenheit_eingabe"></input></td>
-				<td>von: <input type="date" name="startdatum" id="startdatum"></td>
-				<td>bis: <input type="date" name="enddatum" id="enddatum"></td>
+				<td>Grund: <input name="abwesenheit_eingabe" id="abwesenheit_eingabe" required></input></td>
+				<td>von: <input type="date" name="startdatum" id="startdatum" required></td>
+				<td>bis: <input type="date" name="enddatum" id="enddatum" required></td>
 				<td><button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit absenden!</button></td>
 				</form>
 			</tr>
