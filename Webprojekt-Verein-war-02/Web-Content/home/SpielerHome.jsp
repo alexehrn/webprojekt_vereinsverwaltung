@@ -10,9 +10,10 @@
 			
 		</head>
 
-<body>
 
+<body>
 <%@ include file="head.jspf"%>
+
 
 <nav>
 	<a href="/Webprojekt-Verein-war-02/SearchServletSpielerHome" class="active">Dashboard</a>
@@ -122,5 +123,6 @@
 	
 
 </main>
-
+</body>
+</html>
 <%@ include file="footer.jspf"%>
