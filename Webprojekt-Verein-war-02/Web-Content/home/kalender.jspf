@@ -1,9 +1,10 @@
 <%-- Alexander Ehrnstrasser: --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
   
+  <title>Kalender</title>
   <link rel="stylesheet" type="text/css" href="../stylesheet.css">
   
 </head>

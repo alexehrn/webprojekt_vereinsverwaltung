@@ -25,7 +25,7 @@
 	<main class="zentrieren">
 	
 	<h1>Spielerpool</h1>
-			<table border="1">
+			<table>
 				<tr>
 					<th></th>
 					<th>Name</th>

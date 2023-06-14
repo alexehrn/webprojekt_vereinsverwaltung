@@ -12,7 +12,7 @@
 		</head>
 
 <body>
-<%@ include file="head.jspf"%>
+<%@ include file="head.jspf" %>
 
 
 	<nav>
