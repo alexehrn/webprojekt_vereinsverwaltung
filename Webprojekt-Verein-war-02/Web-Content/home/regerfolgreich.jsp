@@ -26,9 +26,6 @@
 		<p><b>Passwort: </b>${registerform.passwort}</p>
 		<p><b>Mannschaft: </b>${registerform.team}</p>
 		
-		<p>Dein Trainer muss dich noch, bei der bei deiner Registrierung gewählten Mannschaft, zuordnen.</p>
-	    <p>Informiere bitte deinen Trainer persönlich, dass er dich zuordnen soll und damit deinen User freigeben soll.</p>
-		
 		<a href="../index.jsp"><button >zurück zum Login</button></a>
 	
 	</main>

@@ -8,41 +8,36 @@
 
 <link rel="stylesheet" type="text/css" href="./css/styleloginundregist.css">
 
-
 <script>
 window.onload = function() {
     var trainerRadio = document.getElementById("r2");
     var imageInput = document.getElementById("image");
+    var passwortInput = document.getElementById("passwort");
+    var passwort2Input = document.getElementById("passwort2");
+    var passwortError = document.getElementById("passwortError");
+    var registrierungsButton = document.querySelector('button[name="absenden"]');
 
-    <%-- Wenn Trainer gewählt wurde kann kein Foto hochgeladen werden --%>
-    
     trainerRadio.addEventListener("click", function() {
-      imageInput.disabled = true;
+        imageInput.disabled = true;
     });
 
-    var playerRadio = document.getElementById("r1");
+    var playerRadio = document.getElementById("r1"); // Hinzugefügt
+
     playerRadio.addEventListener("click", function() {
-      imageInput.disabled = false;
+        imageInput.disabled = false;
     });
-  };
-  
-  window.onload = function() {
-	  var passwortInput = document.getElementById("passwort");
-	  var passwort2Input = document.getElementById("passwort2");
-	  var passwortError = document.getElementById("passwortError");
-	  var registrierungsButton = document.querySelector('button[name="absenden"]');
 
-	  passwort2Input.addEventListener("input", function() {
-	    if (passwortInput.value !== passwort2Input.value) {
-	      passwortError.innerHTML = "Die Passwörter stimmen nicht überein.";
-	      passwortError.style.color = "red";
-	      registrierungsButton.disabled = true;
-	    } else {
-	      passwortError.innerHTML = "";
-	      registrierungsButton.disabled = false;
-	    }
-	  });
-	};
+    passwort2Input.addEventListener("input", function() {
+        if (passwortInput.value !== passwort2Input.value) {
+            passwortError.innerHTML = "Die Passwörter stimmen nicht überein.";
+            passwortError.style.color = "red";
+            registrierungsButton.disabled = true;
+        } else {
+            passwortError.innerHTML = "";
+            registrierungsButton.disabled = false;
+        }
+    });
+};
 </script>
 
 </head>
