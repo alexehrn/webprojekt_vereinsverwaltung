@@ -119,9 +119,6 @@
 			</tr>
 		</table>
 	
-	
 
 </main>
-</body>
-</html>
 <%@ include file="footer.jspf"%>
