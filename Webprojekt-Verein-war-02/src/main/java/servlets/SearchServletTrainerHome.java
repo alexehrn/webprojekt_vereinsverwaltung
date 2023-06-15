@@ -23,9 +23,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class SearchServletAbwesenheit
+/*
+ * Servlet zum Suchen der Daten für die TrainerHome-Seite
  */
+
 @WebServlet("/SearchServletTrainerHome")
 public class SearchServletTrainerHome extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -33,19 +34,12 @@ public class SearchServletTrainerHome extends HttpServlet {
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
  
-	/**
-	 * Default constructor.
-	 */
+	
 	public SearchServletTrainerHome() {
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
 		// Team des Trainers aus Session holen
@@ -62,11 +56,9 @@ public class SearchServletTrainerHome extends HttpServlet {
 		request.setAttribute("rueckmeldung", rueckmeldungen);
 		
 		// Weiterleiten an JSP
-		//final RequestDispatcher dispatcher = request.getRequestDispatcher("/Webprojekt-Verein-war-02/TrainerHomeServlet");
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/TrainerHome.jsp");
 		dispatcher.forward(request, response);
 
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	private List<abwesenheitsbean> searchAbwesenheiten(String team) throws ServletException {
@@ -157,9 +149,7 @@ public class SearchServletTrainerHome extends HttpServlet {
 		
 		return rueckmeldungen;
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 

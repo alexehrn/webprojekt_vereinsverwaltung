@@ -25,7 +25,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SearchServletTrainerTerminverwaltung
+ * Servlet zum Suchen der Termine für den Trainer
  */
 @WebServlet("/SearchServletTrainerTerminverwaltung")
 public class SearchServletTrainerTerminverwaltung extends HttpServlet {
@@ -35,16 +35,12 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 
-    /**
-     * Default constructor. 
-     */
+    
     public SearchServletTrainerTerminverwaltung() {
        super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");	
 		
@@ -66,7 +62,6 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/TrainerTerminverwaltung.jsp");
 		dispatcher.forward(request, response);
 		
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 	
 	private List<TrainerTerminverwaltungsBean> searchTermine(String team) throws ServletException {
@@ -114,12 +109,7 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 	}
 
 	
-	
 
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

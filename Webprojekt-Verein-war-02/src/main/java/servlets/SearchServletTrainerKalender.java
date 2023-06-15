@@ -25,8 +25,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class SearchServletTrainerKalender
+/*
+ * Servlet zum Suchen der Termine einer Mannschaft für den Kalender
  */
 @WebServlet("/SearchServletTrainerKalender")
 public class SearchServletTrainerKalender extends HttpServlet {
@@ -34,16 +34,12 @@ public class SearchServletTrainerKalender extends HttpServlet {
 	
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
-    /**
-     * Default constructor. 
-     */
+   
+	
     public SearchServletTrainerKalender() {
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
@@ -105,11 +101,9 @@ public class SearchServletTrainerKalender extends HttpServlet {
 		
 		return termine;
 	}
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

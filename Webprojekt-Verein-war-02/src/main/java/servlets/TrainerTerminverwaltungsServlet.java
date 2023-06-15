@@ -21,7 +21,9 @@ import bean.TrainerBean;
 import bean.SpielerBean;
 import bean.TrainerTerminverwaltungsBean;
 
-
+/*
+ * Servlet zum anlegen eines Termins
+ */
 
 @WebServlet("/TrainerTerminverwaltungsServlet")
 public class TrainerTerminverwaltungsServlet extends HttpServlet {
@@ -42,7 +44,6 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		
-		
 		TrainerTerminverwaltungsBean trainerTerminverwaltungsBean = new TrainerTerminverwaltungsBean();
 		
 		//Attribute in Bean
@@ -55,18 +56,18 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		
 		
 		
-		
-		
 		//Team aus Session holen
 		HttpSession session = request.getSession();
 		TrainerBean trainer = (TrainerBean) session.getAttribute("trainer");
 		String team = trainer.getTeam();
 		
+		
+		// DB-Zugriff
 		terminAnlegen(trainerTerminverwaltungsBean, team);	
 		
 		
 		//Scope "Request"
-		session.setAttribute("trainerTerminverwaltungsBean", trainerTerminverwaltungsBean);//Redirect weil Formulareingabe? --> würde sonst öfter schicken
+		session.setAttribute("trainerTerminverwaltungsBean", trainerTerminverwaltungsBean);
 		
 		//Weiterleiten an  JSP
 		response.sendRedirect("/Webprojekt-Verein-war-02/SearchServletTrainerTerminverwaltung");
@@ -96,7 +97,7 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 			pstmt.executeUpdate();
 			
 			
-			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
+			// Generierte(n) Schlüssel auslesen 
 			try (ResultSet rs = pstmt.getGeneratedKeys()) {
 				int i = 1;
 				while (rs.next()) {
