@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page errorPage="ErrorPage.jsp" %>
 <!DOCTYPE html>
-	<html>
+	<html lang="de">
 		<head>
 			<meta charset="UTF-8">
 			<title>Trainer-Teamverwaltung</title>
@@ -37,12 +37,12 @@
 				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
 					<tr>
 
-						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" class="spielerfoto"></td>
+						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}" class="spielerfoto" alt="spielerfoto"></td>
 						<td class="zentrierteschrift">${currentSpieler.nachname}</td>
 						<td class="zentrierteschrift">${currentSpieler.vorname}</td>
 						<td class="zentrierteschrift">${currentSpieler.team}</td>
-						<td class="zentrierteschrift"><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerHinzufuegen?id=${currentSpieler.id}"><button type="submit" title="Spieler hinzufuegen" name="spielerhinzufuegen">Spieler hinzufügen</button></a>
-						<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}"><button type="submit" title="Spieler löschen" name="spielerlöschen">Spieler löschen</button></a></td>
+						<td class="zentrierteschrift"><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerHinzufuegen?id=${currentSpieler.id}" class="button">Spieler hinzufügen</a>
+						<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}" class="button">Spieler löschen</a></td>
 					</tr>
 				</c:forEach>
 			

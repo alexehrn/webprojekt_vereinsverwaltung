@@ -3,13 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page errorPage="ErrorPage.jsp" %>
 <!DOCTYPE html>
-	<html>
+	<html lang="de">
 		<head>
 			<meta charset="UTF-8">
 			<title>Trainer-Teamverwaltung</title>
 			<base href="${pageContext.request.requestURI}" />
 			<link rel="stylesheet" type="text/css" href="../stylesheet.css">
-			
 		</head>
 
 <body>
@@ -53,10 +52,10 @@
 				
 				<c:forEach var="currentSpieler" items="${spielerliste}" varStatus="status">
 					<tr>
-						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}"  class="spielerfoto"></td>
+						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}"  class="spielerfoto" alt="Spielerfoto"></td>
 						<td class="zentrierteschrift">${currentSpieler.nachname}</td>
 						<td class="zentrierteschrift">${currentSpieler.vorname}</td>
-						<td class="zentrierteschrift"><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}"><button type="submit" title="Spieler löschen" name="spielerlöschen">Spieler löschen</button></a></td>
+						<td class="zentrierteschrift"><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}" class="button">Spieler löschen</a></td>
 					</tr>
 				</c:forEach>
 			

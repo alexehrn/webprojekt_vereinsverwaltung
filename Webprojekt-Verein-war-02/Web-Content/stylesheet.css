@@ -4,6 +4,7 @@
   right: 10px;
   padding: 10px;
   background-color: #C0C0C0;
+    text-decoration: none;
   color: #000000;
   border: none;
   border-radius: 5px;
@@ -18,6 +19,8 @@
 header img{
 	margin:0;
 	padding: 0;
+	width: 100%;
+	height:auto;
 	vertical-align:top;
 }
 
@@ -187,6 +190,25 @@ button:hover{
   color: white;
 }
 
+a.button {
+  font-size: 15px;
+  background-color: #acacac;
+  color: #000000;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  width: auto;
+}
+
+a.button:hover {
+  background-color: #555555;
+  color: white;
+}
+
+
 
 .zubutton{
 	width: 3em;
@@ -223,15 +245,15 @@ footer {
 }
 
 footer table {
-	margin-left: 8%;
+	margin-left: 15%;
 }
 
 
 footer th {
-	width: 25%;
 	font-size: 18px;
 	font-weight: bold;
 	text-decoration: underline; 
+	width: 20%;
 }
 
 
@@ -241,7 +263,7 @@ footer td, th {
 
 footer img {
 	float: left;
-	padding-left: 60px;
+	
 }
 
 

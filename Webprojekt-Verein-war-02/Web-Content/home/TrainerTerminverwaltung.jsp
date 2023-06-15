@@ -48,10 +48,8 @@
 		                <td class="datumsspalte">${currentTermin.uhrzeitVON}-${currentTermin.uhrzeitBIS}</td>
 		                <td class="langertextspalte">${currentTermin.beschreibung}</td>
 		                <td class="zentrierteschrift">
-		                    <button type="submit" title="Termin ändern" name="terminändern">Termin bearbeiten</button>
-		                    <a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}">
-		                        <button type="submit" title="Termin löschen" name="terminlöschen">Termin löschen</button>
-		                    </a>
+		                    <a href="tbc?id=${currentTermin.id}" class="button" title="Termin bearbeiten">&#x270E;</a>
+		                    <a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}" class="button" title="Termin löschen">&#x1F5D1;</a>
 		                </td>
 		            </tr>
 		        </c:forEach>
@@ -68,7 +66,7 @@
 		<fieldset>
 			<div>
 				<label for="kurzbeschreibung">Beschreibung:</label>
-				<input type="text" name="kurzbeschreibung" id="kurzbeschreibung" size="30" maxlength="15" required placeholder="Beschreibung (max. 15 Zeichen) eingeben">
+				<input type="text" name="kurzbeschreibung" id="kurzbeschreibung" size="30" maxlength="20" required placeholder="Beschreibung (max. 20 Zeichen) eingeben">
 			</div>
 			<div>
 				<label for="ort">Ort:</label>

@@ -6,13 +6,13 @@
 				<th>Vereinsverwaltung</th>
 				<th>Technischer Support</th>
 				<th>Über uns</th>
-				<th rowspan="2"><img src="../img/Firmenlogo.png" alt="Firmenlogo"></th>
+				<th></th>
 			</tr>
 			<tr>
 				<td>Unsere indivuellen Vereinslösungen <br><br>eignen sich optimal von der<br><br>Kreisklasse bis zur Champions League.</td>
 				<td>&#9997; ingo&#64;softwarehouse.de <br><br> &#x260E; 0171/1146397</td>
 				<td>Wir vertreiben individuelle <br><br> Softwarelösungen im großen Stil. <br><br> Werde Teil unseres jungen Teams.</td>
-				<td></td>
+				<td><img src="../img/Firmenlogo.png" alt="Firmenlogo"></td>
 			</tr>
 		</table>
 

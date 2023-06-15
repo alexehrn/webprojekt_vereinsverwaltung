@@ -1,6 +1,6 @@
 <%-- Alexander Ehrnstrasser: --%>
 	<header>
-		<a href="../LogOutServlet"><button id="logout-btn">&#x23FB; Logout</button></a>
-		<img src="../img/Header.png" alt="header" width=100% height=auto>
+		<a href="../LogOutServlet" id="logout-btn">&#x23FB; Logout</a>
+		<img src="../img/Header.png" alt="header">
 
 	</header>
