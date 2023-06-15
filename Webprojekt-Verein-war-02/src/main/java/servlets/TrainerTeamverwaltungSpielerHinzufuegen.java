@@ -52,6 +52,7 @@ public class TrainerTeamverwaltungSpielerHinzufuegen extends HttpServlet {
 		
 		// DB-Zugriff
 		addPlayer(id, team);
+		upadteAbwesenheit(id, team);
 				
 		// Weiterleiten an JSP
 		response.sendRedirect("./TrainerTeamverwaltungSearch");	
@@ -61,6 +62,18 @@ public class TrainerTeamverwaltungSpielerHinzufuegen extends HttpServlet {
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
 			     PreparedStatement pstmt = con.prepareStatement("UPDATE spieler SET zugeordnet = TRUE, mannschaft= ? WHERE spieler_id = ?")) {
+				
+				pstmt.setString(1, team);
+				pstmt.setLong(2,id);
+				pstmt.executeUpdate();
+			} catch (Exception ex) {
+				throw new ServletException(ex.getMessage());
+			}
+	}
+	private void upadteAbwesenheit(Long id, String team) throws ServletException {
+		// DB-Zugriff
+		try (Connection con = ds.getConnection();
+			     PreparedStatement pstmt = con.prepareStatement("UPDATE abwesenheit SET mannschaft= ? WHERE spieler = ?")) {
 				
 				pstmt.setString(1, team);
 				pstmt.setLong(2,id);
