@@ -27,5 +27,3 @@
 	</main>
 	
 	<%@ include file="footer.jspf" %> 
-	</body>
-</html>
