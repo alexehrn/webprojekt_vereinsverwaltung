@@ -13,7 +13,12 @@
 
 
 
+
 	<main>
+	
+	<noscript><h1>Sie müssen Java-Skript aktivieren <br>
+	um die Anwendung optimal nutzen zu können !</h1></noscript>
+	
 		<h1>Login</h1>
 		<form id="loginForm" action="LogInServlet" method="post">
 				<div>

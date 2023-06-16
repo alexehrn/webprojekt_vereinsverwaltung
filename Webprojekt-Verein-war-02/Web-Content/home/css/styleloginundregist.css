@@ -22,6 +22,12 @@ main{
  
 }
 
+noscript h1{
+	background: #ff0900;
+	font-size: 2.0 em;
+	color: #ffffff;
+}
+
 
 h1{
 	text-align: center;
@@ -124,6 +130,7 @@ select:valid + span::after{
 	color:green;
 	content: " ✓";
 }
+
 
 
 form div{
