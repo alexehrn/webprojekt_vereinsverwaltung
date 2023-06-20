@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page errorPage="ErrorPage.jsp" %>
 <!DOCTYPE html>
-	<html>
+	<html lang="de">
 		<head>
 			<meta charset="UTF-8">
 			<title>Spieler-Home</title>
@@ -107,20 +107,28 @@
 				<td>${currentAbwesenheit.ende}</td>
 			</tr>
 		</c:forEach>
-			<tr>
-				<th colspan="4">Neue Abwesenheit anlegen</th>
-			</tr>
-			<tr>
-				<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet" method="post">
-				<td>Grund: <input name="abwesenheit_eingabe" id="abwesenheit_eingabe" required></td>
-				<td>von: <input type="date" name="startdatum" id="startdatum" required></td>
-				<td>bis: <input type="date" name="enddatum" id="enddatum" required></td>
-				<td><button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit absenden!</button></td>
-				</form>
-			</tr>
 		</table>
 	
-
+	<h2>Neue Abwesenheit anlegen:</h2>
+		<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet" method="post">
+		<fieldset>
+						<div>
+							<label for="abwesenheit_eingabe">Grund:</label> 
+							<input name="abwesenheit_eingabe" id="abwesenheit_eingabe" required>
+						</div>
+						<div>
+							<label for="startdatum">von:</label>
+							<input type="date" name="startdatum" id="startdatum" required>
+						</div>
+						<div>
+							<label for="enddatum">bis:</label> 
+							<input type="date" name="enddatum" id="enddatum" required>
+						</div>
+						<div>
+							<button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit absenden!</button>
+						</div>
+		</fieldset>
+		</form>
 
 </main>
 <%@ include file="footer.jspf"%>

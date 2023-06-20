@@ -1,22 +1,8 @@
-<%-- Alexander Ehrnstrasser: 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html lang="de">
-
-<head>
-  
-  <title>Kalender</title>
-  <link rel="stylesheet" type="text/css" href="../stylesheet.css">
-  
-</head>
-
-
-<body id="kalenderbody">
---%>
+<%-- Alexander Ehrnstrasser: --%>
   <main id="kalendermain">
     <div id="calendar">
       <div id="header">
-        <h1 id="current-month"></h1> 											<%-- Wird durch JavaScript befüllt --%>
+        <h1 id="current-month"></h1> 											
         <button id="prev-month-btn" onclick="previousMonth()">&lt;</button>       
         <button id="next-month-btn" onclick="nextMonth()">&gt;</button>
       </div>
@@ -35,7 +21,7 @@
 
   <script>
     var monthNames = [
-      "Januar", "Februar", "März", "April", "Mai", "Juni",
+      "Januar", "Februar", "M�rz", "April", "Mai", "Juni",
       "Juli", "August", "September", "Oktober", "November", "Dezember"
     ];
     
@@ -136,5 +122,3 @@
     
     generateCalendar();
   </script>
-<%-- </body>
-</html> --%>

@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page errorPage="ErrorPage.jsp" %>
 <!DOCTYPE html>
-	<html>
+	<html lang="de">
 		<head>
 			<meta charset="UTF-8">
 			<title>Trainer-Terminverwaltung</title>

@@ -66,10 +66,7 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		terminAnlegen(trainerTerminverwaltungsBean, team);	
 		
 		
-		//Scope "Request"
-		session.setAttribute("trainerTerminverwaltungsBean", trainerTerminverwaltungsBean);
-		
-		//Weiterleiten an  JSP
+		//Weiterleiten an  Servlet
 		response.sendRedirect("/Webprojekt-Verein-war-02/SearchServletTrainerTerminverwaltung");
 	
 	}
