@@ -7,41 +7,11 @@
 <meta charset="UTF-8">
 <title>Registrierung</title>
 
-<link rel="stylesheet" type="text/css" href="./css/styleloginundregist.css">
-
-<script>
-window.onload = function() {
-    var trainerRadio = document.getElementById("r2");
-    var imageInput = document.getElementById("image");
-    var passwortInput = document.getElementById("passwort");
-    var passwort2Input = document.getElementById("passwort2");
-    var passwortError = document.getElementById("passwortError");
-    var registrierungsButton = document.querySelector('button[name="absenden"]');
-
-    trainerRadio.addEventListener("click", function() {
-        imageInput.disabled = true;
-    });
-
-    var playerRadio = document.getElementById("r1"); // Hinzugefügt
-
-    playerRadio.addEventListener("click", function() {
-        imageInput.disabled = false;
-    });
-
-    passwort2Input.addEventListener("input", function() {
-        if (passwortInput.value !== passwort2Input.value) {
-            passwortError.innerHTML = "Die Passwörter stimmen nicht überein.";
-            passwortError.style.color = "red";
-            registrierungsButton.disabled = true;
-        } else {
-            passwortError.innerHTML = "";
-            registrierungsButton.disabled = false;
-        }
-    });
-};
-</script>
+	<link rel="stylesheet" type="text/css" href="./css/styleloginundregist.css">
+	<script type="text/javascript" src="./javaskript/register.js"></script>
 
 </head>
+
 <body>
 	
 
@@ -80,7 +50,7 @@ window.onload = function() {
 					<label for="passwort2">Passwort erneut:</label>
 					<input type="password" name="passwort" id="passwort2" size="30" maxlength="30" minlength="6" required placeholder="Bitte Passwort wiederholen">
 					<span></span>
-					<span id="passwortError"></span>
+					<span id="passworterror"></span>
 				</div>
 			
 				<div>

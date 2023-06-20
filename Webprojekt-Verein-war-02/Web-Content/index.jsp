@@ -41,8 +41,10 @@
 				</div>	
 		</form>
 		
-		<div> Noch kein Konto? <a href="./home/registrierung.jsp"><button name="registrieren" type="submit" ><span>Registrieren </span></button></a>
+		<form action="./home/registrierung.jsp" method="get">
+		<div> Noch kein Konto? <button type="submit"><span>Registrieren </span></button>
 		</div>
+		</form>
 	</main>
 
 </body>

@@ -65,6 +65,10 @@ button {
 	margin-bottom: 10%;
 }
 
+#passworterror{
+	color: #dd2d28;
+}
+
 /*Code wurde von https://www.w3schools.com/css/css3_buttons.asp übernommen und leicht angepasst*/
 
 button span {
@@ -93,6 +97,7 @@ button:hover span:after {
   right: 0;
   color: white;
 }
+
 
 /*Ende des übernommenen Codes*/
 
