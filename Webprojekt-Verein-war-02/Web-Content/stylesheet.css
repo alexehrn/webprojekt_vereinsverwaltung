@@ -176,6 +176,26 @@ form div{
 	padding: 0.2em;
 }
 
+
+div#flexarea{
+	display: flex;
+	width: 80%;
+	flex-flow: row wrap;
+	gap: 0;
+}
+
+#abwesenheitstable{
+	flex:6.45;
+}
+
+#abwesenheitsform{
+	flex: 3.65;
+}
+
+.abwesenheitsline{
+	text-align: left;
+}
+
 button {
 	font-size: 15px;
 	background-color:#acacac;

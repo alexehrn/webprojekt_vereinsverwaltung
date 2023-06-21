@@ -137,6 +137,9 @@ public class SearchServletSpielerHome extends HttpServlet {
 								while (rs.next()) {
 									abwesenheitsbean abwesenheit = new abwesenheitsbean();
 									
+									Long id = Long.valueOf(rs.getLong("abwesenheits_id"));
+									abwesenheit.setId(id);
+									
 									String grund = rs.getString("beschreibung");
 									abwesenheit.setGrund(grund);
 									
