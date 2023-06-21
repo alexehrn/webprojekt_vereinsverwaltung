@@ -59,6 +59,9 @@ button {
   	margin: 0 auto;
 }
 
+.falscherlogin{
+	color: #da0206;
+}
 
 .anmeldebutton{
 	width: 75%;
