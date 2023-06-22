@@ -90,54 +90,87 @@
 			</c:forEach>
 	</table>
 
-	<div id="flexarea">
-	<div id="abwesenheitstable">
-	<h1 class="abwesenheitsline">Meine geplanten Abwesenheiten</h1>
-		<table>
-			<tr>
-				<th>Nr.</th>
-				<th>Beschreibung</th>
-				<th>von</th>
-				<th>bis</th>
-				<th></th>
-			</tr>
-		<c:forEach var="currentAbwesenheit" items="${abwesenheiten}" varStatus="status">
-			<tr>
-				<td>${status.count}</td>
-				<td>${currentAbwesenheit.grund}</td>
-				<td>${currentAbwesenheit.start}</td>
-				<td>${currentAbwesenheit.ende}</td>
-				<td class="zentrierteschrift">
-					<a href="/Webprojekt-Verein-war-02/SpielerAbwesenheitLoeschen?id=${currentAbwesenheit.id}" class="button" title="Abwesenheit löschen">&#x1F5D1;</a> 
-		        </td>
-			</tr>
-		</c:forEach>
-		</table>
-	</div>
+
+	<c:choose>
+  			<c:when test="${empty abwesenheiten}">
+    				
+					<h1>Neue Abwesenheit anlegen</h1>
+						<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet" method="post">
+						<fieldset>
+										<div>
+											<label for="abwesenheit_eingabe">Grund:</label> 
+											<input name="abwesenheit_eingabe" id="abwesenheit_eingabe" maxlength="25"  size="25" placeholder="max. 25 Zeichen" required>
+										</div>
+										<div>
+											<label for="startdatum">von:</label>
+											<input type="date" name="startdatum" id="startdatum" required>
+										</div>
+										<div>
+											<label for="enddatum">bis:</label> 
+											<input type="date" name="enddatum" id="enddatum" required>
+										</div>
+										<div class="zentrieren">
+											<button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit absenden!</button>
+										</div>
+						</fieldset>
+						</form>
+ 			</c:when>
+ 					<c:otherwise>
+  							<div id="flexarea">
+								<div id="abwesenheitstable">
+								<h1 class="abwesenheitsline">Meine geplanten Abwesenheiten</h1>
+									<table>
+										<tr>
+											<th>Nr.</th>
+											<th>Beschreibung</th>
+											<th>von</th>
+											<th>bis</th>
+											<th></th>
+										</tr>
+									<c:forEach var="currentAbwesenheit" items="${abwesenheiten}" varStatus="status">
+										<tr>
+											<td>${status.count}</td>
+											<td>${currentAbwesenheit.grund}</td>
+											<td>${currentAbwesenheit.start}</td>
+											<td>${currentAbwesenheit.ende}</td>
+											<td class="zentrierteschrift">
+												<a href="/Webprojekt-Verein-war-02/SpielerAbwesenheitLoeschen?id=${currentAbwesenheit.id}" class="button" title="Abwesenheit löschen">&#x1F5D1;</a> 
+									        </td>
+										</tr>
+									</c:forEach>
+									</table>
+								</div>
+								
+								<div id="abwesenheitsform">
+								<h1 class="abwesenheitsline">Neue Abwesenheit anlegen</h1>
+									<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet" method="post">
+									<fieldset>
+													<div>
+														<label for="abwesenheit_eingabe">Grund:</label> 
+														<input name="abwesenheit_eingabe" id="abwesenheit_eingabe" maxlength="25"  size="25" placeholder="max. 25 Zeichen" required>
+													</div>
+													<div>
+														<label for="startdatum">von:</label>
+														<input type="date" name="startdatum" id="startdatum" required>
+													</div>
+													<div>
+														<label for="enddatum">bis:</label> 
+														<input type="date" name="enddatum" id="enddatum" required>
+													</div>
+													<div>
+														<button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit absenden!</button>
+													</div>
+									</fieldset>
+									</form>
+								</div>
+							</div>
+					</c:otherwise>
+	</c:choose>
+
 	
-	<div id="abwesenheitsform">
-	<h1 class="abwesenheitsline">Neue Abwesenheit anlegen</h1>
-		<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet" method="post">
-		<fieldset>
-						<div>
-							<label for="abwesenheit_eingabe">Grund:</label> 
-							<input name="abwesenheit_eingabe" id="abwesenheit_eingabe" maxlength="25"  size="25" placeholder="max. 25 Zeichen" required>
-						</div>
-						<div>
-							<label for="startdatum">von:</label>
-							<input type="date" name="startdatum" id="startdatum" required>
-						</div>
-						<div>
-							<label for="enddatum">bis:</label> 
-							<input type="date" name="enddatum" id="enddatum" required>
-						</div>
-						<div>
-							<button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit absenden!</button>
-						</div>
-		</fieldset>
-		</form>
-		</div>
-		</div>
+
+
+
 
 </main>
 <%@ include file="footer.jspf"%>
