@@ -48,8 +48,8 @@
 		                <td class="datumsspalte">${currentTermin.uhrzeitVON}-${currentTermin.uhrzeitBIS}</td>
 		                <td class="langertextspalte">${currentTermin.beschreibung}</td>
 		                <td class="zentrierteschrift">
-		                    <a href="tbc?id=${currentTermin.id}" class="button" title="Termin bearbeiten">&#x270E;</a>
-		                    <a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}" class="button" title="Termin löschen">&#x1F5D1;</a>
+		                <a href="tbc?id=${currentTermin.id}" class="button" title="Termin bearbeiten">&#x270E;</a>
+		                <a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}" id="terminloeschen" class="button"  title="Termin löschen">&#x1F5D1;</a>
 		                </td>
 		            </tr>
 		        </c:forEach>

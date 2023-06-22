@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpSession;
  * Servlet implementation class TrainerTeamverwaltungSpielerHinzufuegen
  */
 /* Alexander Ehrnstrasser: */
-@WebServlet("/TrainerTeamverwaltungSpielerHinzufuegen")
+@WebServlet("/TrainerTeamverwaltungSpielerAusMannschaftEntfernen")
 public class TrainerTeamverwaltungSpielerAusMannschaftEntfernen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
