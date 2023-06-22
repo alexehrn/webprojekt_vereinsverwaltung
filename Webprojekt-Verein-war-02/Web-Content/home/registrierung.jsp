@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Registrierung</title>
+			<base href="${pageContext.request.requestURI}" />
+
 
 	<link rel="stylesheet" type="text/css" href="./css/styleloginundregist.css">
 	<script type="text/javascript" src="./javaskript/register.js"></script>

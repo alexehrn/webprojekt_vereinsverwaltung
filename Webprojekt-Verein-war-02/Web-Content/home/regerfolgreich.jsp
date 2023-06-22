@@ -26,7 +26,7 @@
 		<p><b>Email: </b>${registerform.email}</p>
 		<p><b>Passwort: </b>${registerform.passwort}</p>
 		<p><b>Mannschaft: </b>${registerform.team}</p>
-		<a href="../index.jsp">Zurück zum Login</a>
+		<a class="button" href="../index.jsp">Zurück zum Login</a>
 	
 	</main>
 	

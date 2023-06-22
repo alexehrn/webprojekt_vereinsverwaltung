@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-
+<base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" type="text/css" href="./home/css/styleloginundregist.css">
 
 </head>

@@ -221,6 +221,7 @@ a.button {
   text-decoration: none;
   padding: 0.5em 1em;
   width: auto;
+  margin-bottom:2%;
 }
 
 a.button:hover {

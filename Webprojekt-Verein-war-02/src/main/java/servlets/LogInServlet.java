@@ -53,7 +53,8 @@ public class LogInServlet extends HttpServlet {
 		String auswahl = String.valueOf(request.getParameter("auswahl"));
 		
 
-			
+		//folgende if-Bedingung mit ChatGPT heraufgefunden
+		if (request.getCookies()!= null) { 
 		
 		if (check(auswahl, email, pw)==true) {
 			
@@ -94,7 +95,10 @@ public class LogInServlet extends HttpServlet {
 			disp.forward(request, response);
 		}
 		
-		
+		} else {
+			RequestDispatcher disp = request.getRequestDispatcher("./home/CookiesDeaktiviert.jsp");
+			disp.forward(request, response);
+		}
 	
 	}
 	
