@@ -55,7 +55,7 @@
 						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}"  class="spielerfoto" alt="Spielerfoto"></td>
 						<td class="zentrierteschrift">${currentSpieler.nachname}</td>
 						<td class="zentrierteschrift">${currentSpieler.vorname}</td>
-						<td class="zentrierteschrift"><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerHinzufuegen?id=${currentSpieler.id}" class="button" title="Spieler erscheint wieder im Spielerpool">Spieler entfernen</a></td>
+						<td class="zentrierteschrift"><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerAusMannschaftEntfernen?id=${currentSpieler.id}" class="button" title="Spieler erscheint wieder im Spielerpool">Spieler entfernen</a></td>
 					</tr>
 				</c:forEach>
 			
