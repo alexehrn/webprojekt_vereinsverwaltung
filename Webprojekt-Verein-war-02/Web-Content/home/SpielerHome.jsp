@@ -113,7 +113,7 @@
 													<div>
 													<span id="abwesenheitserror"></span>
 													</div>
-													<div>
+													<div class="zentrieren">
 														<button type="submit" name="abwesenheitAbsenden" id="abwesenheitsenden" value="submit">Abwesenheit absenden!</button>
 													</div>
 									</fieldset>
