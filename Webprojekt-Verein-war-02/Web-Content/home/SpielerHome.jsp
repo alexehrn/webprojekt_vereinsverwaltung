@@ -7,7 +7,8 @@
 			<meta charset="UTF-8">
 			<title>Spieler-Home</title>
 			<base href="${pageContext.request.requestURI}" />
-			<link rel="stylesheet" type="text/css" href="../stylesheet.css">			
+			<link rel="stylesheet" type="text/css" href="../stylesheet.css">	
+			<script type="text/javascript" src="./javaskript/abwesenheitscheck.js"></script>		
 		</head>
 
 
@@ -96,24 +97,27 @@
     				
 					<h1>Neue Abwesenheit anlegen</h1>
 						<form action="/Webprojekt-Verein-war-02/SpielerAbwesenheitServlet" method="post">
-						<fieldset>
-										<div>
-											<label for="abwesenheit_eingabe">Grund:</label> 
-											<input name="abwesenheit_eingabe" id="abwesenheit_eingabe" maxlength="25"  size="25" placeholder="max. 25 Zeichen" required>
-										</div>
-										<div>
-											<label for="startdatum">von:</label>
-											<input type="date" name="startdatum" id="startdatum" required>
-										</div>
-										<div>
-											<label for="enddatum">bis:</label> 
-											<input type="date" name="enddatum" id="enddatum" required>
-										</div>
-										<div class="zentrieren">
-											<button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit absenden!</button>
-										</div>
-						</fieldset>
-						</form>
+									<fieldset>
+													<div>
+														<label for="abwesenheit_eingabe">Grund:</label> 
+														<input name="abwesenheit_eingabe" id="abwesenheit_eingabe" maxlength="25"  size="25" placeholder="max. 25 Zeichen" required>
+													</div>
+													<div>
+														<label for="startdatum">von:</label>
+														<input type="date" name="startdatum" id="startdatum" required>
+													</div>
+													<div>
+														<label for="enddatum">bis:</label> 
+														<input type="date" name="enddatum" id="enddatum" required>
+													</div>
+													<div>
+													<span id="abwesenheitserror"></span>
+													</div>
+													<div>
+														<button type="submit" name="abwesenheitAbsenden" id="abwesenheitsenden" value="submit">Abwesenheit absenden!</button>
+													</div>
+									</fieldset>
+									</form>
  			</c:when>
  					<c:otherwise>
   							<div id="flexarea">
@@ -158,7 +162,10 @@
 														<input type="date" name="enddatum" id="enddatum" required>
 													</div>
 													<div>
-														<button type="submit" name="abwesenheitAbsenden" value="submit">Abwesenheit absenden!</button>
+													<span id="abwesenheitserror"></span>
+													</div>
+													<div>
+														<button type="submit" name="abwesenheitAbsenden" id="abwesenheitsenden" value="submit">Abwesenheit absenden!</button>
 													</div>
 									</fieldset>
 									</form>
