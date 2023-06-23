@@ -12,6 +12,8 @@ function init() {
 
   var passwort2Input = document.getElementById("passwort2");
   passwort2Input.addEventListener("input", fehleranzeige);
+  
+
 }
 
 function fotodeaktivieren() {
@@ -38,3 +40,5 @@ function fehleranzeige() {
     registrierungsButton.disabled = false;
   }
 }
+
+

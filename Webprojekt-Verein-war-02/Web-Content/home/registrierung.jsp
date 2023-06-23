@@ -20,7 +20,7 @@
 	<main>
 		<h1>Registrierung</h1>
 
-		<form action="/Webprojekt-Verein-war-02/RegistrierungsServlet" method="post" accept-charset="utf-8"  enctype="multipart/form-data">
+		<form action="/Webprojekt-Verein-war-02/RegistrierungsServlet" method="post" accept-charset="utf-8"  enctype="multipart/form-data" id="registrierungsForm">
 				<div>
 					<label>Ich bin: </label>
 					<input type="radio" name="auswahl" id="r1" value="Spieler" checked>  
@@ -76,7 +76,7 @@
 				</div>
 				<div class="zentrieren">
 					<button type="submit" name="absenden"><span>Registrieren </span></button>
-					<button name="reset" type="reset">Zurücksetzen</button>
+					<button name="reset" id="reset" type="reset">Zurücksetzen</button>
 				</div>
 		</form>
 
