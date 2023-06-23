@@ -92,6 +92,7 @@
 	</table>
 
 
+
 	<c:choose>
   			<c:when test="${empty abwesenheiten}">
     				
