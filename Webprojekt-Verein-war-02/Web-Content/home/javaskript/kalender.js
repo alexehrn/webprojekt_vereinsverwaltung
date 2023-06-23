@@ -1,7 +1,8 @@
 "use strict";
 
+	document.addEventListener("DOMContentLoaded", init);
 	
-	
+	function init() {
 	// Button-Elemente auswählen
 	var prevMonthBtn = document.getElementById("prev-month-btn");
 	var nextMonthBtn = document.getElementById("next-month-btn");
@@ -12,15 +13,19 @@
 	// Event Listener für nächsten Monat hinzufügen
 	nextMonthBtn.addEventListener("click", nextMonth);
 
-
-    var monthNames = [
+	}
+	var monthNames = [
       "Januar", "Februar", "März", "April", "Mai", "Juni",
       "Juli", "August", "September", "Oktober", "November", "Dezember"
     ];
-    
-    var currentDate = new Date();
+	
+
+	var currentDate = new Date();
     var currentMonth = currentDate.getMonth();
     var currentYear = currentDate.getFullYear();
+   
+    
+  
     
     // Beispieltermine
     var events = [
