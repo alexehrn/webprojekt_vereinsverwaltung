@@ -4,18 +4,24 @@
 
 	document.addEventListener("DOMContentLoaded", init);
 	
-	function init() {
-	// Button-Elemente auswählen
-	var prevMonthBtn = document.getElementById("prev-month-btn");
-	var nextMonthBtn = document.getElementById("next-month-btn");
-	
-	// Event Listener für vorherigen Monat hinzufügen
-	prevMonthBtn.addEventListener("click", previousMonth);
-	
-	// Event Listener für nächsten Monat hinzufügen
-	nextMonthBtn.addEventListener("click", nextMonth);
+function init() {
+  // Button-Elemente auswählen
+  var prevMonthBtn = document.getElementById("prev-month-btn");
+  var nextMonthBtn = document.getElementById("next-month-btn");
 
-	}
+  // Event Listener für vorherigen Monat hinzufügen
+  prevMonthBtn.addEventListener("click", previousMonth);
+
+  // Event Listener für nächsten Monat hinzufügen
+  nextMonthBtn.addEventListener("click", nextMonth);
+
+  // Termine erstellen
+  erstelleTermine();
+
+  // Kalender generieren
+  generateCalendar();
+}
+
 	var monthNames = [
       "Januar", "Februar", "März", "April", "Mai", "Juni",
       "Juli", "August", "September", "Oktober", "November", "Dezember"
@@ -25,19 +31,50 @@
 	var currentDate = new Date();
     var currentMonth = currentDate.getMonth();
     var currentYear = currentDate.getFullYear();
-   
+    var events = [
+       { date: new Date(currentYear, currentMonth, 01), title: "Training", time: "09:00" },
+  	   { date: new Date(currentYear, currentMonth, 10), title: "Event 2", time: "14:00 - 16:00" },
+       { date: new Date(currentYear, currentMonth, 21), title: "Event 3", time: "18:00 - 20:00" },
+       { date: new Date(currentYear, currentMonth, 15), title: "Event 4", time: "10:00 - 12:00" },
+       { date: new Date(currentYear, currentMonth, 22), title: "Event 5", time: "16:00 - 18:00" },
+       { date: new Date(currentYear, currentMonth, 25), title: "Event 6", time: "14:30 - 15:30" },
+     ];
     
   
     
-    // Beispieltermine
-    var events = [
-      { date: new Date(currentYear, currentMonth, 10), title: "Event 1", time: "09:00 - 12:00" },
-      { date: new Date(currentYear, currentMonth, 10), title: "Event 2", time: "14:00 - 16:00" },
-      { date: new Date(currentYear, currentMonth, 21), title: "Event 3", time: "18:00 - 20:00" },
-      { date: new Date(currentYear, currentMonth, 15), title: "Event 4", time: "10:00 - 12:00" },
-      { date: new Date(currentYear, currentMonth, 22), title: "Event 5", time: "16:00 - 18:00" },
-      { date: new Date(currentYear, currentMonth, 25), title: "Event 6", time: "14:30 - 15:30" },
-    ];
+			 // Termine von DB einfügen
+			function erstelleTermine() {
+				var searchTermine = "SearchServletTrainerKalender";
+				
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.responseType = "json"; // Wenn gesetzt, ist kein JSON.parse() notwendig!
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						var terminList = xmlhttp.response; // Wenn responseType auf JSON gesetzt ist
+						
+						for (var i = 0; i < terminList.length; i++) {
+							
+							
+							// Erstelle ein neues Event-Objekt
+							var event = {
+								date: terminList[i].datum,
+								title: terminList[i].kurzbeschreibung,
+								time: terminList[i].uhrzeitVON
+							};
+			  
+							// Füge das Event-Objekt zum Array hinzu
+							events.push(event);
+						}
+					}
+				};
+				
+				xmlhttp.open("GET", searchTermine, true);
+				xmlhttp.send();
+			
+			}
+
+				
+				
     
     function generateCalendar() {
       var calendarBody = document.getElementById("calendar-body");
@@ -95,7 +132,7 @@
     
       events.forEach(function(event) {
         if (event.date.toDateString() === date.toDateString()) {
-          eventText.push(event.title + " " + event.time);
+          eventText.push(event.time + " Uhr: " + event.title);
         }
       });
     

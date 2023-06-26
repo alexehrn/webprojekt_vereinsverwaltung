@@ -70,8 +70,8 @@
 				<td class="zentrierteschrift">
 					<form action="/Webprojekt-Verein-war-02/SpielerRueckmeldungServlet" method="get">
 						<input type="hidden" name="id" value="${currentTermin.id}">
-						<button class ="zubutton" type="submit" name="rueckmeldung" value="Zugesagt">&#10003;</button>
-						<button class ="abbutton" type="submit" name="rueckmeldung" value="Abgesagt">X</button>
+						<button class ="zubutton" type="submit" name="rueckmeldung" value="Zugesagt" title="Zusagen">&#10003;</button>
+						<button class ="abbutton" type="submit" name="rueckmeldung" value="Abgesagt" title="Absagen">X</button>
 					</form>
 				<td>
 				

@@ -66,7 +66,7 @@ public class SearchServletTrainerKalender extends HttpServlet {
 	
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT termin_id, kurzbeschreibung, ort, beginn, ende FROM termine WHERE mannschaft=?")) { 
+			 PreparedStatement pstmt = con.prepareStatement("SELECT termin_id, kurzbeschreibung, ort, datum, beginn, ende FROM termine WHERE mannschaft=?")) { 
 
 			pstmt.setString(1,team);																			
 			try (ResultSet rs = pstmt.executeQuery()) {
