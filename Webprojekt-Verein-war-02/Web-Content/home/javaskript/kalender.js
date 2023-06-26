@@ -1,3 +1,5 @@
+/Kalender wurde komplett mit Chat-GPT erstellt und nach Best-Pratice bestmöglich angepasst/
+
 "use strict";
 
 	document.addEventListener("DOMContentLoaded", init);

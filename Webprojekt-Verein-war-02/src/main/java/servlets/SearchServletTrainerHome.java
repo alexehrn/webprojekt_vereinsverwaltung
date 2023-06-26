@@ -107,16 +107,6 @@ public class SearchServletTrainerHome extends HttpServlet {
 	
 		
 		// Das SQL Statement ist aus Chat-GPT
-		// DB-Zugriff
-//		try (Connection con = ds.getConnection();
-//			 PreparedStatement pstmt = con.prepareStatement("SELECT termine.kurzbeschreibung, termine.datum,\r\n"
-//			 		+ "       SUM(CASE WHEN rueckmeldung.meldung = 'Zugesagt' THEN 1 ELSE 0 END) AS anzahlzusagen,\r\n"
-//			 		+ "       SUM(CASE WHEN rueckmeldung.meldung = 'Abgesagt' THEN 1 ELSE 0 END) AS anzahlabsagen\r\n"
-//			 		+ "FROM termine\r\n"
-//			 		+ "INNER JOIN rueckmeldung ON (termine.termin_id = rueckmeldung.termin_id)\r\n"
-//			 		+ "WHERE termine.mannschaft = ? AND termine.datum >= CURRENT_DATE\r\n"
-//			 		+ "GROUP BY termine.kurzbeschreibung, termine.datum\r\n"
-//			 		+ "ORDER BY termine.datum ASC;")) {
 			
 			try (Connection con = ds.getConnection();
 					 PreparedStatement pstmt = con.prepareStatement("SELECT termine.kurzbeschreibung, termine.datum,\r\n"
