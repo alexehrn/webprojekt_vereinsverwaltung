@@ -76,7 +76,7 @@
 				</div>
 				<div class="zentrieren">
 					<button type="submit" name="absenden"><span>Registrieren </span></button>
-					<button name="reset" id="reset" type="reset">Zurücksetzen</button>
+					<button name="reset"  type="reset">Zurücksetzen</button>
 				</div>
 		</form>
 

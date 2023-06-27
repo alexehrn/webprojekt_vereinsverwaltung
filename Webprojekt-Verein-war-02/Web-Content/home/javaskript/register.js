@@ -4,7 +4,7 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
- var reset = document.getElementById("reset");
+  var reset = document.getElementById("registrierungsForm");
   reset.addEventListener("reset", confirmReset); 
  
   var trainerRadio = document.getElementById("r2");

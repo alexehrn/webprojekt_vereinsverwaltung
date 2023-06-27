@@ -1,14 +1,19 @@
-/ Alexander Ehrnstrasser:/
+/ Alexander Ehrnstrasser, Quirin Gerstberger:/
 "use strict";
 
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
+	var abwesenheitloeschenclick = document.getElementById("abwesenheitloeschen");
+	abwesenheitloeschenclick.addEventListener("click", abwesenheitwirklichloeschen);
+	
 	var enddatum = document.getElementById("enddatum");
 	enddatum.addEventListener("change", abwesenheitdeaktivieren);
 	
 	var startdatum =document.getElementById("startdatum");
 	startdatum.addEventListener("change", abwesenheitdeaktivieren);
+	
+	
 }
 
 
@@ -34,3 +39,11 @@ function abwesenheitdeaktivieren(){
 	
 	
 }
+
+function abwesenheitwirklichloeschen(event){
+	var abwesenheitreallyDelete = confirm("⚠️ Abwesenheit wirklich löschen? ⚠️");
+	if(!abwesenheitreallyDelete){
+		event.preventDefault();
+	}
+}
+

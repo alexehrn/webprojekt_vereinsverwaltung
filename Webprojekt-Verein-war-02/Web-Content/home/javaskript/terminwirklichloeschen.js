@@ -12,7 +12,7 @@ function init(){
 }
 
 function terminwirklichloeschen(evt){
-	var reallyDelete = confirm("Termin wirklich löschen?");
+	var reallyDelete = confirm("⚠️ Termin wirklich löschen? ⚠️");
 	if(!reallyDelete){
 		evt.preventDefault();
 	}

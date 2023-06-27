@@ -139,7 +139,7 @@
 											<td>${currentAbwesenheit.start}</td>
 											<td>${currentAbwesenheit.ende}</td>
 											<td class="zentrierteschrift">
-												<a href="/Webprojekt-Verein-war-02/SpielerAbwesenheitLoeschen?id=${currentAbwesenheit.id}" class="button" title="Abwesenheit löschen">&#x1F5D1;</a> 
+												<a href="/Webprojekt-Verein-war-02/SpielerAbwesenheitLoeschen?id=${currentAbwesenheit.id}" id="abwesenheitloeschen" class="button" title="Abwesenheit löschen">&#x1F5D1;</a> 
 									        </td>
 										</tr>
 									</c:forEach>
