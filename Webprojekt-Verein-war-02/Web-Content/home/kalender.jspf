@@ -16,7 +16,5 @@
   <div class="weekday">Sonntag</div>
 </div>
       <div id="calendar-body"></div>
-    </div>
   </main>
-
-<script type="text/javascript" src="./javaskript/kalender.js"></script>
+			

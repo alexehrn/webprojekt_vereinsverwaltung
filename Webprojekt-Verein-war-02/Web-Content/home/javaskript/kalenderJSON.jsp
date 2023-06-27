@@ -5,9 +5,9 @@
     [
     <c:forEach var="termin" items="${termine}" varStatus="status">
     {
-    	"date":${termin.datum},
-    	"title": ${termin.kurzbeschreibung},
-    	"time": ${termin.uhrzeitVON}
+    	"date":"${termin.datum}",
+    	"title":"${termin.kurzbeschreibung}",
+    	"time":"${termin.uhrzeitVON}"
      }<c:if test="${not status.last}">,</c:if>
     </c:forEach>
     ]

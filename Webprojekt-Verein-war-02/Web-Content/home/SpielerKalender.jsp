@@ -9,7 +9,7 @@
 			<title>Spieler-Kalender</title>
 			<base href="${pageContext.request.requestURI}" />
 			<link rel="stylesheet" type="text/css" href="../stylesheet.css">
-			 
+			<script type="text/javascript" src="./javaskript/kalender.js"></script>
 		</head>
 
 <body>

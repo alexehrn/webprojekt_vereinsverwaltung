@@ -16,7 +16,7 @@ function init() {
   nextMonthBtn.addEventListener("click", nextMonth);
 
   // Termine erstellen
-  erstelleTermine();
+ erstelleTermine();
 
   // Kalender generieren
   generateCalendar();
@@ -31,23 +31,14 @@ function init() {
 	var currentDate = new Date();
     var currentMonth = currentDate.getMonth();
     var currentYear = currentDate.getFullYear();
-    var events = [];
     
+    //Ab hier wurde selber erstellt//
     
-    /*[
-       { date: new Date(currentYear, currentMonth, 01), title: "Training", time: "09:00" },
-  	   { date: new Date(currentYear, currentMonth, 10), title: "Event 2", time: "14:00 - 16:00" },
-       { date: new Date(currentYear, currentMonth, 21), title: "Event 3", time: "18:00 - 20:00" },
-       { date: new Date(currentYear, currentMonth, 15), title: "Event 4", time: "10:00 - 12:00" },
-       { date: new Date(currentYear, currentMonth, 22), title: "Event 5", time: "16:00 - 18:00" },
-       { date: new Date(currentYear, currentMonth, 25), title: "Event 6", time: "14:30 - 15:30" },
-     ];*/
-    
-  
+  var events=[];
     
 			 // Termine von DB einfügen
 			function erstelleTermine() {
-				var searchTermine = "SearchServletTrainerKalender";
+				var searchTermine = "/Webprojekt-Verein-war-02/SearchServletKalender";
 				
 				var xmlhttp = new XMLHttpRequest();
 				xmlhttp.responseType = "json"; // Wenn gesetzt, ist kein JSON.parse() notwendig!
@@ -55,20 +46,31 @@ function init() {
 					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 						var terminList = xmlhttp.response; // Wenn responseType auf JSON gesetzt ist
 						
+						events = [];
+						
 						for (var i = 0; i < terminList.length; i++) {
 							
 							
+							var date = new Date(terminList[i].date);
+							var year = date.getFullYear();
+							var month = date.getMonth();
+							var day = date.getDate();
+							
 							// Erstelle ein neues Event-Objekt
 							var event = {
-								date: new Date(terminList[i].datum),
-								title: terminList[i].kurzbeschreibung,
-								time: terminList[i].uhrzeitVON
+								date: new Date(year, month, day),
+								title: terminList[i].title,
+								time: terminList[i].time
 							};
-			  
+			  			
 							// Füge das Event-Objekt zum Array hinzu
 							events.push(event);
 						}
+						      				
+      				
 					}
+					generateCalendar(); 
+					return events;
 				};
 				
 				xmlhttp.open("GET", searchTermine, true);
@@ -76,7 +78,7 @@ function init() {
 			
 			}
 
-				
+		 //Ende selber erstellt//		
 				
     
     function generateCalendar() {
@@ -126,7 +128,7 @@ function init() {
           calendarBody.appendChild(dayCell);
         }
       }
-    
+   
       document.getElementById("current-month").textContent = monthNames[currentMonth] + " " + currentYear;
     }
     
