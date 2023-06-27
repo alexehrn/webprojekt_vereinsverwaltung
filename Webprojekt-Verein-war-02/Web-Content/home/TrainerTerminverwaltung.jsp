@@ -48,7 +48,7 @@
 		                <td class="datumsspalte">${currentTermin.uhrzeitVON}-${currentTermin.uhrzeitBIS}</td>
 		                <td class="langertextspalte">${currentTermin.beschreibung}</td>
 		                <td class="zentrierteschrift">
-		                <a href="tbc?id=${currentTermin.id}" class="button" title="Termin bearbeiten">&#x270E;</a>
+		                <a href="/Webprojekt-Verein-war-02/SearchServletTrainerTerminBearbeiten?id=${currentTermin.id}" class="button" title="Termin bearbeiten">&#x270E;</a>
 		                <a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}" id="terminloeschen" class="button"  title="Termin löschen">&#x1F5D1;</a>
 		                </td>
 		            </tr>
@@ -85,7 +85,7 @@
 			</div>
 			<div>
 				<label for="trainer_eingabe">Details:</label>
-				<textarea name="trainer_eingabe" id="trainer_eingabe" rows="6" cols="50" placeholder="Details eingeben... (max. 200 Zeichen)" maxlength="200"></textarea>
+				<textarea name="trainer_eingabe" id="trainer_eingabe" rows="4" cols="40" placeholder="Details eingeben... (max. 200 Zeichen)" maxlength="200"></textarea>
 			</div>
 			<div>
 				<button type="submit" name="anlegen">Termin anlegen</button>
