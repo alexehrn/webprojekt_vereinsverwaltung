@@ -1,9 +1,12 @@
-/ Alexander Ehrnstrasser:/
+/ Alexander Ehrnstrasser, Quirin Gerstberger:/
 "use strict";
 
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
+ var reset = document.getElementById("reset");
+  reset.addEventListener("reset", confirmReset); 
+ 
   var trainerRadio = document.getElementById("r2");
   trainerRadio.addEventListener("click", fotodeaktivieren);
 
@@ -12,6 +15,8 @@ function init() {
 
   var passwort2Input = document.getElementById("passwort2");
   passwort2Input.addEventListener("input", fehleranzeige);
+  
+ 
   
 
 }
@@ -41,4 +46,10 @@ function fehleranzeige() {
   }
 }
 
+function confirmReset(evt){
+	var reallyReset = confirm("Formular wirkich zurücksetzen?");
+	if(!reallyReset){
+		evt.preventDefault();
+	}
+}
 
