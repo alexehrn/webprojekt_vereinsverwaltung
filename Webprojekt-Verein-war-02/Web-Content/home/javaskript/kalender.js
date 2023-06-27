@@ -31,14 +31,17 @@ function init() {
 	var currentDate = new Date();
     var currentMonth = currentDate.getMonth();
     var currentYear = currentDate.getFullYear();
-    var events = [
+    var events = [];
+    
+    
+    /*[
        { date: new Date(currentYear, currentMonth, 01), title: "Training", time: "09:00" },
   	   { date: new Date(currentYear, currentMonth, 10), title: "Event 2", time: "14:00 - 16:00" },
        { date: new Date(currentYear, currentMonth, 21), title: "Event 3", time: "18:00 - 20:00" },
        { date: new Date(currentYear, currentMonth, 15), title: "Event 4", time: "10:00 - 12:00" },
        { date: new Date(currentYear, currentMonth, 22), title: "Event 5", time: "16:00 - 18:00" },
        { date: new Date(currentYear, currentMonth, 25), title: "Event 6", time: "14:30 - 15:30" },
-     ];
+     ];*/
     
   
     
@@ -57,7 +60,7 @@ function init() {
 							
 							// Erstelle ein neues Event-Objekt
 							var event = {
-								date: terminList[i].datum,
+								date: new Date(terminList[i].datum),
 								title: terminList[i].kurzbeschreibung,
 								time: terminList[i].uhrzeitVON
 							};

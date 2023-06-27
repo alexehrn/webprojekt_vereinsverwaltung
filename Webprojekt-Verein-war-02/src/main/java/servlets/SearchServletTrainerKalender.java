@@ -56,7 +56,7 @@ public class SearchServletTrainerKalender extends HttpServlet {
 
 		
 		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/TrainerKalender.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/javaskript/kalenderJSON.jsp");
 		dispatcher.forward(request, response);
 
 	}
