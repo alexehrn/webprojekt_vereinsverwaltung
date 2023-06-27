@@ -28,15 +28,15 @@ import jakarta.servlet.http.HttpSession;
 /*
  * Servlet zum Suchen der Termine einer Mannschaft für den Kalender
  */
-@WebServlet("/SearchServletTrainerKalender")
-public class SearchServletTrainerKalender extends HttpServlet {
+@WebServlet("/SearchServletKalender")
+public class SearchServletKalender extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
    
 	
-    public SearchServletTrainerKalender() {
+    public SearchServletKalender() {
     }
 
 	
@@ -45,19 +45,36 @@ public class SearchServletTrainerKalender extends HttpServlet {
 
 		// Team des Trainers aus Session holen
 		final HttpSession session = request.getSession();
-		TrainerBean trainer = (TrainerBean) session.getAttribute("trainer");
-		String team = trainer.getTeam();
-
-		// DB-Zugriff
-		List<TrainerTerminverwaltungsBean> termine = searchtermine(team);
 		
-		// Scope "Request"
-		request.setAttribute("termine", termine);
+		Object trainerObj = session.getAttribute("trainer");
+		Object spielerObj = session.getAttribute("spieler");
 
+		if (trainerObj instanceof TrainerBean) {
+		    TrainerBean trainer = (TrainerBean) trainerObj;
+		    String team = trainer.getTeam();
+		    List<TrainerTerminverwaltungsBean> termine = searchtermine(team);
+		    // Scope "Request"
+			request.setAttribute("termine", termine);
+
+			
+			// Weiterleiten an JSP
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/javaskript/kalenderJSON.jsp");
+			dispatcher.forward(request, response);
+		} else if (spielerObj instanceof SpielerBean) {
+		    SpielerBean spieler = (SpielerBean) spielerObj;
+		    String team = spieler.getTeam();
+		    List<TrainerTerminverwaltungsBean> termine = searchtermine(team);
+		    // Scope "Request"
+			request.setAttribute("termine", termine);
+
+			
+			// Weiterleiten an JSP
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/javaskript/kalenderJSON.jsp");
+			dispatcher.forward(request, response);
+		}
 		
-		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/javaskript/kalenderJSON.jsp");
-		dispatcher.forward(request, response);
+
+	
 
 	}
 
@@ -66,7 +83,7 @@ public class SearchServletTrainerKalender extends HttpServlet {
 	
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT termin_id, kurzbeschreibung, ort, datum, beginn, ende FROM termine WHERE mannschaft=?")) { 
+			 PreparedStatement pstmt = con.prepareStatement("SELECT termin_id, kurzbeschreibung, ort, datum, beginn, ende FROM termine WHERE mannschaft=? ORDER BY datum ASC, beginn ASC")) { 
 
 			pstmt.setString(1,team);																			
 			try (ResultSet rs = pstmt.executeQuery()) {
