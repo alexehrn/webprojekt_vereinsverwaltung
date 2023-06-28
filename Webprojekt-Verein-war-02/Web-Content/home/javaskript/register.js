@@ -23,12 +23,16 @@ function init() {
 
 function fotodeaktivieren() {
   var imageInput = document.getElementById("image");
+  var spanElement = document.getElementById("image").nextElementSibling;
   imageInput.disabled = true;
+  spanElement.style.display = 'none';
 }
 
 function fotoaktivieren() {
   var imageInput = document.getElementById("image");
+  var spanElement = document.getElementById("image").nextElementSibling;
   imageInput.disabled = false;
+  spanElement.style.display = 'inline';
 }
 
 function fehleranzeige() {

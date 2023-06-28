@@ -41,10 +41,9 @@ function init() {
 				var searchTermine = "/Webprojekt-Verein-war-02/SearchServletKalender";
 				
 				var xmlhttp = new XMLHttpRequest();
-				xmlhttp.responseType = "json"; // Wenn gesetzt, ist kein JSON.parse() notwendig!
-				xmlhttp.onreadystatechange = function() {
-					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-						var terminList = xmlhttp.response; // Wenn responseType auf JSON gesetzt ist
+				xmlhttp.responseType = "json"; 
+				xmlhttp.addEventListener("load",function() {
+					var terminList = xmlhttp.response;
 						
 						events = [];
 						
@@ -66,15 +65,16 @@ function init() {
 							// Füge das Event-Objekt zum Array hinzu
 							events.push(event);
 						}
-						      				
-      				
-					}
-					generateCalendar(); 
-					return events;
-				};
+					generateCalendar();
+					return events;		      					
+				});
 				
 				xmlhttp.open("GET", searchTermine, true);
 				xmlhttp.send();
+				
+			
+			
+				
 			
 			}
 
