@@ -2,19 +2,20 @@
   <main id="kalendermain">
     <div id="calendar">
       <div id="header">
-        <h1 id="current-month"></h1>
-        <button id="prev-month-btn">&lt;</button>       
-      	<button id="next-month-btn">&gt;</button> 											
+	      <h1 id="current-month"></h1>
+		      <button id="prev-month-btn">&lt;</button>       
+		      <button id="next-month-btn">&gt;</button> 											
       </div>
       <div id="weekday-bar">
-  <div class="weekday">Montag</div>
-  <div class="weekday">Dienstag</div>
-  <div class="weekday">Mittwoch</div>
-  <div class="weekday">Donnerstag</div>
-  <div class="weekday">Freitag</div>
-  <div class="weekday">Samstag</div>
-  <div class="weekday">Sonntag</div>
-</div>
+		  <div class="weekday">Montag</div>
+		  <div class="weekday">Dienstag</div>
+		  <div class="weekday">Mittwoch</div>
+		  <div class="weekday">Donnerstag</div>
+		  <div class="weekday">Freitag</div>
+		  <div class="weekday">Samstag</div>
+		  <div class="weekday">Sonntag</div>
+	  </div>
       <div id="calendar-body"></div>
+   	</div>
   </main>
 			
