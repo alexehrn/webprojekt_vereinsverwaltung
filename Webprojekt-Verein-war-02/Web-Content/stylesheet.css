@@ -232,7 +232,8 @@ a.button:hover {
 
 
 .zubutton{
-	width: 3em;
+	width: 32px;
+	height: 32px;
 	transition-duration: 0.4s;
     cursor: pointer;
 }
@@ -244,7 +245,8 @@ a.button:hover {
 
 
 .abbutton{
-	width: 3em;
+	width: 32px;
+	height: 32px;
 	transition-duration: 0.4s;
     cursor: pointer;
 }

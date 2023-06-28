@@ -20,6 +20,9 @@ function init() {
 function abwesenheitdeaktivieren(){
 	
 	var startdatum =new Date(document.getElementById("startdatum").value);
+	startdatum.setHours(23);
+	startdatum.setMinutes(59);
+	startdatum.setSeconds(59);
 	var enddatum = new Date(document.getElementById("enddatum").value);
 	var heute= new Date();
 	var abwerror = document.getElementById("abwesenheitserror");
@@ -30,7 +33,7 @@ function abwesenheitdeaktivieren(){
 		 sendebutton.disabled=true;
 		 
 	 } else if(startdatum < heute){
-		  abwerror.innerHTML = "Startzeitpunkt liegt in der Vergangenheit";
+		 abwerror.innerHTML = "Startzeitpunkt liegt in der Vergangenheit";
 		 sendebutton.disabled=true;
 	 }else {
 		 abwerror.innerHTML = "";
