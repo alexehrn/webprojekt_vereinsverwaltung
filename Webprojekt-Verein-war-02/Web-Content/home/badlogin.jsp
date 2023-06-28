@@ -7,6 +7,7 @@
 <title>Login</title>
 
 <link rel="stylesheet" type="text/css" href="./home/css/styleloginundregist.css">
+<link rel="icon" type="image/x-icon" href="../img/tapicon.png">
 
 </head>
 <body>

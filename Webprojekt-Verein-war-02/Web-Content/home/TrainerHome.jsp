@@ -8,7 +8,7 @@
 			<title>Trainer-Home</title>
 			<base href="${pageContext.request.requestURI}" />
 			<link rel="stylesheet" type="text/css" href="../stylesheet.css">
-			
+			<link rel="icon" type="image/x-icon" href="../img/tapicon.png">
 		</head>
 
 <body>
@@ -47,29 +47,53 @@
 
 	</table>
 
-	<h1>Geplante Abwesenheiten</h1>
-	<table>
-		<tr>
-			<th></th>
-			<th>Name</th>
-			<th>Zeitraum</th>
-			<th>Grund</th>
-		</tr>
-	
+	<c:choose>
+			<c:when test="${empty abwesenheiten}">
+				<h1>Geplante Abwesenheiten</h1>
+				<table>
+					<tr>
+						<th>Name</th>
+						<th>Zeitraum</th>
+						<th>Grund</th>
+					</tr>
+				
+					<tr>
+					     <td colspan="3">Keiner deiner Spieler hat aktuell eine Abwesenheit gemeldet!</td>
+					    
+					</tr>
+					        
 			
-		        <c:forEach var="currentAbwesenheit" items="${abwesenheit}" varStatus="status">
-		            <tr>
-		                <td class="nummerspalte">${status.count}</td>
-		                <td>${currentAbwesenheit.vorname} ${currentAbwesenheit.nachname}</td>
-		                <td>${currentAbwesenheit.start} bis ${currentAbwesenheit.ende}</td>
-		                <td class="zentrierteschrift">${currentAbwesenheit.grund}</td>
-		            </tr>
-		        </c:forEach>
-		   
+			
+				</table>
+			</c:when>
+			<c:otherwise>
+				<h1>Geplante Abwesenheiten</h1>
+					<table>
+						<tr>
+							<th></th>
+							<th>Name</th>
+							<th>Zeitraum</th>
+							<th>Grund</th>
+						</tr>
+					
+							
+						        <c:forEach var="currentAbwesenheit" items="${abwesenheit}" varStatus="status">
+						            <tr>
+						                <td class="nummerspalte">${status.count}</td>
+						                <td>${currentAbwesenheit.vorname} ${currentAbwesenheit.nachname}</td>
+						                <td>${currentAbwesenheit.start} bis ${currentAbwesenheit.ende}</td>
+						                <td class="zentrierteschrift">${currentAbwesenheit.grund}</td>
+						            </tr>
+						        </c:forEach>
+						   
+				
+					</table>
+			</c:otherwise>
+	</c:choose>
+	
 
-</table>
 
-	<h1>Nachricht an das Team senden:</h1>
+	<h1>Nachricht an das Team senden</h1>
 	<form action="/Webprojekt-Verein-war-02/TrainerHomeServlet" method="post" accept-charset="utf-8">
 		<fieldset>
 			<div class="zentrieren">

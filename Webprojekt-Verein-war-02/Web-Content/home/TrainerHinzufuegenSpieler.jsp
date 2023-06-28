@@ -9,6 +9,7 @@
 			<title>Trainer-Teamverwaltung</title>
 			<base href="${pageContext.request.requestURI}" />
 			<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+			<link rel="icon" type="image/x-icon" href="../img/tapicon.png">
 			<script type="text/javascript" src="./javaskript/spielerpoolloeschen.js"></script>
 		</head>
 
@@ -43,7 +44,7 @@
 						<td class="zentrierteschrift">${currentSpieler.team}</td>
 						<td class="zentrierteschrift">
 						<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerHinzufuegen?id=${currentSpieler.id}" class="button">Spieler hinzufügen</a>
-						<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}" id="spielerauspoolloeschen" class="button">Spieler löschen</a></td>
+						<a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerLoeschen?id=${currentSpieler.id}" class="button spielerauspoolloeschen">Spieler löschen</a></td>
 					</tr>
 				</c:forEach>
 			

@@ -5,13 +5,15 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init(){
-	var spielerentfernenclick = document.getElementById("spielerausteamentfernen");
-	spielerentfernenclick.addEventListener("click", spielerentfernen);
+	var spielerentfernenclick = document.getElementsByClassName("spielerausteamentfernen");
+	for (var i=0; spielerentfernenclick.length; i++){
+	spielerentfernenclick[i].addEventListener("click", spielerentfernen);
+	}
 }
 
-function spielerentfernen(event1){
+function spielerentfernen(event){
 	var reallyentfernen = confirm("⚠️ Wollen Sie den Spieler wirklich aus dem Team entfernen? Zugehörige Abwesenheiten werden ebenfalls entfernt! ⚠️");
 	if(!reallyentfernen){
-		event1.preventDefault();
+		event.preventDefault();
 	}
 }

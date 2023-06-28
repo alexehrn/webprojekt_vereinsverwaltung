@@ -8,6 +8,8 @@
 			<title>Spieler-Home</title>
 			<base href="${pageContext.request.requestURI}" />
 			<link rel="stylesheet" type="text/css" href="../stylesheet.css">	
+			<link rel="icon" type="image/x-icon" href="../img/tapicon.png">
+			
 			<script type="text/javascript" src="./javaskript/abwesenheitscheck.js"></script>		
 		</head>
 
@@ -139,7 +141,7 @@
 											<td>${currentAbwesenheit.start}</td>
 											<td>${currentAbwesenheit.ende}</td>
 											<td class="zentrierteschrift">
-												<a href="/Webprojekt-Verein-war-02/SpielerAbwesenheitLoeschen?id=${currentAbwesenheit.id}" id="abwesenheitloeschen" class="button" title="Abwesenheit löschen">&#x1F5D1;</a> 
+												<a href="/Webprojekt-Verein-war-02/SpielerAbwesenheitLoeschen?id=${currentAbwesenheit.id}" class="button abwesenheitloeschen" title="Abwesenheit löschen">&#x1F5D1;</a> 
 									        </td>
 										</tr>
 									</c:forEach>

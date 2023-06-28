@@ -26,7 +26,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 /*
- * Servlet zum Suchen der Termine einer Mannschaft für den Kalender
+ * Servlet zum Suchen der Termine für den Kalender
  */
 @WebServlet("/SearchServletKalender")
 public class SearchServletKalender extends HttpServlet {

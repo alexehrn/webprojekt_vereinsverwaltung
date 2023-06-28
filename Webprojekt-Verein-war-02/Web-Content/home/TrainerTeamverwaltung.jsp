@@ -9,6 +9,7 @@
 			<title>Trainer-Teamverwaltung</title>
 			<base href="${pageContext.request.requestURI}" />
 			<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+			<link rel="icon" type="image/x-icon" href="../img/tapicon.png">			
 			<script type="text/javascript" src="./javaskript/spielerteamentfernen.js"></script>
 		</head>
 
@@ -41,7 +42,7 @@
 			
 			
 			
-			<h1>Deine Mannschaft:</h1>
+			<h1>Deine Mannschaft</h1>
 
 			<table>
 				<tr>
@@ -56,7 +57,7 @@
 						<td><img src="/Webprojekt-Verein-war-02/BildVerarbeitungServlet?id=${currentSpieler.id}"  class="spielerfoto" alt="Spielerfoto"></td>
 						<td class="zentrierteschrift">${currentSpieler.nachname}</td>
 						<td class="zentrierteschrift">${currentSpieler.vorname}</td>
-						<td class="zentrierteschrift"><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerAusMannschaftEntfernen?id=${currentSpieler.id}" id="spielerausteamentfernen" class="button" title="Spieler erscheint wieder im Spielerpool">Spieler entfernen</a></td>
+						<td class="zentrierteschrift"><a href="/Webprojekt-Verein-war-02/TrainerTeamverwaltungSpielerAusMannschaftEntfernen?id=${currentSpieler.id}" class="button spielerausteamentfernen" title="Spieler erscheint wieder im Spielerpool">Spieler entfernen</a></td>
 					</tr> 
 				</c:forEach>
 			

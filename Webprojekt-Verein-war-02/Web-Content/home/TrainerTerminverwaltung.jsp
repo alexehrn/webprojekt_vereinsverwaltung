@@ -8,6 +8,7 @@
 			<title>Trainer-Terminverwaltung</title>
 			<base href="${pageContext.request.requestURI}" />
 			<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+			<link rel="icon" type="image/x-icon" href="../img/tapicon.png">			
 			<script type="text/javascript" src="./javaskript/terminwirklichloeschen.js"></script>
 		</head>
 

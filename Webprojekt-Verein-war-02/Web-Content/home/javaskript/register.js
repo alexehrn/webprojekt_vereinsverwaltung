@@ -47,7 +47,7 @@ function fehleranzeige() {
 }
 
 function confirmReset(evt){
-	var reallyReset = confirm("Formular wirkich zurücksetzen?");
+	var reallyReset = confirm("Formular wirklich zurücksetzen?");
 	if(!reallyReset){
 		evt.preventDefault();
 	}

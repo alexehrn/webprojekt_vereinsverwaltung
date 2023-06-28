@@ -10,8 +10,9 @@
 
 
 	<link rel="stylesheet" type="text/css" href="./css/styleloginundregist.css">
+	<link rel="icon" type="image/x-icon" href="../img/tapicon.png">
 	<script type="text/javascript" src="./javaskript/register.js"></script>
-
+	
 </head>
 
 <body>

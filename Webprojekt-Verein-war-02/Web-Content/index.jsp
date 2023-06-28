@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
+<link rel="icon" type="image/x-icon" href="./img/tapicon.png">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" type="text/css" href="./home/css/styleloginundregist.css">
 
