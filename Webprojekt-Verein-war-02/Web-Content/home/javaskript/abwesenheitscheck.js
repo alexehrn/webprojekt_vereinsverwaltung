@@ -4,21 +4,16 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-	
-	
-	var abwesenheitloeschenclick = document.getElementsByClassName("abwesenheitloeschen");
-	
-	for(var i=0; abwesenheitloeschenclick.length;i++){
-	abwesenheitloeschenclick[i].addEventListener("click", abwesenheitwirklichloeschen);
-	}
-	
 	var enddatum = document.getElementById("enddatum");
 	enddatum.addEventListener("change", abwesenheitdeaktivieren);
 	
 	var startdatum =document.getElementById("startdatum");
 	startdatum.addEventListener("change", abwesenheitdeaktivieren);
 	
-	
+	var abwesenheitloeschenclick = document.getElementsByClassName("abwesenheitloeschen");
+	for(var i=0; abwesenheitloeschenclick.length;i++){
+		abwesenheitloeschenclick[i].addEventListener("click", abwesenheitwirklichloeschen);
+	}
 }
 
 
