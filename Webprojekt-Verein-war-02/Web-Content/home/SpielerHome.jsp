@@ -73,7 +73,7 @@
 					<form action="/Webprojekt-Verein-war-02/SpielerRueckmeldungServlet" method="get">
 						<input type="hidden" name="id" value="${currentTermin.id}">
 						<button class ="zubutton" type="submit" name="rueckmeldung" value="Zugesagt" title="Zusagen">&#10003;</button>
-						<button class ="abbutton" type="submit" name="rueckmeldung" value="Abgesagt" title="Absagen">X</button>
+						<button class ="abbutton" type="submit" name="rueckmeldung" value="Abgesagt" title="Absagen">&#10005;</button>
 					</form>
 				<td>
 				
