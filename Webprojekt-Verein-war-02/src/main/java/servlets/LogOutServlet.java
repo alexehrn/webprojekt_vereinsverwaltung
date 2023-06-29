@@ -1,7 +1,11 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
 
+import bean.KalenderItemBean;
+import bean.SpielerBean;
+import bean.TrainerBean;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -30,17 +34,28 @@ public class LogOutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		
-		/* der folgende Aufruf 	session.invalidate(); wurde über Chat-GPT herausgefunden */
-		/* Durch den Aufruf der invalidate()-Methode wird die aktuelle Session ungültig gemacht und alle darin gespeicherten Attribute, einschließlich der JavaBeans, werden entfernt. */
+		request.setCharacterEncoding("UTF-8");
+		
+		Object trainerObj = session.getAttribute("trainer");
+		Object spielerObj = session.getAttribute("spieler");
 
+		if (trainerObj instanceof TrainerBean) {
+		    
+		    session.removeAttribute("trainer");
+			
+			// Weiterleiten an JSP
+		    RequestDispatcher disp = request.getRequestDispatcher("./index.jsp");
+			disp.forward(request, response);
+		} else if (spielerObj instanceof SpielerBean) {
 		
-		session.invalidate();
+		    session.removeAttribute("spieler");
+
+			// Weiterleiten an JSP
+		    RequestDispatcher disp = request.getRequestDispatcher("./index.jsp");
+			disp.forward(request, response);
+		}
 		
 		
-		
-		
-		RequestDispatcher disp = request.getRequestDispatcher("./index.jsp");
-		disp.forward(request, response);
 	}
 
 	/**
