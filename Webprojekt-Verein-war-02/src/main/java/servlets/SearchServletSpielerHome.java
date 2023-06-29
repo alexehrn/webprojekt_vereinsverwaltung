@@ -79,7 +79,7 @@ public class SearchServletSpielerHome extends HttpServlet {
 				 PreparedStatement pstmt = con.prepareStatement("SELECT *\r\n"
 				 		+ "FROM termine\r\n"
 				 		+ "LEFT OUTER JOIN rueckmeldung ON termine.termin_id = rueckmeldung.termin_id AND rueckmeldung.spieler_id = ?\r\n"
-				 		+ "WHERE termine.mannschaft = ? AND (rueckmeldung.spieler_id = ? OR rueckmeldung.spieler_id IS NULL) AND termine.datum >= CURDATE();")) { 
+				 		+ "WHERE termine.mannschaft = ? AND (rueckmeldung.spieler_id = ? OR rueckmeldung.spieler_id IS NULL) AND termine.datum >= CURDATE() ORDER BY termine.datum ASC;")) { 
 
 				
 				pstmt.setLong(1, spieler.getId());
