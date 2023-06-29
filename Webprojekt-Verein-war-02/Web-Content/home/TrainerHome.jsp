@@ -48,7 +48,7 @@
 	</table>
 
 	<c:choose>
-			<c:when test="${empty abwesenheiten}">
+			<c:when test="${empty abwesenheit}">
 				<h1>Geplante Abwesenheiten</h1>
 				<table>
 					<tr>
