@@ -1,8 +1,8 @@
-/Kalender wurde komplett mit Chat-GPT erstellt und nach Best-Pratice bestmöglich angepasst/
+/Kalender wurde komplett mit Chat-GPT erstellt und nach Best-Pratice gemeinsam, bestmöglich angepasst/
 
 "use strict";
 
-	document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", init);
 	
 function init() {
   // Button-Elemente auswählen
@@ -66,6 +66,7 @@ function init() {
 							events.push(event);
 						}
 					generateCalendar();
+					console.log(events);
 					return events;		      					
 				});
 				
@@ -162,5 +163,4 @@ function init() {
       generateCalendar();
     }
     
-    generateCalendar(); 
 

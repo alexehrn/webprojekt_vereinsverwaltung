@@ -3,6 +3,7 @@ package bean;
 import java.io.Serializable;
 import java.sql.Date;
 
+
 public class abwesenheitsbean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -41,14 +42,14 @@ public class abwesenheitsbean implements Serializable {
 		this.grund = grund;
 	}
 	public Date getStart() {
-		return start;
-	}
+        return start;
+    }
 	public void setStart(Date start) {
 		this.start = start;
 	}
 	public Date getEnde() {
-		return ende;
-	}
+       return ende;
+    }
 	public void setEnde(Date ende) {
 		this.ende = ende;
 	}

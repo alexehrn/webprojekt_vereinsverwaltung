@@ -2,6 +2,8 @@ package bean;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalTime;
 
@@ -40,7 +42,7 @@ public void setOrt(String ort) {
 	this.ort = ort;
 }
 public Date getDatum() {
-	return datum;
+    return datum;
 }
 public void setDatum(Date datum) {
 	this.datum = datum;

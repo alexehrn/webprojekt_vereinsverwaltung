@@ -2,6 +2,8 @@ package bean;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 
 public class RueckmeldungsBean implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -19,9 +21,10 @@ public class RueckmeldungsBean implements Serializable{
 	public void setBeschreibung(String beschreibung) {
 		this.beschreibung = beschreibung;
 	}
-	public Date getDatum() {
-		return datum;
-	}
+	 public String getDatum() {
+	        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+	        return sdf.format(datum);
+	    }
 	public void setDatum(Date datum) {
 		this.datum = datum;
 	}

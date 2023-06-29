@@ -29,21 +29,42 @@
 
 <main class="zentrieren">
 
+
+
+
 	<h1>News der letzten 7 Tage vom Trainerteam</h1>
 
-	<table>
-		<tr>
-			<th class="datumsspalte">Tag</th>
-			<th>Nachrichtenforum</th>
-		</tr>
-	<c:forEach var="currentNachricht" items="${nachrichten}" varStatus="status">
-		<tr>
-		<td class="datumsspalte">${currentNachricht.tag}</td>
-		<td class="langertextspalte">${currentNachricht.beschreibung}</td>
-		</tr>
-		</c:forEach>
+	<c:choose>
+  			<c:when test="${empty nachrichten}">
+				<table>
+						<tr>
+							<th>Nachricht</th>
+						</tr>
+						<tr>
+							<td>Es gibt keine Nachricht aus den letzten 7 Tagen.</td>
+						</tr>
+				
+					</table>
+			</c:when>
+ 			
+ 			<c:otherwise>
+				<table>
+					<tr>
+						<th class="datumsspalte">Tag</th>
+						<th>Nachrichtenforum</th>
+					</tr>
+					<c:forEach var="currentNachricht" items="${nachrichten}" varStatus="status">
+						<tr>
+						<td class="datumsspalte">${currentNachricht.tag}</td>
+						<td class="langertextspalte">${currentNachricht.beschreibung}</td>
+						</tr>
+					</c:forEach>
+			
+				</table>
+ 			</c:otherwise>
+ 	</c:choose>
 
-	</table>
+	
 
 
 

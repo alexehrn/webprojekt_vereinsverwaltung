@@ -11,6 +11,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import bean.KalenderItemBean;
 import bean.SpielerBean;
 import bean.TrainerBean;
 import bean.TrainerHomeBean;
@@ -52,7 +53,7 @@ public class SearchServletKalender extends HttpServlet {
 		if (trainerObj instanceof TrainerBean) {
 		    TrainerBean trainer = (TrainerBean) trainerObj;
 		    String team = trainer.getTeam();
-		    List<TrainerTerminverwaltungsBean> termine = searchtermine(team);
+		    List<KalenderItemBean> termine = searchtermine(team);
 		    // Scope "Request"
 			request.setAttribute("termine", termine);
 
@@ -63,7 +64,7 @@ public class SearchServletKalender extends HttpServlet {
 		} else if (spielerObj instanceof SpielerBean) {
 		    SpielerBean spieler = (SpielerBean) spielerObj;
 		    String team = spieler.getTeam();
-		    List<TrainerTerminverwaltungsBean> termine = searchtermine(team);
+		    List<KalenderItemBean> termine = searchtermine(team);
 		    // Scope "Request"
 			request.setAttribute("termine", termine);
 
@@ -78,18 +79,18 @@ public class SearchServletKalender extends HttpServlet {
 
 	}
 
-	private List<TrainerTerminverwaltungsBean> searchtermine(String team) throws ServletException {
-		List<TrainerTerminverwaltungsBean> termine = new ArrayList<TrainerTerminverwaltungsBean>();
+	private List<KalenderItemBean> searchtermine(String team) throws ServletException {
+		List<KalenderItemBean> termine = new ArrayList<KalenderItemBean>();
 	
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT termin_id, kurzbeschreibung, ort, datum, beginn, ende FROM termine WHERE mannschaft=? ORDER BY datum ASC, beginn ASC")) { 
+			 PreparedStatement pstmt = con.prepareStatement("SELECT termin_id, kurzbeschreibung, datum, beginn FROM termine WHERE mannschaft=? ORDER BY datum ASC, beginn ASC")) { 
 
 			pstmt.setString(1,team);																			
 			try (ResultSet rs = pstmt.executeQuery()) {
 			
 				while (rs.next()) {
-					TrainerTerminverwaltungsBean termin = new TrainerTerminverwaltungsBean();
+					KalenderItemBean termin = new KalenderItemBean();
 					
 					Long id = Long.valueOf(rs.getLong("termin_id"));
 					termin.setId(id);
@@ -97,17 +98,11 @@ public class SearchServletKalender extends HttpServlet {
 					String kurzbeschreibung = rs.getString("kurzbeschreibung");
 					termin.setKurzbeschreibung(kurzbeschreibung);
 					
-					String ort = rs.getString("ort");
-					termin.setOrt(ort);
-					
 					Date datum = rs.getDate("datum");
 					termin.setDatum(datum);
 					
 					LocalTime beginn = rs.getTime("beginn").toLocalTime();
 					termin.setUhrzeitVON(beginn);
-					
-					LocalTime ende = rs.getTime("ende").toLocalTime();
-					termin.setUhrzeitBIS(ende);
 					
 					termine.add(termin);
 				}
