@@ -26,13 +26,15 @@
 <main class="zentrieren">
 
 
-	<h1>Termine</h1>
+	<h1>Rückmeldungen</h1>
+	<p>Du hast ${spielerzahl} zugeordnete Spieler in deiner Mannschaft.</p>
 	<table> 
 		<tr>
 			<th>Beschreibung</th>
 			<th class="datumsspalte">Datum</th>
 			<th class="zentrierteschrift">Zusagen</th>
 			<th class="zentrierteschrift">Absagen</th>
+			<th class="zentrierteschrift">Ausstehend</th>
 		</tr>
 		
 				<c:forEach var="currentRueckmeldung" items="${rueckmeldung}" varStatus="status">
@@ -41,6 +43,7 @@
 						<td class="datumsspalte">${currentRueckmeldung.day}.${currentRueckmeldung.month}.${currentRueckmeldung.year}</td>
 						<td class="zentrierteschrift">${currentRueckmeldung.zusagen}</td>
 						<td class="zentrierteschrift">${currentRueckmeldung.absagen}</td>
+						<td class="zentrierteschrift">${spielerzahl-currentRueckmeldung.absagen-currentRueckmeldung.zusagen}</td>
 					</tr>
 				</c:forEach>
 			

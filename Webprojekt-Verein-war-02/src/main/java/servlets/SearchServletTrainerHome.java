@@ -50,16 +50,41 @@ public class SearchServletTrainerHome extends HttpServlet {
 		// DB-Zugriff
 		List<abwesenheitsbean> abwesenheiten = searchAbwesenheiten(team);
 		List<RueckmeldungsBean> rueckmeldungen = searchRueckmeldung(team);
+		String spielerzahl = countPlayers(team);
 		
 		// Scope "Request"
 		request.setAttribute("abwesenheit", abwesenheiten);
 		request.setAttribute("rueckmeldung", rueckmeldungen);
+		request.setAttribute("spielerzahl", spielerzahl);
 		
 		// Weiterleiten an JSP
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/TrainerHome.jsp");
 		dispatcher.forward(request, response);
 
 	}
+
+	private String countPlayers(String team) throws ServletException {
+	    String spieleranzahl;
+
+	    // DB-Zugriff
+	    try (Connection con = ds.getConnection();
+	         PreparedStatement pstmt = con.prepareStatement("SELECT COUNT(*) AS anzahl FROM spieler WHERE mannschaft=? AND zugeordnet = TRUE")) {
+
+	        pstmt.setString(1, team);
+	        try (ResultSet rs = pstmt.executeQuery()) {
+	            if (rs.next()) {
+	                spieleranzahl = rs.getString("anzahl");
+	            } else {
+	                spieleranzahl = "0";
+	            }
+	        }
+	    } catch (Exception ex) {
+	        throw new ServletException(ex.getMessage());
+	    }
+
+	    return spieleranzahl;
+	}
+
 
 	private List<abwesenheitsbean> searchAbwesenheiten(String team) throws ServletException {
 		List<abwesenheitsbean> abwesenheiten = new ArrayList<abwesenheitsbean>();

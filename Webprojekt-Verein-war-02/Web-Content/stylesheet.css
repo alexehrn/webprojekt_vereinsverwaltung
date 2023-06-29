@@ -64,6 +64,12 @@ main {
 main h1{
 	text-align: center;
 	color: #000000;
+	padding-bottom:0;
+}
+
+p{
+	margin-top:0;
+	font-size: 1.1rem;
 }
 
 main table{
@@ -130,6 +136,7 @@ fieldset{
 label{
 	min-width: 8em;
 	display: inline-block;
+	font-size: 1.05rem;
 	text-align: left;
 }
 
