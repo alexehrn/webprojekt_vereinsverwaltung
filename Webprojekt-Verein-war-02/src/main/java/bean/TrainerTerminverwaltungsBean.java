@@ -16,6 +16,9 @@ private Long id;
 private String kurzbeschreibung;
 private String ort;
 private Date datum;
+private String year;
+private String month;
+private String day;
 private LocalTime uhrzeitVON;
 private LocalTime uhrzeitBIS;
 private String beschreibung;
@@ -46,6 +49,29 @@ public Date getDatum() {
 }
 public void setDatum(Date datum) {
 	this.datum = datum;
+}
+public String getYear() {
+	return year;
+}
+
+public void setYear(Date datum) {
+	this.year = datum.toString().substring(0,4);
+}
+
+public String getMonth() {
+	return month;
+}
+
+public void setMonth(Date datum) {
+	this.month = datum.toString().substring(5,7);
+}
+
+public String getDay() {
+	return day;
+}
+
+public void setDay(Date datum) {
+	this.day = datum.toString().substring(8,10);
 }
 public LocalTime getUhrzeitVON() {
 	return uhrzeitVON;

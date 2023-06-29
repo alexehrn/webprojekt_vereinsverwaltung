@@ -38,7 +38,7 @@
 				<c:forEach var="currentRueckmeldung" items="${rueckmeldung}" varStatus="status">
 					<tr>
 						<td>${currentRueckmeldung.beschreibung}</td>
-						<td class="datumsspalte">${currentRueckmeldung.datum}</td>
+						<td class="datumsspalte">${currentRueckmeldung.day}.${currentRueckmeldung.month}.${currentRueckmeldung.year}</td>
 						<td class="zentrierteschrift">${currentRueckmeldung.zusagen}</td>
 						<td class="zentrierteschrift">${currentRueckmeldung.absagen}</td>
 					</tr>
@@ -81,7 +81,7 @@
 						            <tr>
 						                <td class="nummerspalte">${status.count}</td>
 						                <td>${currentAbwesenheit.vorname} ${currentAbwesenheit.nachname}</td>
-						                <td>${currentAbwesenheit.start} bis ${currentAbwesenheit.ende}</td>
+						                <td>${currentAbwesenheit.startday}.${currentAbwesenheit.startmonth}.${currentAbwesenheit.startyear} bis ${currentAbwesenheit.endeday}.${currentAbwesenheit.endemonth}.${currentAbwesenheit.endeyear}</td>
 						                <td class="zentrierteschrift">${currentAbwesenheit.grund}</td>
 						            </tr>
 						        </c:forEach>

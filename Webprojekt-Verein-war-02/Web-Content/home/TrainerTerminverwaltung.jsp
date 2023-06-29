@@ -45,7 +45,7 @@
 		            <tr>
 		                <td>${currentTermin.kurzbeschreibung}</td>
 		                <td>${currentTermin.ort}</td>
-		                <td class="datumsspalte">${currentTermin.datum}</td>
+		                <td class="datumsspalte">${currentTermin.day}.${currentTermin.month}.${currentTermin.year}</td>
 		                <td class="datumsspalte">${currentTermin.uhrzeitVON}-${currentTermin.uhrzeitBIS}</td>
 		                <td class="langertextspalte">${currentTermin.beschreibung}</td>
 		                <td class="zentrierteschrift">

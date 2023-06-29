@@ -55,7 +55,7 @@
 					</tr>
 					<c:forEach var="currentNachricht" items="${nachrichten}" varStatus="status">
 						<tr>
-						<td class="datumsspalte">${currentNachricht.tag}</td>
+						<td class="datumsspalte">${currentNachricht.day}.${currentNachricht.month}.${currentNachricht.year}</td>
 						<td class="langertextspalte">${currentNachricht.beschreibung}</td>
 						</tr>
 					</c:forEach>
@@ -86,7 +86,7 @@
 			<tr>
 				<td>${currentTermin.kurzbeschreibung}</td>
 				<td>${currentTermin.ort}</td>
-				<td class="datumsspalte">${currentTermin.datum}</td>
+				<td class="datumsspalte">${currentTermin.day}.${currentTermin.month}.${currentTermin.year}</td>
 				<td class="uhrzeitspalte">${currentTermin.uhrzeitVON}</td>
 				<td class="uhrzeitspalte">${currentTermin.uhrzeitBIS}</td>
 				<td class="langertextspalte">${currentTermin.beschreibung}</td>
@@ -159,8 +159,8 @@
 										<tr>
 											<td>${status.count}</td>
 											<td>${currentAbwesenheit.grund}</td>
-											<td>${currentAbwesenheit.start}</td>
-											<td>${currentAbwesenheit.ende}</td>
+											<td>${currentAbwesenheit.startday}.${currentAbwesenheit.startmonth}.${currentAbwesenheit.startyear}</td>
+											<td>${currentAbwesenheit.endeday}.${currentAbwesenheit.endemonth}.${currentAbwesenheit.endeyear}</td>
 											<td class="zentrierteschrift">
 												<a href="/Webprojekt-Verein-war-02/SpielerAbwesenheitLoeschen?id=${currentAbwesenheit.id}" class="button abwesenheitloeschen" title="Abwesenheit löschen">&#x1F5D1;</a> 
 									        </td>

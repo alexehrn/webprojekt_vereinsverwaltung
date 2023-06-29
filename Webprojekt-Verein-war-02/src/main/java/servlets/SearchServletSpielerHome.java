@@ -102,6 +102,9 @@ public class SearchServletSpielerHome extends HttpServlet {
 						
 						Date datum = rs.getDate("datum");
 						termin.setDatum(datum);
+						termin.setYear(datum);
+						termin.setMonth(datum);
+						termin.setDay(datum);
 						
 						LocalTime beginn = rs.getTime("beginn").toLocalTime();
 						termin.setUhrzeitVON(beginn);
@@ -145,9 +148,15 @@ public class SearchServletSpielerHome extends HttpServlet {
 									
 									Date datum_von = rs.getDate("datum_von");
 									abwesenheit.setStart(datum_von);
+									abwesenheit.setStartyear(datum_von);
+									abwesenheit.setStartmonth(datum_von);
+									abwesenheit.setStartday(datum_von);
 
 									Date datum_bis = rs.getDate("datum_bis");
 									abwesenheit.setEnde(datum_bis);
+									abwesenheit.setEndeyear(datum_bis);
+									abwesenheit.setEndemonth(datum_bis);
+									abwesenheit.setEndeday(datum_bis);
 									
 									abwesenheiten.add(abwesenheit);
 								}
@@ -183,6 +192,9 @@ public class SearchServletSpielerHome extends HttpServlet {
 						
 						Date datum = rs.getDate("tag");
 						nachricht.setTag(datum);
+						nachricht.setYear(datum);
+						nachricht.setMonth(datum);
+						nachricht.setDay(datum);
 
 						
 						nachrichten.add(nachricht);

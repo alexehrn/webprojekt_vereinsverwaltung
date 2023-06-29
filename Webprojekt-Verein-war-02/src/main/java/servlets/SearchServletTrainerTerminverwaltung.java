@@ -85,6 +85,9 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 					
 					Date datum = rs.getDate("datum");
 					termin.setDatum(datum);
+					termin.setYear(datum);
+					termin.setMonth(datum);
+					termin.setDay(datum);
 					
 					String ort = rs.getString("ort");
 					termin.setOrt(ort);

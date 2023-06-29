@@ -88,9 +88,15 @@ public class SearchServletTrainerHome extends HttpServlet {
 					
 					Date startdatum = rs.getDate("datum_von");
 					abwesenheit.setStart(startdatum);
+					abwesenheit.setStartyear(startdatum);
+					abwesenheit.setStartmonth(startdatum);
+					abwesenheit.setStartday(startdatum);
 					
 					Date enddatum = rs.getDate("datum_bis");
 					abwesenheit.setEnde(enddatum);
+					abwesenheit.setEndeyear(enddatum);
+					abwesenheit.setEndemonth(enddatum);
+					abwesenheit.setEndeday(enddatum);
 					
 					abwesenheiten.add(abwesenheit);
 				}
@@ -129,6 +135,9 @@ public class SearchServletTrainerHome extends HttpServlet {
 					
 					Date datum = rs.getDate("datum");
 					rueckmeldung.setDatum(datum);
+					rueckmeldung.setYear(datum);
+					rueckmeldung.setMonth(datum);
+					rueckmeldung.setDay(datum);
 					
 					Long zusagen = rs.getLong("anzahlzusagen");
 					rueckmeldung.setZusagen(zusagen);
