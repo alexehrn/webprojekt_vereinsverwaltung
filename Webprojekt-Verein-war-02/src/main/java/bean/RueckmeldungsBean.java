@@ -21,9 +21,8 @@ public class RueckmeldungsBean implements Serializable{
 	public void setBeschreibung(String beschreibung) {
 		this.beschreibung = beschreibung;
 	}
-	 public String getDatum() {
-	        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-	        return sdf.format(datum);
+	 public Date getDatum() {
+	   return datum;
 	    }
 	public void setDatum(Date datum) {
 		this.datum = datum;

@@ -53,6 +53,10 @@ public class LogOutServlet extends HttpServlet {
 			// Weiterleiten an JSP
 		    RequestDispatcher disp = request.getRequestDispatcher("./index.jsp");
 			disp.forward(request, response);
+		} else  {
+			//wenn Spieler noch nicht freigegeben ist
+			RequestDispatcher disp = request.getRequestDispatcher("./index.jsp");
+			disp.forward(request, response);
 		}
 		
 		
