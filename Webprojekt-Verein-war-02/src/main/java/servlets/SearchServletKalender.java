@@ -45,7 +45,7 @@ public class SearchServletKalender extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		// Team des Trainers aus Session holen
-		final HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 		
 		Object trainerObj = session.getAttribute("trainer");
 		Object spielerObj = session.getAttribute("spieler");
@@ -59,7 +59,7 @@ public class SearchServletKalender extends HttpServlet {
 
 			
 			// Weiterleiten an JSP
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/javaskript/kalenderJSON.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("./home/javaskript/kalenderJSON.jsp");
 			dispatcher.forward(request, response);
 		} else if (spielerObj instanceof SpielerBean) {
 		    SpielerBean spieler = (SpielerBean) spielerObj;
@@ -70,7 +70,7 @@ public class SearchServletKalender extends HttpServlet {
 
 			
 			// Weiterleiten an JSP
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("./home/javaskript/kalenderJSON.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("./home/javaskript/kalenderJSON.jsp");
 			dispatcher.forward(request, response);
 		}
 		
