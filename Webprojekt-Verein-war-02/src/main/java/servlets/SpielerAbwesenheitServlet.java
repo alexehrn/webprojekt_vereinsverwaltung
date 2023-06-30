@@ -1,3 +1,5 @@
+//Fabian Wolfsteiner:
+
 package servlets;
 
 
@@ -10,7 +12,6 @@ import java.sql.ResultSet;
 import javax.sql.DataSource;
 
 import bean.SpielerBean;
-import bean.TrainerBean;
 import bean.abwesenheitsbean;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;

@@ -1,3 +1,5 @@
+//Alexander Ehrnstrasser:
+
 package servlets;
 
 
@@ -10,7 +12,6 @@ import javax.sql.DataSource;
 
 import bean.SpielerBean;
 import bean.TrainerBean;
-import bean.registrierungsbean01;
 
 import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
@@ -25,7 +26,6 @@ import jakarta.servlet.http.HttpSession;
  * Servlet implementation class LogInServlet
  */
 
-/* Alexander Ehrnstrasser: */
 @WebServlet("/LogInServlet")
 public class LogInServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

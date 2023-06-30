@@ -1,10 +1,9 @@
+//Fabian Wolfsteiner:
+
 package bean;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.sql.Date;
-import java.sql.Time;
 import java.time.LocalTime;
 
 

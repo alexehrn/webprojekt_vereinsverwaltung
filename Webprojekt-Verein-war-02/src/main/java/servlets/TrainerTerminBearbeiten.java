@@ -1,3 +1,4 @@
+//Quirin Gerstberger:
 package servlets;
 
 import java.io.IOException;
@@ -5,10 +6,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.time.LocalTime;
-
 import javax.sql.DataSource;
-
-import bean.TrainerBean;
 import bean.TrainerTerminverwaltungsBean;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
@@ -16,7 +14,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class TrainerTerminBearbeiten

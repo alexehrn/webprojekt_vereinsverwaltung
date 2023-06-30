@@ -1,4 +1,4 @@
-/ Alexander Ehrnstrasser, Quirin Gerstberger:/
+/ Alexander Ehrnstrasser:/
 "use strict";
 
 document.addEventListener("DOMContentLoaded", init);

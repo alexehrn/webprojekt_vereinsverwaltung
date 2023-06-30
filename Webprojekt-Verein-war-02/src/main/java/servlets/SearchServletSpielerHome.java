@@ -1,3 +1,5 @@
+//Fabian Wolfsteiner:
+
 package servlets;
 
 
@@ -6,14 +8,13 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalTime;
 
 import javax.sql.DataSource;
 
-import bean.RueckmeldungsBean;
+
 import bean.SpielerBean;
 import bean.TrainerHomeBean;
 import bean.TrainerTerminverwaltungsBean;

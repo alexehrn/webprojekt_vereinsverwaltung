@@ -1,8 +1,10 @@
+//Quirin Gerstberger:
+
 package bean;
 
 import java.io.Serializable;
 
-/* Alexander Ehrnstrasser: */
+
 public class TrainerBean implements Serializable {
 private static final long serialVersionUID = 1L;
 

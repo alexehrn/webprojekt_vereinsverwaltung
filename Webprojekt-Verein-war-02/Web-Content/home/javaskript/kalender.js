@@ -32,9 +32,9 @@ function init() {
     var currentMonth = currentDate.getMonth();
     var currentYear = currentDate.getFullYear();
     
-    //Ab hier wurde selber erstellt//
+    //Ab hier wurde selber, gemeinsam erstellt://
     
-  var events=[];
+  	var events=[];
     
 			 // Termine von DB einfügen
 			function erstelleTermine() {

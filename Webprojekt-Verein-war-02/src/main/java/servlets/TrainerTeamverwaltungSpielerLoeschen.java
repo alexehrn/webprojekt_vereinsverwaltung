@@ -1,24 +1,23 @@
+//Quirin Gerstberger:
+
 package servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
 import javax.sql.DataSource;
-
-import bean.TrainerBean;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+
 
 /**
  * Servlet implementation class TrainerTeamverwaltungSpielerLoeschen
  */
-/* Alexander Ehrnstrasser: */
+
 @WebServlet("/TrainerTeamverwaltungSpielerLoeschen")
 public class TrainerTeamverwaltungSpielerLoeschen extends HttpServlet {
 	private static final long serialVersionUID = 1L;

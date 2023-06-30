@@ -1,3 +1,5 @@
+//Fabian Wolfsteiner
+
 package bean;
 
 import java.io.Serializable;

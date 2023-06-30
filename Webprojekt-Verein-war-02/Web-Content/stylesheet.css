@@ -1,3 +1,6 @@
+/* Gemeinsam: */
+/*Unten befindet sich die CSS für den Kalender, welche CHAT-GPT erstellt hat*/
+
 #logout-btn {
   position: fixed;
   top: 10px;
@@ -297,7 +300,7 @@ footer img {
 
 
 
-/* Alles Chat GPT */
+/* Ab hier alles Chat GPT: */
 /* CSS für Kalender */
 
  #kalenderbody {

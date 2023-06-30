@@ -1,8 +1,9 @@
+//Fabian Wolfsteiner:
+
 package bean;
 
 import java.io.Serializable;
 
-/* Alexander Ehrnstrasser: */
 public class SpielerBean implements Serializable {
 private static final long serialVersionUID = 1L;
 

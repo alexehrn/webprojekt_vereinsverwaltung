@@ -1,3 +1,5 @@
+//Alexander Ehrnstrasser:
+
 package servlets;
 
 import java.io.IOException;
@@ -14,9 +16,7 @@ import javax.sql.DataSource;
 import bean.KalenderItemBean;
 import bean.SpielerBean;
 import bean.TrainerBean;
-import bean.TrainerHomeBean;
-import bean.TrainerTerminverwaltungsBean;
-import bean.abwesenheitsbean;
+
 import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

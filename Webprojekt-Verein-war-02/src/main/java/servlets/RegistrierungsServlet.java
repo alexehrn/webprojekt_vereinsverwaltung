@@ -1,3 +1,5 @@
+//Alexander Ehrnstrasser:
+
 package servlets;
 
 
@@ -20,11 +22,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.Part;
 
-/**
- * Servlet implementation class RegistrierungsServlet
- */
 
-/* Alexander Ehrnstrasser: */
+
 @WebServlet("/RegistrierungsServlet")
 @MultipartConfig( 
 		maxFileSize=1024*1024*5, 

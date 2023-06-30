@@ -1,3 +1,4 @@
+//Quirin Gerstberger:
 package servlets;
 
 import java.io.IOException;
@@ -5,7 +6,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Time;
 import java.time.LocalTime;
 
 import javax.sql.DataSource;
@@ -18,7 +18,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import bean.TrainerBean;
-import bean.SpielerBean;
 import bean.TrainerTerminverwaltungsBean;
 
 /*

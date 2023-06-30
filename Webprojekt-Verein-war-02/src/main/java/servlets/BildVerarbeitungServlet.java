@@ -1,3 +1,5 @@
+//Alexander Ehrnstrasser:
+
 package servlets;
 
 import java.io.IOException;
@@ -24,8 +26,6 @@ import jakarta.servlet.http.HttpServletResponse;
  * Servlet implementation class BildVerarbeitungServlet
  */
 
-
-/* Alexander Ehrnstrasser: */
 
 @WebServlet("/BildVerarbeitungServlet")
 public class BildVerarbeitungServlet extends HttpServlet {

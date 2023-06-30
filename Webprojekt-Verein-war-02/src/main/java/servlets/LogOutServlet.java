@@ -1,9 +1,9 @@
+//Alexander Ehrnstrasser:
+
 package servlets;
 
 import java.io.IOException;
-import java.util.List;
 
-import bean.KalenderItemBean;
 import bean.SpielerBean;
 import bean.TrainerBean;
 import jakarta.servlet.RequestDispatcher;

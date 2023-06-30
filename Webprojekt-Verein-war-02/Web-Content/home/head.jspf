@@ -1,4 +1,4 @@
-<%-- Alexander Ehrnstrasser: --%>
+<%-- Gemeinsam: --%>
 	<header>
 		<a href="../LogOutServlet" id="logout-btn">&#10150; Logout</a>
 		<img src="../img/Header.png" alt="header">
