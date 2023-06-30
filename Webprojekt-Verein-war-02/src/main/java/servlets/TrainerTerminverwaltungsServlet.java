@@ -47,6 +47,7 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 		
 		//Attribute in Bean
 		trainerTerminverwaltungsBean.setKurzbeschreibung(request.getParameter("kurzbeschreibung"));
+		trainerTerminverwaltungsBean.setKategorie(request.getParameter("kategorie"));
 		trainerTerminverwaltungsBean.setOrt(request.getParameter("ort"));
 		trainerTerminverwaltungsBean.setDatum(Date.valueOf(request.getParameter("datum")));
 		trainerTerminverwaltungsBean.setUhrzeitVON(LocalTime.parse(request.getParameter("startzeit")));
@@ -76,7 +77,7 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 	
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
-					"INSERT INTO termine (kurzbeschreibung, ort, datum, beginn, ende, beschreibung, mannschaft) VALUES (?, ?, ?, ?, ?, ?, ?)", 
+					"INSERT INTO termine (kurzbeschreibung, ort, datum, beginn, ende, beschreibung, mannschaft, kategorie) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 
 					generatedKeys)){
 			
 			// Zugriff über Klasse java.sql.PreparedStatement
@@ -87,6 +88,7 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 			pstmt.setTime(5, java.sql.Time.valueOf(trainerTerminverwaltungsBean.getUhrzeitBIS()));
 			pstmt.setString(6, trainerTerminverwaltungsBean.getBeschreibung());
 			pstmt.setString(7, team);
+			pstmt.setString(8, trainerTerminverwaltungsBean.getKategorie());
 			
 			
 			

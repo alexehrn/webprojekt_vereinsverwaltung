@@ -1,4 +1,4 @@
-<%-- Quirin Gerstberger: --%>
+<%-- Alexander Ehrnstrasser: --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page errorPage="ErrorPage.jsp" %>
@@ -34,6 +34,37 @@
 			<div>
 				<label for="kurzbeschreibung">Beschreibung:</label>
 				<input type="text" name="kurzbeschreibung" id="kurzbeschreibung" size="30" maxlength="20" required value="${termin.kurzbeschreibung}">
+			</div>
+			<div>
+				<label for="kategorie">Kategorie:</label>
+				<select name="kategorie" id="kategorie" size="1" required>
+						<c:choose>
+						    <c:when test="${termin.kategorie == 'Training'}">
+						        <option value="Training" selected>Training</option>
+						    </c:when>
+						    <c:otherwise>
+						        <option value="Training">Training</option>
+						    </c:otherwise>
+						</c:choose>
+						<c:choose>
+						    <c:when test="${termin.kategorie == 'Spiel'}">
+						        <option value="Spiel" selected>Spiel</option>
+						    </c:when>
+						    <c:otherwise>
+						        <option value="Spiel">Spiel</option>
+						    </c:otherwise>
+						</c:choose>
+							<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
+							    <c:choose>
+							        <c:when test="${termin.kategorie == currentKategorie.kategorie}">
+							            <option value="${currentKategorie.kategorie}" selected>${currentKategorie.kategorie}</option>
+							        </c:when>
+							        <c:otherwise>
+							            <option value="${currentKategorie.kategorie}">${currentKategorie.kategorie}</option>
+							        </c:otherwise>
+							    </c:choose>
+							</c:forEach>
+				</select>
 			</div>
 			<div>
 				<label for="ort">Ort:</label>

@@ -142,7 +142,7 @@ public class SearchServletTrainerHome extends HttpServlet {
 		// Das SQL Statement ist aus Chat-GPT
 			
 			try (Connection con = ds.getConnection();
-					 PreparedStatement pstmt = con.prepareStatement("SELECT termine.kurzbeschreibung, termine.datum,\r\n"
+					 PreparedStatement pstmt = con.prepareStatement("SELECT termine.kurzbeschreibung, termine.kategorie, termine.datum,\r\n"
 					 		+ "       IFNULL(SUM(CASE WHEN rueckmeldung.meldung = 'Zugesagt' THEN 1 ELSE 0 END), 0) AS anzahlzusagen,\r\n" //IFNULL: Wenn keine Rückmeldungen vorhanden sind (d.h. Ergbenis=NULL) wird 0 als anzahlzusagen eingefügt
 					 		+ "       IFNULL(SUM(CASE WHEN rueckmeldung.meldung = 'Abgesagt' THEN 1 ELSE 0 END), 0) AS anzahlabsagen\r\n"  //IFNULL: Wenn keine Rückmeldungen vorhanden sind (d.h. Ergbenis=NULL) wird 0 als anzahlabsagen eingefügt
 					 		+ "FROM termine\r\n"
@@ -159,6 +159,9 @@ public class SearchServletTrainerHome extends HttpServlet {
 					
 					String beschreibung = rs.getString("kurzbeschreibung");
 					rueckmeldung.setBeschreibung(beschreibung);
+					
+					String kategorie = rs.getString("kategorie");
+					rueckmeldung.setKategorie(kategorie);
 					
 					Date datum = rs.getDate("datum");
 					rueckmeldung.setDatum(datum);

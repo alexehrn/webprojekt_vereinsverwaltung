@@ -14,6 +14,7 @@ import java.util.List;
 import javax.sql.DataSource;
 import bean.TrainerBean;
 import bean.TrainerTerminverwaltungsBean;
+import bean.terminkategorie;
 import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpSession;
@@ -51,10 +52,12 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 		
 		// DB-Zugriff
 		List<TrainerTerminverwaltungsBean> termine = searchTermine(team);
+		List<terminkategorie> kategorien = searchKategorien(team);
 		
 		
 		// Scope "Request"
-		request.setAttribute("termine", termine);					
+		request.setAttribute("termine", termine);
+		request.setAttribute("kategorien", kategorien);	
 				
 				
 		// Weiterleiten an JSP
@@ -63,6 +66,37 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 		
 	}
 	
+	private List<terminkategorie> searchKategorien(String team) throws ServletException{
+		List<terminkategorie> kategorien = new ArrayList<terminkategorie>();
+		
+		// DB-Zugriff
+		try (Connection con = ds.getConnection();
+			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM kategorien WHERE Mannschaft=? OR Mannschaft='all'")) { 
+
+			pstmt.setString(1,team);
+			
+			try (ResultSet rs = pstmt.executeQuery()) {
+			
+				while (rs.next()) {
+					terminkategorie kategorie = new terminkategorie();
+					
+					String kurzbeschreibung = rs.getString("Kategorie");
+					kategorie.setKategorie(kurzbeschreibung);
+					
+					String mannschaft = rs.getString("Mannschaft");
+					kategorie.setMannschaft(mannschaft);
+					
+					kategorien.add(kategorie);
+				}
+			}
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+		
+		return kategorien;
+	}
+
+
 	private List<TrainerTerminverwaltungsBean> searchTermine(String team) throws ServletException {
 		List<TrainerTerminverwaltungsBean> termine = new ArrayList<TrainerTerminverwaltungsBean>();
 	
@@ -81,6 +115,9 @@ public class SearchServletTrainerTerminverwaltung extends HttpServlet {
 					
 					String kurzbeschreibung = rs.getString("kurzbeschreibung");
 					termin.setKurzbeschreibung(kurzbeschreibung);
+					
+					String kategorie = rs.getString("kategorie");
+					termin.setKategorie(kategorie);
 					
 					Date datum = rs.getDate("datum");
 					termin.setDatum(datum);

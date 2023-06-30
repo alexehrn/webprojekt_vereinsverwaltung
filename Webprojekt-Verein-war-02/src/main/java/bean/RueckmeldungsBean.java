@@ -11,6 +11,7 @@ public class RueckmeldungsBean implements Serializable{
 	private String rueckmeldung;
 	private Long id;
 	private String beschreibung;
+	private String kategorie;
 	private Long zusagen;
 	private Long absagen;
 	private Date datum;
@@ -78,5 +79,11 @@ public class RueckmeldungsBean implements Serializable{
 	}
 	public void setAbsagen(Long absagen) {
 		this.absagen = absagen;
+	}
+	public String getKategorie() {
+		return kategorie;
+	}
+	public void setKategorie(String kategorie) {
+		this.kategorie = kategorie;
 	}
 }

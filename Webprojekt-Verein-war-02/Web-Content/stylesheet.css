@@ -136,6 +136,13 @@ fieldset{
 	flex-direction: column;
 }
 
+#terminformularzentrieren{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
 label{
 	min-width: 8em;
 	display: inline-block;
@@ -147,6 +154,25 @@ label{
 	vertical-align: top;
 }
 
+select{
+	width: 20em;
+	height: 30px;
+}
+
+#kategorienbearbeiten{
+	font-size: 15px;
+	background-color:#acacac;
+	color: #000000;
+	width: 3em;
+	height: 2em;
+	transition-duration: 0.4s;
+  	cursor: pointer;
+}
+kategorienbearbeiten:hover{
+  background-color: #555555;
+  color: white;
+}
+
 input{
 	width: 20em;
 	height: 30px;
@@ -155,6 +181,8 @@ input{
 input[type="radio"], input[type="time"], input[type="date"] {
 	width: auto;
 }
+
+
 
 input:focus {
   background-color: #baf9ff;
@@ -201,6 +229,38 @@ div#flexarea{
 #abwesenheitsform{
 	flex: 3.65;
 }
+
+div#flexareatermin{
+	display: flex;
+	width: 80%;
+	flex-flow: row wrap;
+	
+}
+
+
+#kategorieformausgeblendet{
+	display:none;
+}
+
+#neuekategorieausgeblendet{
+	display:none;
+}
+
+#terminform{
+	flex: 3;
+	margin-right: 5%;
+}
+
+#kategorieform{
+	flex: 2;
+
+}
+
+#neuekategorie{
+	flex:1;
+
+}
+
 
 .abwesenheitsline{
 	text-align: left;
@@ -296,6 +356,10 @@ footer td, th {
 footer img {
 	float: left;
 	
+}
+
+.rightfloat{
+	float:right;
 }
 
 

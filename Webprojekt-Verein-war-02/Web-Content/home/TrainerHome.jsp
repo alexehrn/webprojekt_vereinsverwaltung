@@ -32,6 +32,7 @@
 	<table> 
 		<tr>
 			<th>Beschreibung</th>
+			<th>Kategorie</th>
 			<th class="datumsspalte">Datum</th>
 			<th class="zentrierteschrift">Zusagen</th>
 			<th class="zentrierteschrift">Absagen</th>
@@ -41,6 +42,7 @@
 				<c:forEach var="currentRueckmeldung" items="${rueckmeldung}" varStatus="status">
 					<tr>
 						<td>${currentRueckmeldung.beschreibung}</td>
+						<td>${currentRueckmeldung.kategorie}</td>
 						<td class="datumsspalte">${currentRueckmeldung.day}.${currentRueckmeldung.month}.${currentRueckmeldung.year}</td>
 						<td class="zentrierteschrift">${currentRueckmeldung.zusagen}</td>
 						<td class="zentrierteschrift">${currentRueckmeldung.absagen}</td>

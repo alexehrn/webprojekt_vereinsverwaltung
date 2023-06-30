@@ -43,6 +43,7 @@ import jakarta.servlet.http.HttpServletResponse;
 		
 		//Attribute in Bean
 		trainerTerminverwaltungsBean.setKurzbeschreibung(request.getParameter("kurzbeschreibung"));
+		trainerTerminverwaltungsBean.setKategorie(request.getParameter("kategorie"));
 		trainerTerminverwaltungsBean.setOrt(request.getParameter("ort"));
 		trainerTerminverwaltungsBean.setDatum(Date.valueOf(request.getParameter("datum")));
 		trainerTerminverwaltungsBean.setUhrzeitVON(LocalTime.parse(request.getParameter("startzeit")));
@@ -61,7 +62,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 	private void updateTermin(Long id, TrainerTerminverwaltungsBean trainerTerminverwaltungsBean) throws ServletException {
 		try (Connection con = ds.getConnection();
-			    PreparedStatement pstmt = con.prepareStatement("UPDATE termine SET kurzbeschreibung=?, ort=?, datum=?, beginn=?, ende=?, beschreibung=? WHERE termin_id = ?")) {
+			    PreparedStatement pstmt = con.prepareStatement("UPDATE termine SET kurzbeschreibung=?, ort=?, datum=?, beginn=?, ende=?, beschreibung=?,kategorie=? WHERE termin_id = ?")) {
 				
 				pstmt.setString(1, trainerTerminverwaltungsBean.getKurzbeschreibung());
 				pstmt.setString(2, trainerTerminverwaltungsBean.getOrt());
@@ -69,8 +70,8 @@ import jakarta.servlet.http.HttpServletResponse;
 				pstmt.setTime(4, java.sql.Time.valueOf(trainerTerminverwaltungsBean.getUhrzeitVON()));
 				pstmt.setTime(5, java.sql.Time.valueOf(trainerTerminverwaltungsBean.getUhrzeitBIS()));
 				pstmt.setString(6, trainerTerminverwaltungsBean.getBeschreibung());
-				
-				pstmt.setLong(7,id);
+				pstmt.setString(7, trainerTerminverwaltungsBean.getKategorie());
+				pstmt.setLong(8,id);
 				pstmt.executeUpdate();
 			} catch (Exception ex) {
 				throw new ServletException(ex.getMessage());

@@ -13,6 +13,7 @@ private static final long serialVersionUID = 1L;
 
 private Long id;
 private String kurzbeschreibung;
+private String kategorie;
 private String ort;
 private Date datum;
 private String year;
@@ -95,6 +96,12 @@ public String getRueckmeldung() {
 }
 public void setRueckmeldung(String rueckmeldung) {
 	this.rueckmeldung = rueckmeldung;
+}
+public String getKategorie() {
+	return kategorie;
+}
+public void setKategorie(String kategorie) {
+	this.kategorie = kategorie;
 }
 
 
