@@ -232,7 +232,7 @@ div#flexarea{
 
 div#flexareatermin{
 	display: flex;
-	width: 80%;
+	width: 90%;
 	flex-flow: row wrap;
 	
 }

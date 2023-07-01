@@ -110,20 +110,42 @@
 	</div>
 	
 	<div id="kategorieformausgeblendet">
-	<h1  class="abwesenheitsline">Kategorien verwalten</h1>
+	<h1  class="abwesenheitsline">Kategorieverwaltung</h1>
 	
-	<table>
-		<tr>
-			<th>Kategorie</th>
+	
+	<c:choose>
+		<c:when test="${empty kategorien}">
+				<table>
+						<tr>
+							<th>Kategorie</th>
+						</tr>
+						<tr>
+							<td>Keine Kategorie vorhanden</td>
+						</tr>
+					</table>
+			</c:when>
+			<c:otherwise>
+					<table>
+						<tr>
+							<th>Kategorie</th>
+						</tr>
+						
+						 <c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
+						<tr>
+							<td>${currentKategorie.kategorie}	<a href="/Webprojekt-Verein-war-02/TrainerKategorieLoeschen?kategorie=${currentKategorie.kategorie}" id="kategorielöschen" class="button rightfloat"  title="Kategorie löschen">&#x1F5D1;</a></td>
+						</tr>
+						 </c:forEach>
+					</table>
 			
-		</tr>
-		
-		 <c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
-		<tr>
-			<td>${currentKategorie.kategorie}	<a href="/Webprojekt-Verein-war-02/TrainerKategorieLoeschen?kategorie=${currentKategorie.kategorie}" id="kategorielöschen" class="button rightfloat"  title="Kategorie löschen">&#x1F5D1;</a></td>
-		</tr>
-		 </c:forEach>
-	</table>
+			</c:otherwise>
+	
+	</c:choose>
+	
+	
+	
+	
+	
+
 	</div>	
 	
 	<div id="neuekategorieausgeblendet">
