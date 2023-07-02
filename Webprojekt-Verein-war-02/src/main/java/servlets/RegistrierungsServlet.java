@@ -26,8 +26,8 @@ import jakarta.servlet.http.Part;
 
 @WebServlet("/RegistrierungsServlet")
 @MultipartConfig( 
-		maxFileSize=1024*1024*5, 
-		maxRequestSize=1024*1024*5*5,
+		maxFileSize=1024*1024, 
+		maxRequestSize=1024*1024,
 		location= "/tmp",
 		fileSizeThreshold=1024*1024)
 
