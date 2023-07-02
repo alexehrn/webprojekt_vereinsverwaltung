@@ -141,12 +141,6 @@
 	
 	</c:choose>
 	
-	
-	
-	
-	
-	
-
 	</div>	
 	
 	<div id="neuekategorieausgeblendet">
