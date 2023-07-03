@@ -41,7 +41,7 @@ public class TrainerHomeServlet extends HttpServlet {
 		TrainerHomeBean trainerHomeBean = new TrainerHomeBean();
 		
 		trainerHomeBean.setBeschreibung(request.getParameter("trainer_eingabe"));
-		trainerHomeBean.setTag(new java.sql.Date(new java.util.Date().getTime()));		//Automatisches erstellen des Heutigen Datums --> mit ChatGPT Herausgefunden												//aktuellen Tag einfügen
+		trainerHomeBean.setTag(new java.sql.Date(new java.util.Date().getTime()));													//aktuellen Tag einfügen
 		
 		persist(trainerHomeBean, team);
 		
@@ -50,7 +50,7 @@ public class TrainerHomeServlet extends HttpServlet {
 
 		
 		// Weiterleiten an JSP
-		response.sendRedirect("SearchServletTrainerHome"); //Redirect weil Formulareingabe? --> würde sonst öfter schicken
+		response.sendRedirect("SearchServletTrainerHome"); 
 		
 	
 		
@@ -62,7 +62,7 @@ public class TrainerHomeServlet extends HttpServlet {
 	
 	private void persist(TrainerHomeBean trainerHomeBean, String team) throws ServletException {
 		// DB-Zugriff
-		String[] generatedKeys = new String[] {"nachricht_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
+		String[] generatedKeys = new String[] {"nachricht_id"};	
 		
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
@@ -70,13 +70,11 @@ public class TrainerHomeServlet extends HttpServlet {
 					generatedKeys)){
 
 		
-			// Zugriff über Klasse java.sql.PreparedStatement
 			pstmt.setString(1, team);
 			pstmt.setString(2, trainerHomeBean.getBeschreibung());
 			pstmt.setDate(3, trainerHomeBean.getTag());
 			pstmt.executeUpdate();
 			
-			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
 			try (ResultSet rs = pstmt.getGeneratedKeys()) {
 				while (rs.next()) {
 					trainerHomeBean.setNachricht_id(rs.getLong(1));

@@ -17,7 +17,7 @@
 
 	<main>
 	
-	<noscript><h1>Sie müssen Java-Skript aktivieren <br>
+	<noscript><h1>Sie müssen Java-Skript aktivieren, <br>
 	um die Anwendung optimal nutzen zu können !</h1></noscript>
 	
 		<h1>Login</h1>

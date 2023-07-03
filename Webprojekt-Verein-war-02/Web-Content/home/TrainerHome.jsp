@@ -103,7 +103,7 @@
 	<form action="/Webprojekt-Verein-war-02/TrainerHomeServlet" method="post" accept-charset="utf-8">
 		<fieldset>
 			<div class="zentrieren">
-				<textarea name="trainer_eingabe" id="trainer_eingabe" placeholder="max. 1000 Zeichen" maxlength="1000"rows="10" cols="100"></textarea>
+				<textarea name="trainer_eingabe" id="trainer_eingabe" placeholder="max. 1000 Zeichen" maxlength="1000" rows="10" cols="100"></textarea>
 			</div>
 			<div class="zentrieren">
 				<button type="submit" name="nachrichtAbsenden" value="submit">Absenden der Nachricht</button>

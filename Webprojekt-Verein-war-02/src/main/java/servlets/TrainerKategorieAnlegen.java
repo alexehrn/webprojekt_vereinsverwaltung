@@ -65,7 +65,6 @@ public class TrainerKategorieAnlegen extends HttpServlet {
 			PreparedStatement pstmt = con.prepareStatement(
 					"INSERT INTO kategorien (Kategorie, Mannschaft) VALUES (?, ?)")){
 			
-			// Zugriff über Klasse java.sql.PreparedStatement
 			pstmt.setString(1, neueKategorie.getKategorie());
 			pstmt.setString(2, neueKategorie.getMannschaft());
 		

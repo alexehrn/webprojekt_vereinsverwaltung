@@ -35,7 +35,7 @@ import jakarta.servlet.http.HttpServletResponse;
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
+		request.setCharacterEncoding("UTF-8");	
 		Long id = Long.valueOf(request.getParameter("id"));
 		
 		

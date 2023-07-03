@@ -37,23 +37,7 @@
 			</div>
 			<div>
 				<label for="kategorie">Kategorie:</label>
-				<select name="kategorie" id="kategorie" size="1" required>
-						<c:choose>
-						    <c:when test="${termin.kategorie == 'Training'}">
-						        <option value="Training" selected>Training</option>
-						    </c:when>
-						    <c:otherwise>
-						        <option value="Training">Training</option>
-						    </c:otherwise>
-						</c:choose>
-						<c:choose>
-						    <c:when test="${termin.kategorie == 'Spiel'}">
-						        <option value="Spiel" selected>Spiel</option>
-						    </c:when>
-						    <c:otherwise>
-						        <option value="Spiel">Spiel</option>
-						    </c:otherwise>
-						</c:choose>
+				<select name="kategorie" id="kategorie" size="1">
 							<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 							    <c:choose>
 							        <c:when test="${termin.kategorie == currentKategorie.kategorie}">
@@ -64,6 +48,14 @@
 							        </c:otherwise>
 							    </c:choose>
 							</c:forEach>
+							 <c:choose>
+						    		<c:when test="${termin.kategorie == ''}">
+						       			<option value="" selected>Keine Kategorisierung</option>
+						    		</c:when>
+						   			<c:otherwise>
+						        		<option value="">Keine Kategorisierung</option>
+						    		</c:otherwise>
+							</c:choose>
 				</select>
 			</div>
 			<div>

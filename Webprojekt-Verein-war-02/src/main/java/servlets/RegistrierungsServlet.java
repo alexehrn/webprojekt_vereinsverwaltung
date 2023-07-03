@@ -85,7 +85,7 @@ public class RegistrierungsServlet extends HttpServlet {
 		
 		
 		
-			String[] generatedKeys = new String[] {"spieler_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
+			String[] generatedKeys = new String[] {"spieler_id"};	
 			
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
@@ -103,7 +103,6 @@ public class RegistrierungsServlet extends HttpServlet {
 				pstmt.executeUpdate();
 				
 				
-				// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
 				try (ResultSet rs = pstmt.getGeneratedKeys()) {
 					while (rs.next()) {
 						regbean.setId(rs.getLong(1));
@@ -123,7 +122,7 @@ private void persisttrainer(registrierungsbean01 regbean) throws ServletExceptio
 		
 
 			
-			String[] generatedKeys = new String[] {"trainer_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
+			String[] generatedKeys = new String[] {"trainer_id"};
 			
 			// DB-Zugriff
 			try (Connection con = ds.getConnection();
@@ -140,7 +139,7 @@ private void persisttrainer(registrierungsbean01 regbean) throws ServletExceptio
 				pstmt.executeUpdate();
 				
 				
-				// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
+				
 				try (ResultSet rs = pstmt.getGeneratedKeys()) {
 					while (rs.next()) {
 						regbean.setId(rs.getLong(1));

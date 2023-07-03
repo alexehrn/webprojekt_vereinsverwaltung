@@ -95,7 +95,7 @@ public class TrainerTeamverwaltungSpielerSuche extends HttpServlet {
 					spieler.setTeam(mannschaft);
 					
 					spielerliste.add(spieler);
-				} // while rs.next()
+				} 
 			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());

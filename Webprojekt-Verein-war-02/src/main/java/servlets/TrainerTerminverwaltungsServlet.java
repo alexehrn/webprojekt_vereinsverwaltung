@@ -73,14 +73,14 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 	
 	private void terminAnlegen(TrainerTerminverwaltungsBean trainerTerminverwaltungsBean, String team) throws ServletException {
 		// DB-Zugriff
-		String[] generatedKeys = new String[] {"id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
+		String[] generatedKeys = new String[] {"id"};	
 	
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
 					"INSERT INTO termine (kurzbeschreibung, ort, datum, beginn, ende, beschreibung, mannschaft, kategorie) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 
 					generatedKeys)){
 			
-			// Zugriff über Klasse java.sql.PreparedStatement
+			
 			pstmt.setString(1, trainerTerminverwaltungsBean.getKurzbeschreibung());
 			pstmt.setString(2, trainerTerminverwaltungsBean.getOrt());
 			pstmt.setDate(3, trainerTerminverwaltungsBean.getDatum());
@@ -95,7 +95,6 @@ public class TrainerTerminverwaltungsServlet extends HttpServlet {
 			pstmt.executeUpdate();
 			
 			
-			// Generierte(n) Schlüssel auslesen 
 			try (ResultSet rs = pstmt.getGeneratedKeys()) {
 				int i = 1;
 				while (rs.next()) {

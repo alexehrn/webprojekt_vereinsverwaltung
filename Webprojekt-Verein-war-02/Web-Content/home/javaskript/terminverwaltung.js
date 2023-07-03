@@ -5,12 +5,13 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init(){
-	var terminloeschenclick = document.getElementById("terminloeschen");
-	terminloeschenclick.addEventListener("click", terminwirklichloeschen);
-	
 	var kategoriebutton = document.getElementById("kategorienbearbeiten");
 	kategoriebutton.addEventListener("click", kategoriebearbeiten);
-	
+		
+	var terminloeschenclick = document.getElementsByClassName("terminloeschen");
+	for (var i=0; terminloeschenclick.length; i++){
+		terminloeschenclick[i].addEventListener("click", terminwirklichloeschen);
+	}	
 	
 }
 

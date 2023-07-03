@@ -61,7 +61,7 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 				PreparedStatement pstmt = con
 						.prepareStatement("SELECT * FROM rueckmeldung WHERE spieler_id=? AND termin_id=?")) {
 
-			// Zugriff über Klasse java.sql.PreparedStatement
+			
 			pstmt.setLong(1, spieler.getId());
 			pstmt.setLong(2, terminId);
 
@@ -85,7 +85,6 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 				PreparedStatement pstmt = con
 						.prepareStatement("Update rueckmeldung SET meldung=? WHERE spieler_id=? AND termin_id=?")) {
 
-			// Zugriff über Klasse java.sql.PreparedStatement
 			pstmt.setString(1, rueckmeldung.getRueckmeldung());
 			pstmt.setLong(2, spieler.getId());
 			pstmt.setLong(3, terminId);
@@ -107,7 +106,6 @@ public class SpielerRueckmeldungServlet extends HttpServlet {
 				PreparedStatement pstmt = con.prepareStatement(
 						"INSERT INTO rueckmeldung (spieler_id,termin_id, meldung) VALUES (?, ?, ?)")) {
 
-			// Zugriff über Klasse java.sql.PreparedStatement
 
 			pstmt.setLong(1, spieler.getId());
 			pstmt.setLong(2, terminId);

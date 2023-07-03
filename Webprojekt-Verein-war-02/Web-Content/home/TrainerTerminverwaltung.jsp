@@ -53,7 +53,7 @@
 		                <td class="langertextspalte">${currentTermin.beschreibung}</td>
 		                <td class="zentrierteschrift">
 		                <a href="/Webprojekt-Verein-war-02/SearchServletTrainerTerminBearbeiten?id=${currentTermin.id}" class="button" title="Termin bearbeiten">&#x270E;</a>
-		                <a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}" id="terminloeschen" class="button"  title="Termin löschen">&#x1F5D1;</a>
+		                <a href="/Webprojekt-Verein-war-02/TrainerTerminLoeschen?id=${currentTermin.id}" class="button terminloeschen"   title="Termin löschen">&#x1F5D1;</a>
 		                </td>
 		            </tr>
 		        </c:forEach>
@@ -74,12 +74,11 @@
 			</div>
 			<div>
 				<label for="kategorie">Kategorie:</label>
-				<select name="kategorie" id="kategorie" size="1" required>
-						<option value="Training">Training</option>
-						<option value="Spiel">Spiel</option>
+				<select name="kategorie" id="kategorie" size="1">
 							 <c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 								<option value="${currentKategorie.kategorie}">${currentKategorie.kategorie}</option>
 							</c:forEach>
+							<option value="" selected>Keine Kategorisierung</option>
 				</select>
 				<button type="button" name="kategorienbearbeiten" id="kategorienbearbeiten" title="Kategorie bearbeiten">&#x270E;</button>
 			</div>
@@ -147,7 +146,7 @@
 	<h1 class="abwesenheitsline">Neue Kategorie</h1>
 	<form action="/Webprojekt-Verein-war-02/TrainerKategorieAnlegen" method="get">
   	<div>
-  	<input type="text" name="kategorie" id="kategorie" size="30" maxlength="20" required placeholder="Kategorie (max. 20 Zeichen) eingeben">
+  	<input type="text" name="kategorie" id="neueKategorie" size="30" maxlength="20" required placeholder="Kategorie (max. 20 Zeichen) eingeben">
   	</div>
   	<div>
   	<button type="submit">Hinzufügen</button>

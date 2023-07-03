@@ -24,7 +24,7 @@
 	
 	<p>Deine Registrierung in unserer Vereinsverwaltung-Software war bereits erfolgreich.</p>
 	<p>Leider hat dich dein Trainer noch nicht zur Mannschaft zugeordnet.</p>
-	<p>Informiere bitte deinen Trainer persönlich, dass er dich zuordnen soll und damit deinen User freigeben soll.</p>
+	<p>Informiere bitte deinen Trainer persönlich, dass er dich zuordnen soll.</p>
 	<p>Klicke oben rechts auf den Logout-Button, um die Session zu verlassen.</p>
 	
 	</main>

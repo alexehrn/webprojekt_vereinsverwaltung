@@ -71,7 +71,7 @@ public class SpielerAbwesenheitServlet extends HttpServlet {
 	
 	private void abwesenheitAnlegen(abwesenheitsbean abwesenheit, SpielerBean spieler, String team) throws ServletException {
 		// DB-Zugriff
-		String[] generatedKeys = new String[] {"abwesenheits_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
+		String[] generatedKeys = new String[] {"abwesenheits_id"};	
 		
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
@@ -79,7 +79,7 @@ public class SpielerAbwesenheitServlet extends HttpServlet {
 					generatedKeys)){
 
 		
-			// Zugriff über Klasse java.sql.PreparedStatement
+			
 			pstmt.setLong(1, spieler.getId());
 			pstmt.setString(2, abwesenheit.getGrund());
 			pstmt.setDate(3, abwesenheit.getStart()); 
@@ -87,7 +87,7 @@ public class SpielerAbwesenheitServlet extends HttpServlet {
 			pstmt.setString(5, team);
 			pstmt.executeUpdate();
 			
-			// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
+			
 			try (ResultSet rs = pstmt.getGeneratedKeys()) {
 				while (rs.next()) {
 					abwesenheit.setId(rs.getLong(1));
